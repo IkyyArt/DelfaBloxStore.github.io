@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roblox Account Store | Premium Gaming Accounts</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #5865f2;
+        --secondary: #eb459e;
+        --dark: #1a1a2e;
+        --light: #f7f7f7;
+        --success: #57f287;
+        --warning: #fee75c;
+        --danger: #ed4245;
+        --legendary: #ffd700;
+        --mythic: #ff44cc;
+        --world-class: #00a8ff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: #121212;
+        color: white;
+        overflow-x: hidden;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header Styles */
+      header {
+        background: linear-gradient(135deg, #5865f2, #eb459e);
+        padding: 1rem 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      .logo {
+        font-size: 2.5rem;
+        font-weight: 800;
+        background: linear-gradient(to right, #ffffff, #ffd700);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        display: flex;
+        align-items: center;
+      }
+
+      .logo i {
+        margin-right: 10px;
+        color: #ffd700;
+        -webkit-text-fill-color: #ffd700;
+      }
+
+      .nav-menu {
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav-link {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 8px 16px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        transform: translateY(-3px);
+      }
+
+      .nav-link.active {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      /* Game Selection */
+      .game-section {
+        padding: 2rem 0;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+        position: relative;
+        padding-bottom: 15px;
+        color: #ffffff;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(to right, var(--primary), var(--secondary));
+        border-radius: 2px;
+      }
+
+      .game-cards {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+
+      .game-card {
+        width: 280px;
+        height: 380px;
+        background-color: #1e1e2f;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        transition: all 0.4s ease;
+        position: relative;
+        cursor: pointer;
+      }
+
+      .game-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(88, 101, 242, 0.4);
+      }
+
+      .game-card-img {
+        width: 100%;
+        height: 60%;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .game-card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .game-card:hover .game-card-img img {
+        transform: scale(1.1);
+      }
+
+      .game-card-content {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .game-card-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: white;
+      }
+
+      .game-card-desc {
+        font-size: 0.9rem;
+        color: #b8b8b8;
+        margin-bottom: 15px;
+      }
+
+      .game-card-btn {
+        display: inline-block;
+        padding: 8px 25px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .game-card-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(88, 101, 242, 0.5);
+      }
+
+      /* Account Types */
+      .account-type-section {
+        display: none;
+        padding: 2rem 0;
+      }
+
+      .account-types {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 2rem;
+      }
+
+      .type-btn {
+        background-color: #1e1e2f;
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .type-btn:hover {
+        background-color: #2d2d44;
+        transform: translateY(-3px);
+      }
+
+      .type-btn.active {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        box-shadow: 0 5px 15px rgba(88, 101, 242, 0.4);
+      }
+
+      /* Tiers */
+      .tier-section {
+        display: none;
+        padding: 2rem 0;
+      }
+
+      .tier-cards {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-top: 2rem;
+      }
+
+      .tier-card {
+        width: 320px;
+        background-color: #1e1e2f;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        transition: all 0.4s ease;
+        position: relative;
+        cursor: pointer;
+      }
+
+      .tier-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .tier-card.world-class {
+        border: 2px solid var(--world-class);
+      }
+
+      .tier-card.mythic {
+        border: 2px solid var(--mythic);
+      }
+
+      .tier-card.legendary {
+        border: 2px solid var(--legendary);
+      }
+
+      .tier-header {
+        padding: 20px;
+        text-align: center;
+        position: relative;
+      }
+
+      .tier-title {
+        font-size: 1.8rem;
+        font-weight: 800;
+        margin-bottom: 10px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .world-class .tier-title {
+        background: linear-gradient(135deg, #00a8ff, #00f2fe);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .mythic .tier-title {
+        background: linear-gradient(135deg, #ff44cc, #ff66ff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .legendary .tier-title {
+        background: linear-gradient(135deg, #ffd700, #ffaa00);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .tier-img {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .tier-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .tier-card:hover .tier-img img {
+        transform: scale(1.1);
+      }
+
+      .tier-details {
+        padding: 20px;
+      }
+
+      .tier-price {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 15px;
+        text-align: center;
+        color: white;
+      }
+
+      .tier-status {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .status-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .status-item i {
+        width: 24px;
+        text-align: center;
+        font-size: 1rem;
+        color: var(--success);
+      }
+
+      .tier-actions {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+
+      .buy-btn,
+      .testimonial-btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .buy-btn {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+        flex: 2;
+      }
+
+      .buy-btn:hover {
+        box-shadow: 0 5px 15px rgba(88, 101, 242, 0.5);
+      }
+
+      .testimonial-btn {
+        background-color: #2d2d44;
+        color: white;
+        margin-left: 10px;
+        flex: 1;
+      }
+
+      .testimonial-btn:hover {
+        background-color: #3d3d5c;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .header-content {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .nav-menu {
+          margin-top: 15px;
+        }
+
+        .game-cards,
+        .tier-cards {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .account-types {
+          flex-direction: column;
+          align-items: center;
+          gap: 15px;
+        }
+
+        .tier-actions {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .testimonial-btn {
+          margin-left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="bg-particles" id="particles"></div>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo animate__animated animate__fadeInDown">
+            <i class="fa-solid fa-gamepad"></i> IkyyBlox Store
+          </div>
+          <div class="nav-menu animate__animated animate__fadeInDown">
+            <a href="#" class="nav-link active">Home</a>
+            <a href="#" class="nav-link">Accounts</a>
+            <a href="#" class="nav-link">FAQ</a>
+            <a href="#" class="nav-link">Contact</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="game-section" id="gameSection">
+        <div class="container">
+          <h2 class="section-title animate__animated animate__fadeIn">
+            Pilih Akun Roblox
+          </h2>
+          <div class="game-cards">
+            <div
+              class="game-card animate__animated animate__fadeInUp"
+              data-game="bluelock"
+            >
+              <div class="game-card-img">
+                <img src="Blue Lock Rivals.jpg" alt="Blue Lock Rivals" />
+              </div>
+              <div class="game-card-content">
+                <h3 class="game-card-title">Blue Lock Rivals</h3>
+                <p class="game-card-desc">
+                  Jadi pemain sepak bola terbaik di dunia!
+                </p>
+                <a href="#" class="game-card-btn">Pilih Akun</a>
+              </div>
+            </div>
+
+            <div
+              class="game-card animate__animated animate__fadeInUp"
+              data-game="volleyball"
+              style="animation-delay: 0.2s"
+            >
+              <div class="game-card-img">
+                <img src="VolleyBall Legends.jpg" alt="Volleyball Legends" />
+              </div>
+              <div class="game-card-content">
+                <h3 class="game-card-title">Volleyball Legends</h3>
+                <p class="game-card-desc">
+                  Kuasai lapangan dengan spike terbaik!
+                </p>
+                <a href="#" class="game-card-btn">Pilih Akun</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="account-type-section" id="accountTypeSection">
+        <div class="container">
+          <h2 class="section-title animate__animated animate__fadeIn">
+            Pilih Tipe Akun
+          </h2>
+          <div class="account-types">
+            <button
+              class="type-btn animate__animated animate__fadeInLeft"
+              data-type="style-flow"
+            >
+              Style + Flow
+            </button>
+            <button
+              class="type-btn animate__animated animate__fadeInUp"
+              data-type="style-only"
+            >
+              Style Only
+            </button>
+            <button
+              class="type-btn animate__animated animate__fadeInRight"
+              data-type="flow-only"
+            >
+              Flow Only
+            </button>
+          </div>
+
+          <button
+            class="type-btn"
+            style="margin: 20px auto; display: block"
+            id="backToGames"
+          >
+            <i class="fa-solid fa-arrow-left"></i> Kembali ke Pilihan Akun
+          </button>
+        </div>
+      </section>
+
+      <section class="tier-section" id="tierSection">
+        <div class="container">
+          <h2
+            class="section-title animate__animated animate__fadeIn"
+            id="tierTitle"
+          >
+            Pilih Tier Akun
+          </h2>
+
+          <!-- Style + Flow Tiers -->
+          <div class="tier-cards" id="styleFlowTiers">
+            <div
+              class="tier-card world-class animate__animated animate__fadeInUp"
+              data-tier="world-class-sf"
+            >
+              <div class="tier-header">
+                <h3 class="tier-title">World Class</h3>
+              </div>
+              <div class="tier-img">
+                <img src="/api/placeholder/320/200" alt="World Class Account" />
+              </div>
+              <div class="tier-details">
+                <div class="tier-price">Rp 250.000</div>
+                <div class="tier-status">
+                  <div class="status-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Level 50+</span>
+                  </div>
+                  <div class="status-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Karakter Langka</span>
+                  </div>
+                  <div class="status-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Item Premium</span>
+                  </div>
+                </div>
+                <div class="tier-actions">
+                  <button class="buy-btn">Beli Sekarang</button>
+                  <button class="testimonial-btn" data-tier="world-class-sf">
+                    Testimoni
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="tier-card mythic animate__animated animate__fadeInUp"
+              style="animation-delay: 0.2s"
+              data-tier="mythic-sf"
+            >
+              <div class="tier-header">
+                <h3 class="tier-title">Mythic</h3>
+              </div>
+              <div class="tier-img">
+                <img src="/api/placeholder/320/200" alt="Mythic Account" />
+              </div>
+              <div class="tier-details">
+                <div class="tier-price">Rp 450.000</div>
+                <div class="tier-status">
+                  <div class="status-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Level 75+</span>
+                  </div>
+                  <div class="status-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Karakter Ultra Langka</span>
+                  </div>
+                  <div class="status-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Set Item Exclusive</span>
+                  </div>
+                </div>
+                <div class="tier-actions">
+                  <button class="buy-btn">Beli Sekarang</button>
+                  <button class="testimonial-btn" data-tier="mythic-sf">
+                    Testimoni
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="tier-card legendary animate__animated animate__fadeInUp"
+              style="animation-delay: 0.4s"
+              data-tier="legendary-sf"
+            >
+              <div class="tier-header">
+                <h3 class="tier-title">Legendary</h3>
+              </div>
+              <div class="tier-img">
+                <img src="/api/placeholder/320/200" alt="Legendary Account" />
+              </div>
+              <div class="tier-details">
+                <div class="tier-price">Rp 750.000</div>
+                <div class="tier-status">
+                  <div class="status-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Level 100 Max</span>
+                  </div>
+                  <div class="status-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Karakter Legendary Full</span>
+                  </div>
+                  <div class="status-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Limited Edition Items</span>
+                  </div>
+                </div>
+                <div class="tier-actions">
+                  <button class="buy-btn">Beli Sekarang</button>
+                  <button class="testimonial-btn" data-tier="legendary-sf">
+                    Testimoni
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Style Only Tiers -->
+          <div class="tier-cards" id="styleOnlyTiers" style="display: none">
+            <div
+              class="tier-card world-class animate__animated animate__fadeInUp"
+              data-tier="world-class-s"
+            >
+              <div class="tier-header">
+                <h3 class="tier-title">World Class</h3>
+              </div>
+              <div class="tier-img">
+                <img
+                  src="/api/placeholder/320/200"
+                  alt="World Class Style Account"
+                />
+              </div>
+              <div class="tier-details">
+                <div class="tier-price">Rp 180.000</div>
+                <div class="tier-status">
+                  <div class="status-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Skin Premium</span>
+                  </div>
+                  <div class="status-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Efek Karakter Spesial</span>
+                  </div>
+                  <div class="status-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Kostum Terbatas</span>
+                  </div>
+                </div>
+                <div class="tier-actions">
+                  <button class="buy-btn">Beli Sekarang</button>
+                  <button class="testimonial-btn" data-tier="world-class-s">
+                    Testimoni
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="tier-card mythic animate__animated animate__fadeInUp"
+              style="animation-delay: 0.2s"
+              data-tier="mythic-s"
+            >
+              <div class="tier-header">
+                <h3 class="tier-title">Mythic</h3>
+              </div>
+              <div class="tier-img">
+                <img
+                  src="/api/placeholder/320/200"
+                  alt="Mythic Style Account"
+                />
+              </div>
+              <div class="tier-details">
+                <div class="tier-price">Rp 350.000</div>
+                <div class="tier-status">
+                  <div class="status-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Skin Ultra Premium</span>
+                  </div>
+                  <div class="status-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Animasi Eksklusif</span>
+                  </div>
+                  <div class="status-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Kolleksi Kostum Lengkap</span>
+                  </div>
+                </div>
+                <div class="tier-actions">
+                  <button class="buy-btn">Beli Sekarang</button>
+                  <button class="testimonial-btn" data-tier="mythic-s">
+                    Testimoni
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="tier-card legendary animate__animated animate__fadeInUp"
+              style="animation-delay: 0.4s"
+              data-tier="legendary-s"
+            >
+              <div class="tier-header">
+                <h3 class="tier-title">Legendary</h3>
+              </div>
+              <div class="tier-img">
+                <img
+                  src="/api/placeholder/320/200"
+                  alt="Legendary Style Account"
+                />
+              </div>
+              <div class="tier-details">
+                <div class="tier-price">Rp 550.000</div>
+                <div class="tier-status">
+                  <div class="status-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Skin Legendary Full</span>
+                  </div>
+                  <div class="status-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Efek Visual Ultimate</span>
+                  </div>
+                  <div class="status-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Set Kostum Koleksi Lengkap</span>
+                  </div>
+                </div>
+                <div class="tier-actions">
+                  <button class="buy-btn">Beli Sekarang</button>
+                  <button class="testimonial-btn" data-tier="legendary-s">
+                    Testimoni
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flow Only Tiers -->
+          <div class="tier-cards" id="flowOnlyTiers" style="display: none">
+            <div
+              class="tier-card world-class animate__animated animate__fadeInUp"
+              data-tier="world-class-f"
+            >
+              <div class="tier-header">
+                <h3 class="tier-title">World Class</h3>
+              </div>
+              <div class="tier-img">
+                <img
+                  src="/api/placeholder/320/200"
+                  alt="World Class Flow Account"
+                />
+              </div>
+              <div class="tier-details">
+                <div class="tier-price">Rp 200.000</div>
+                <div class="tier-status">
+                  <div class="status-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Skill Level Tinggi</span>
+                  </div>
+                  <div class="status-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Teknik Advanced</span>
+                  </div>
+                  <div class="status-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tombol Kembali ke Tipe Akun -->
+          <button
+            class="type-btn"
+            style="margin: 20px auto; display: block"
+            id="backToAccountTypes"
+          >
+            <i class="fa-solid fa-arrow-left"></i> Kembali ke Tipe Akun
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      // JavaScript untuk menangani interaksi
+      document.addEventListener("DOMContentLoaded", function () {
+        const gameSection = document.getElementById("gameSection");
+        const accountTypeSection =
+          document.getElementById("accountTypeSection");
+        const tierSection = document.getElementById("tierSection");
+        const backToGamesButton = document.getElementById("backToGames");
+        const backToAccountTypesButton =
+          document.getElementById("backToAccountTypes");
+        const accountTypeButtons = document.querySelectorAll(".type-btn");
+        const styleFlowTiers = document.getElementById("styleFlowTiers");
+        const styleOnlyTiers = document.getElementById("styleOnlyTiers");
+        const flowOnlyTiers = document.getElementById("flowOnlyTiers");
+
+        // Menampilkan bagian pemilihan tipe akun ketika tombol "Pilih Akun" diklik
+        document.querySelectorAll(".game-card-btn").forEach((button) => {
+          button.addEventListener("click", function (e) {
+            e.preventDefault();
+            gameSection.style.display = "none";
+            accountTypeSection.style.display = "block";
+            tierSection.style.display = "none";
+          });
+        });
+
+        // Menampilkan bagian pemilihan tier ketika tombol tipe akun diklik
+        accountTypeButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const type = this.getAttribute("data-type");
+
+            // Sembunyikan semua tier
+            styleFlowTiers.style.display = "none";
+            styleOnlyTiers.style.display = "none";
+            flowOnlyTiers.style.display = "none";
+
+            // Tampilkan tier yang sesuai
+            if (type === "style-flow") {
+              styleFlowTiers.style.display = "flex";
+            } else if (type === "style-only") {
+              styleOnlyTiers.style.display = "flex";
+            } else if (type === "flow-only") {
+              flowOnlyTiers.style.display = "flex";
+            }
+
+            // Tampilkan bagian tier
+            accountTypeSection.style.display = "none";
+            tierSection.style.display = "block";
+          });
+        });
+
+        // Kembali ke bagian pemilihan akun
+        backToGamesButton.addEventListener("click", function () {
+          accountTypeSection.style.display = "none";
+          tierSection.style.display = "none";
+          gameSection.style.display = "block";
+        });
+
+        // Kembali ke bagian pemilihan tipe akun
+        backToAccountTypesButton.addEventListener("click", function () {
+          tierSection.style.display = "none";
+          accountTypeSection.style.display = "block";
+        });
+      });
+    </script>
+  </body>
+</html>
