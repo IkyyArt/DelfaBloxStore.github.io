@@ -403,6 +403,103 @@
         background-color: #3d3d5c;
       }
 
+      /* Testimonial Section */
+      .testimonial-section {
+        display: none;
+        padding: 2rem 0;
+      }
+
+      .testimonial-cards {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .testimonial-card {
+        width: 300px;
+        background-color: #1e1e2f;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .testimonial-img {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        border-radius: 10px;
+      }
+
+      .testimonial-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .testimonial-name {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-top: 15px;
+        text-align: center;
+        color: white;
+      }
+
+      .testimonial-text {
+        font-size: 0.9rem;
+        color: #b8b8b8;
+        margin-top: 10px;
+        text-align: center;
+      }
+
+      /* Tombol Kembali ke Pilihan Tier */
+      .back-button {
+        display: block;
+        margin: 20px auto;
+        padding: 12px 24px;
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .back-button:hover {
+        background-color: #4752c4;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .back-button i {
+        margin-right: 8px;
+      }
+
+      /* Judul Kategori Tier */
+      .tier-category-title {
+        font-size: 2rem;
+        font-weight: 800;
+        text-align: center;
+        margin: 2rem 0 1rem 0;
+        position: relative;
+        color: rgb(255, 255, 255);
+        width: 100%;
+      }
+
+      .tier-category-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(to right, var(--primary), var(--secondary));
+        border-radius: 2px;
+      }
+
       /* Responsive Design */
       @media (max-width: 768px) {
         .header-content {
@@ -456,6 +553,7 @@
     </header>
 
     <main>
+      <!-- Game Selection Section -->
       <section class="game-section" id="gameSection">
         <div class="container">
           <h2 class="section-title animate__animated animate__fadeIn">
@@ -498,6 +596,7 @@
         </div>
       </section>
 
+      <!-- Account Type Section -->
       <section class="account-type-section" id="accountTypeSection">
         <div class="container">
           <h2 class="section-title animate__animated animate__fadeIn">
@@ -524,16 +623,13 @@
             </button>
           </div>
 
-          <button
-            class="type-btn"
-            style="margin: 20px auto; display: block"
-            id="backToGames"
-          >
+          <button class="back-button" id="backToGames">
             <i class="fa-solid fa-arrow-left"></i> Kembali ke Pilihan Akun
           </button>
         </div>
       </section>
 
+      <!-- Tier Section -->
       <section class="tier-section" id="tierSection">
         <div class="container">
           <h2
@@ -545,6 +641,7 @@
 
           <!-- Style + Flow Tiers -->
           <div class="tier-cards" id="styleFlowTiers">
+            <h3 class="tier-category-title">World Class</h3>
             <div
               class="tier-card world-class animate__animated animate__fadeInUp"
               data-tier="world-class-sf"
@@ -556,23 +653,28 @@
                 <img src="/api/placeholder/320/200" alt="World Class Account" />
               </div>
               <div class="tier-details">
-                <div class="tier-price">Rp 250.000</div>
+                <div class="tier-price">Rp 25.000</div>
                 <div class="tier-status">
                   <div class="status-item">
                     <i class="fa-solid fa-check-circle"></i>
-                    <span>Level 50+</span>
+                    <span>Style: Don Lorenzo ( SOLD )</span>
                   </div>
                   <div class="status-item">
                     <i class="fa-solid fa-check-circle"></i>
-                    <span>Karakter Langka</span>
+                    <span>FLow: Crow</span>
                   </div>
                   <div class="status-item">
                     <i class="fa-solid fa-check-circle"></i>
-                    <span>Item Premium</span>
+                    <span>Status: Datpol, Notopi, Siap MC</span>
                   </div>
                 </div>
                 <div class="tier-actions">
-                  <button class="buy-btn">Beli Sekarang</button>
+                  <button
+                    class="buy-btn"
+                    onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20World%20Class%20Style%20%2B%20Flow', '_blank')"
+                  >
+                    Beli Sekarang
+                  </button>
                   <button class="testimonial-btn" data-tier="world-class-sf">
                     Testimoni
                   </button>
@@ -580,6 +682,47 @@
               </div>
             </div>
 
+            <div
+              class="tier-card world-class animate__animated animate__fadeInUp"
+              data-tier="world-class-sf"
+            >
+              <div class="tier-header">
+                <h3 class="tier-title">World Class</h3>
+              </div>
+              <div class="tier-img">
+                <img src="/api/placeholder/320/200" alt="World Class Account" />
+              </div>
+              <div class="tier-details">
+                <div class="tier-price">Rp 25.000</div>
+                <div class="tier-status">
+                  <div class="status-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Style: Don Lorenzo ( SOLD )</span>
+                  </div>
+                  <div class="status-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>FLow: Monster</span>
+                  </div>
+                  <div class="status-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Status: Datpol, Notopi, Siap MC</span>
+                  </div>
+                </div>
+                <div class="tier-actions">
+                  <button
+                    class="buy-btn"
+                    onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20World%20Class%20Style%20%2B%20Flow', '_blank')"
+                  >
+                    Beli Sekarang
+                  </button>
+                  <button class="testimonial-btn" data-tier="world-class-sf">
+                    Testimoni
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="tier-category-title">Mythic</h3>
             <div
               class="tier-card mythic animate__animated animate__fadeInUp"
               style="animation-delay: 0.2s"
@@ -592,23 +735,28 @@
                 <img src="/api/placeholder/320/200" alt="Mythic Account" />
               </div>
               <div class="tier-details">
-                <div class="tier-price">Rp 450.000</div>
+                <div class="tier-price">Rp 20.000</div>
                 <div class="tier-status">
                   <div class="status-item">
                     <i class="fa-solid fa-check-circle"></i>
-                    <span>Level 75+</span>
+                    <span>Style: Yukimya</span>
                   </div>
                   <div class="status-item">
                     <i class="fa-solid fa-check-circle"></i>
-                    <span>Karakter Ultra Langka</span>
+                    <span>Flow: Demon Wings</span>
                   </div>
                   <div class="status-item">
                     <i class="fa-solid fa-check-circle"></i>
-                    <span>Set Item Exclusive</span>
+                    <span>Status: Datpol, Notopi, Siap MC</span>
                   </div>
                 </div>
                 <div class="tier-actions">
-                  <button class="buy-btn">Beli Sekarang</button>
+                  <button
+                    class="buy-btn"
+                    onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Mythic%20Style%20%2B%20Flow', '_blank')"
+                  >
+                    Beli Sekarang
+                  </button>
                   <button class="testimonial-btn" data-tier="mythic-sf">
                     Testimoni
                   </button>
@@ -616,6 +764,7 @@
               </div>
             </div>
 
+            <h3 class="tier-category-title">Legendary</h3>
             <div
               class="tier-card legendary animate__animated animate__fadeInUp"
               style="animation-delay: 0.4s"
@@ -628,23 +777,28 @@
                 <img src="/api/placeholder/320/200" alt="Legendary Account" />
               </div>
               <div class="tier-details">
-                <div class="tier-price">Rp 750.000</div>
+                <div class="tier-price">Rp 15.000</div>
                 <div class="tier-status">
                   <div class="status-item">
                     <i class="fa-solid fa-check-circle"></i>
-                    <span>Level 100 Max</span>
+                    <span>Style: Nagi</span>
                   </div>
                   <div class="status-item">
                     <i class="fa-solid fa-check-circle"></i>
-                    <span>Karakter Legendary Full</span>
+                    <span>Flow: Demon Wings</span>
                   </div>
                   <div class="status-item">
                     <i class="fa-solid fa-check-circle"></i>
-                    <span>Limited Edition Items</span>
+                    <span>Status: Datpol, Notopi, Siap MC</span>
                   </div>
                 </div>
                 <div class="tier-actions">
-                  <button class="buy-btn">Beli Sekarang</button>
+                  <button
+                    class="buy-btn"
+                    onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Legendary%20Style%20%2B%20Flow', '_blank')"
+                  >
+                    Beli Sekarang
+                  </button>
                   <button class="testimonial-btn" data-tier="legendary-sf">
                     Testimoni
                   </button>
@@ -655,6 +809,7 @@
 
           <!-- Style Only Tiers -->
           <div class="tier-cards" id="styleOnlyTiers" style="display: none">
+            <h3 class="tier-category-title">World Class</h3>
             <div
               class="tier-card world-class animate__animated animate__fadeInUp"
               data-tier="world-class-s"
@@ -685,7 +840,12 @@
                   </div>
                 </div>
                 <div class="tier-actions">
-                  <button class="buy-btn">Beli Sekarang</button>
+                  <button
+                    class="buy-btn"
+                    onclick="window.open('https://wa.me/6281234567890?text=Saya%20ingin%20membeli%20akun%20World%20Class%20Style%20Only', '_blank')"
+                  >
+                    Beli Sekarang
+                  </button>
                   <button class="testimonial-btn" data-tier="world-class-s">
                     Testimoni
                   </button>
@@ -693,6 +853,7 @@
               </div>
             </div>
 
+            <h3 class="tier-category-title">Mythic</h3>
             <div
               class="tier-card mythic animate__animated animate__fadeInUp"
               style="animation-delay: 0.2s"
@@ -724,7 +885,12 @@
                   </div>
                 </div>
                 <div class="tier-actions">
-                  <button class="buy-btn">Beli Sekarang</button>
+                  <button
+                    class="buy-btn"
+                    onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Mythic%20Style%20Only', '_blank')"
+                  >
+                    Beli Sekarang
+                  </button>
                   <button class="testimonial-btn" data-tier="mythic-s">
                     Testimoni
                   </button>
@@ -732,6 +898,7 @@
               </div>
             </div>
 
+            <h3 class="tier-category-title">Legendary</h3>
             <div
               class="tier-card legendary animate__animated animate__fadeInUp"
               style="animation-delay: 0.4s"
@@ -763,7 +930,12 @@
                   </div>
                 </div>
                 <div class="tier-actions">
-                  <button class="buy-btn">Beli Sekarang</button>
+                  <button
+                    class="buy-btn"
+                    onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Legendary%20Style%20Only', '_blank')"
+                  >
+                    Beli Sekarang
+                  </button>
                   <button class="testimonial-btn" data-tier="legendary-s">
                     Testimoni
                   </button>
@@ -774,6 +946,7 @@
 
           <!-- Flow Only Tiers -->
           <div class="tier-cards" id="flowOnlyTiers" style="display: none">
+            <h3 class="tier-category-title">World Class</h3>
             <div
               class="tier-card world-class animate__animated animate__fadeInUp"
               data-tier="world-class-f"
@@ -800,46 +973,191 @@
                   </div>
                   <div class="status-item">
                     <i class="fa-solid fa-check-circle"></i>
+                    <span>Item Skill Lengkap</span>
                   </div>
+                </div>
+                <div class="tier-actions">
+                  <button
+                    class="buy-btn"
+                    onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20World%20Class%20Flow%20Only', '_blank')"
+                  >
+                    Beli Sekarang
+                  </button>
+                  <button class="testimonial-btn" data-tier="world-class-f">
+                    Testimoni
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="tier-category-title">Mythic</h3>
+            <div
+              class="tier-card mythic animate__animated animate__fadeInUp"
+              style="animation-delay: 0.2s"
+              data-tier="mythic-f"
+            >
+              <div class="tier-header">
+                <h3 class="tier-title">Mythic</h3>
+              </div>
+              <div class="tier-img">
+                <img src="/api/placeholder/320/200" alt="Mythic Flow Account" />
+              </div>
+              <div class="tier-details">
+                <div class="tier-price">Rp 400.000</div>
+                <div class="tier-status">
+                  <div class="status-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Skill Level Ultimate</span>
+                  </div>
+                  <div class="status-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Teknik Master</span>
+                  </div>
+                  <div class="status-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Item Skill Ultra Lengkap</span>
+                  </div>
+                </div>
+                <div class="tier-actions">
+                  <button
+                    class="buy-btn"
+                    onclick="window.open('https://wa.me/6281234567890?text=Saya%20ingin%20membeli%20akun%20Mythic%20Flow%20Only', '_blank')"
+                  >
+                    Beli Sekarang
+                  </button>
+                  <button class="testimonial-btn" data-tier="mythic-f">
+                    Testimoni
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="tier-category-title">Legendary</h3>
+            <div
+              class="tier-card legendary animate__animated animate__fadeInUp"
+              style="animation-delay: 0.4s"
+              data-tier="legendary-f"
+            >
+              <div class="tier-header">
+                <h3 class="tier-title">Legendary</h3>
+              </div>
+              <div class="tier-img">
+                <img
+                  src="/api/placeholder/320/200"
+                  alt="Legendary Flow Account"
+                />
+              </div>
+              <div class="tier-details">
+                <div class="tier-price">Rp 600.000</div>
+                <div class="tier-status">
+                  <div class="status-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Skill Level Max</span>
+                  </div>
+                  <div class="status-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Teknik Legendary</span>
+                  </div>
+                  <div class="status-item">
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Item Skill Ultimate</span>
+                  </div>
+                </div>
+                <div class="tier-actions">
+                  <button
+                    class="buy-btn"
+                    onclick="window.open('https://wa.me/6281234567890?text=Saya%20ingin%20membeli%20akun%20Legendary%20Flow%20Only', '_blank')"
+                  >
+                    Beli Sekarang
+                  </button>
+                  <button class="testimonial-btn" data-tier="legendary-f">
+                    Testimoni
+                  </button>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Tombol Kembali ke Tipe Akun -->
-          <button
-            class="type-btn"
-            style="margin: 20px auto; display: block"
-            id="backToAccountTypes"
-          >
+          <button class="back-button" id="backToAccountTypes">
             <i class="fa-solid fa-arrow-left"></i> Kembali ke Tipe Akun
+          </button>
+        </div>
+      </section>
+
+      <!-- Testimonial Section -->
+      <section class="testimonial-section" id="testimonialSection">
+        <div class="container">
+          <h2 class="section-title animate__animated animate__fadeIn">
+            Testimoni Pembeli
+          </h2>
+          <div class="testimonial-cards">
+            <div class="testimonial-card animate__animated animate__fadeInUp">
+              <div class="testimonial-img">
+                <img src="testimonial1.jpg" alt="Testimoni 1" />
+              </div>
+              <div class="testimonial-name">John Doe</div>
+              <div class="testimonial-text">
+                "Akunnya keren banget, pelayanan cepat dan ramah!"
+              </div>
+            </div>
+            <div
+              class="testimonial-card animate__animated animate__fadeInUp"
+              style="animation-delay: 0.2s"
+            >
+              <div class="testimonial-img">
+                <img src="testimonial2.jpg" alt="Testimoni 2" />
+              </div>
+              <div class="testimonial-name">Jane Smith</div>
+              <div class="testimonial-text">
+                "Itemnya lengkap, worth it banget harganya!"
+              </div>
+            </div>
+          </div>
+          <button class="back-button" id="backToTiers">
+            <i class="fa-solid fa-arrow-left"></i> Kembali ke Pilihan Tier
           </button>
         </div>
       </section>
     </main>
 
     <script>
-      // JavaScript untuk menangani interaksi
       document.addEventListener("DOMContentLoaded", function () {
         const gameSection = document.getElementById("gameSection");
         const accountTypeSection =
           document.getElementById("accountTypeSection");
         const tierSection = document.getElementById("tierSection");
+        const testimonialSection =
+          document.getElementById("testimonialSection");
+
         const backToGamesButton = document.getElementById("backToGames");
         const backToAccountTypesButton =
           document.getElementById("backToAccountTypes");
+        const backToTiersButton = document.getElementById("backToTiers");
+
         const accountTypeButtons = document.querySelectorAll(".type-btn");
         const styleFlowTiers = document.getElementById("styleFlowTiers");
         const styleOnlyTiers = document.getElementById("styleOnlyTiers");
         const flowOnlyTiers = document.getElementById("flowOnlyTiers");
+        const testimonialButtons =
+          document.querySelectorAll(".testimonial-btn");
+
+        let currentTierType = "style-flow"; // Menyimpan tier yang sedang aktif
+
+        // Fungsi untuk menyembunyikan semua section
+        function hideAllSections() {
+          gameSection.style.display = "none";
+          accountTypeSection.style.display = "none";
+          tierSection.style.display = "none";
+          testimonialSection.style.display = "none";
+        }
 
         // Menampilkan bagian pemilihan tipe akun ketika tombol "Pilih Akun" diklik
         document.querySelectorAll(".game-card-btn").forEach((button) => {
           button.addEventListener("click", function (e) {
             e.preventDefault();
-            gameSection.style.display = "none";
+            hideAllSections();
             accountTypeSection.style.display = "block";
-            tierSection.style.display = "none";
           });
         });
 
@@ -847,6 +1165,7 @@
         accountTypeButtons.forEach((button) => {
           button.addEventListener("click", function () {
             const type = this.getAttribute("data-type");
+            currentTierType = type; // Simpan tier yang sedang aktif
 
             // Sembunyikan semua tier
             styleFlowTiers.style.display = "none";
@@ -863,22 +1182,44 @@
             }
 
             // Tampilkan bagian tier
-            accountTypeSection.style.display = "none";
+            hideAllSections();
             tierSection.style.display = "block";
           });
         });
 
         // Kembali ke bagian pemilihan akun
         backToGamesButton.addEventListener("click", function () {
-          accountTypeSection.style.display = "none";
-          tierSection.style.display = "none";
+          hideAllSections();
           gameSection.style.display = "block";
         });
 
         // Kembali ke bagian pemilihan tipe akun
         backToAccountTypesButton.addEventListener("click", function () {
-          tierSection.style.display = "none";
+          hideAllSections();
           accountTypeSection.style.display = "block";
+        });
+
+        // Kembali ke bagian pemilihan tier
+        backToTiersButton.addEventListener("click", function () {
+          hideAllSections();
+          tierSection.style.display = "block";
+
+          // Tampilkan tier yang sesuai dengan yang terakhir dipilih
+          if (currentTierType === "style-flow") {
+            styleFlowTiers.style.display = "flex";
+          } else if (currentTierType === "style-only") {
+            styleOnlyTiers.style.display = "flex";
+          } else if (currentTierType === "flow-only") {
+            flowOnlyTiers.style.display = "flex";
+          }
+        });
+
+        // Menampilkan testimoni ketika tombol testimoni diklik
+        testimonialButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            hideAllSections();
+            testimonialSection.style.display = "block";
+          });
         });
       });
     </script>
