@@ -854,36 +854,62 @@
         box-shadow: 0 10px 20px rgba(88, 101, 242, 0.3);
       }
 
-      /* Responsive Design */
-      @media (max-width: 768px) {
+      @media (min-width: 768px) {
         .header-content {
-          flex-direction: column;
-          gap: 15px;
+          flex-direction: row;
+          padding: 1rem 0;
+        }
+
+        .logo-wrapper {
+          width: auto;
+          justify-content: flex-start;
+        }
+
+        .logo {
+          font-size: 2rem;
+          margin-bottom: 0;
         }
 
         .nav-menu {
-          margin-top: 15px;
+          width: auto;
+          flex-direction: row;
+          margin-top: 0;
         }
 
-        .game-cards,
-        .tier-cards {
-          flex-direction: column;
-          align-items: center;
+        .nav-link {
+          font-size: 1rem;
         }
 
-        .account-types {
-          flex-direction: column;
-          align-items: center;
-          gap: 15px;
+        .game-card {
+          width: calc(33.333% - 15px);
         }
 
-        .tier-actions {
-          flex-direction: column;
-          gap: 10px;
+        .tier-card {
+          width: calc(33.333% - 15px);
         }
 
-        .testimonial-btn {
-          margin-left: 0;
+        .testimonial-card {
+          width: calc(33.333% - 15px);
+        }
+
+        .account-features {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .account-stats {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .contact-container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        #mobile-menu-toggle {
+          display: none;
+        }
+
+        .nav-menu {
+          display: flex !important;
         }
       }
     </style>
