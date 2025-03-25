@@ -4,10 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Roblox Account Store | Premium Gaming Accounts</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Animate.css -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -206,7 +213,7 @@
         box-shadow: 0 5px 15px rgba(88, 101, 242, 0.5);
       }
 
-      /* Account Types */
+      /* Account Type Section */
       .account-type-section {
         display: none;
         padding: 2rem 0;
@@ -500,6 +507,313 @@
         border-radius: 2px;
       }
 
+      /* New Sections Styles */
+      /* Accounts Section */
+      .accounts-section {
+        display: none;
+        padding: 4rem 0;
+        background-color: #0f0f15;
+      }
+
+      .account-features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 3rem;
+      }
+
+      .feature-card {
+        background: linear-gradient(145deg, #1e1e2f, #252540);
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .feature-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          45deg,
+          transparent,
+          rgba(88, 101, 242, 0.1)
+        );
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(88, 101, 242, 0.3);
+      }
+
+      .feature-card:hover::before {
+        opacity: 1;
+      }
+
+      .feature-icon {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .feature-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: white;
+      }
+
+      .feature-desc {
+        color: #b8b8b8;
+        line-height: 1.6;
+      }
+
+      .account-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-top: 4rem;
+      }
+
+      .stat-card {
+        background-color: #1e1e2f;
+        border-radius: 10px;
+        padding: 25px;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(88, 101, 242, 0.2);
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 10px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .stat-label {
+        color: #b8b8b8;
+        font-size: 1rem;
+      }
+
+      /* FAQ Section */
+      .faq-section {
+        display: none;
+        padding: 4rem 0;
+        background-color: #0f0f15;
+      }
+
+      .accordion {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .accordion-item {
+        background-color: #1e1e2f;
+        border: none;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .accordion-header {
+        background-color: transparent;
+        border: none;
+      }
+
+      .accordion-button {
+        background-color: #252540;
+        color: white;
+        font-weight: 600;
+        padding: 20px;
+        border-radius: 10px !important;
+        box-shadow: none;
+      }
+
+      .accordion-button:not(.collapsed) {
+        background-color: #2d2d5a;
+        color: white;
+      }
+
+      .accordion-button:focus {
+        box-shadow: none;
+        border-color: transparent;
+      }
+
+      .accordion-button::after {
+        filter: brightness(0) invert(1);
+      }
+
+      .accordion-body {
+        padding: 20px;
+        background-color: #252540;
+        color: #b8b8b8;
+        line-height: 1.6;
+      }
+
+      /* Contact Section */
+      .contact-section {
+        display: none;
+        padding: 4rem 0;
+        background-color: #0f0f15;
+      }
+
+      .contact-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+        margin-top: 3rem;
+      }
+
+      .contact-info {
+        background: linear-gradient(145deg, #1e1e2f, #252540);
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .contact-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: white;
+        position: relative;
+      }
+
+      .contact-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(to right, var(--primary), var(--secondary));
+        border-radius: 2px;
+      }
+
+      .contact-details {
+        margin-top: 30px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .contact-icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        font-size: 1.2rem;
+        color: white;
+      }
+
+      .contact-text h4 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: white;
+      }
+
+      .contact-text p {
+        color: #b8b8b8;
+      }
+
+      .contact-form {
+        background: linear-gradient(145deg, #1e1e2f, #252540);
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .form-control {
+        background-color: #2d2d44;
+        border: none;
+        color: white;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+      }
+
+      .form-control:focus {
+        background-color: #3d3d5c;
+        color: white;
+        box-shadow: 0 0 0 0.25rem rgba(88, 101, 242, 0.25);
+      }
+
+      .form-label {
+        color: white;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .submit-btn {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        width: 100%;
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(88, 101, 242, 0.3);
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
+      }
+
+      .social-link {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+      }
+
+      .social-link:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(88, 101, 242, 0.3);
+      }
+
       /* Responsive Design */
       @media (max-width: 768px) {
         .header-content {
@@ -531,6 +845,14 @@
         .testimonial-btn {
           margin-left: 0;
         }
+
+        .feature-card {
+          padding: 20px;
+        }
+
+        .contact-container {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
@@ -543,18 +865,18 @@
             <i class="fa-solid fa-gamepad"></i> IkyyBlox Store
           </div>
           <div class="nav-menu animate__animated animate__fadeInDown">
-            <a href="#" class="nav-link active">Home</a>
-            <a href="#" class="nav-link">Accounts</a>
-            <a href="#" class="nav-link">FAQ</a>
-            <a href="#" class="nav-link">Contact</a>
+            <a href="#" class="nav-link active" data-section="home">Home</a>
+            <a href="#" class="nav-link" data-section="accounts">Accounts</a>
+            <a href="#" class="nav-link" data-section="faq">FAQ</a>
+            <a href="#" class="nav-link" data-section="contact">Contact</a>
           </div>
         </div>
       </div>
     </header>
 
     <main>
-      <!-- Game Selection Section -->
-      <section class="game-section" id="gameSection">
+      <!-- Home Section (Game Selection) -->
+      <section class="game-section" id="homeSection">
         <div class="container">
           <h2 class="section-title animate__animated animate__fadeIn">
             Pilih Akun Roblox
@@ -797,7 +1119,7 @@
                 <div class="tier-actions">
                   <button
                     class="buy-btn"
-                    onclick="window.open('https://wa.me/6281234567890?text=Saya%20ingin%20membeli%20akun%20World%20Class%20Style%20Only', '_blank')"
+                    onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20World%20Class%20Style%20Only', '_blank')"
                   >
                     Beli Sekarang
                   </button>
@@ -976,7 +1298,7 @@
                 <div class="tier-actions">
                   <button
                     class="buy-btn"
-                    onclick="window.open('https://wa.me/6281234567890?text=Saya%20ingin%20membeli%20akun%20Mythic%20Flow%20Only', '_blank')"
+                    onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Mythic%20Flow%20Only', '_blank')"
                   >
                     Beli Sekarang
                   </button>
@@ -1021,7 +1343,7 @@
                 <div class="tier-actions">
                   <button
                     class="buy-btn"
-                    onclick="window.open('https://wa.me/6281234567890?text=Saya%20ingin%20membeli%20akun%20Legendary%20Flow%20Only', '_blank')"
+                    onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Legendary%20Flow%20Only', '_blank')"
                   >
                     Beli Sekarang
                   </button>
@@ -1074,16 +1396,364 @@
           </button>
         </div>
       </section>
+
+      <!-- Accounts Section -->
+      <section class="accounts-section" id="accountsSection">
+        <div class="container">
+          <h2 class="section-title animate__animated animate__fadeIn">
+            Mengapa Memilih Akun Kami?
+          </h2>
+
+          <div class="account-features">
+            <div class="feature-card animate__animated animate__fadeInUp">
+              <div class="feature-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h3 class="feature-title">100% Aman</h3>
+              <p class="feature-desc">
+                Semua akun kami telah melalui proses verifikasi ketat dan
+                dijamin aman untuk digunakan. Kami memberikan garansi 100% jika
+                terjadi masalah.
+              </p>
+            </div>
+
+            <div
+              class="feature-card animate__animated animate__fadeInUp"
+              style="animation-delay: 0.2s"
+            >
+              <div class="feature-icon">
+                <i class="fas fa-bolt"></i>
+              </div>
+              <h3 class="feature-title">Proses Cepat</h3>
+              <p class="feature-desc">
+                Setelah pembayaran dikonfirmasi, akun akan dikirim dalam waktu
+                kurang dari 5 menit. Tidak perlu menunggu lama!
+              </p>
+            </div>
+
+            <div
+              class="feature-card animate__animated animate__fadeInUp"
+              style="animation-delay: 0.4s"
+            >
+              <div class="feature-icon">
+                <i class="fas fa-headset"></i>
+              </div>
+              <h3 class="feature-title">Dukungan 24/7</h3>
+              <p class="feature-desc">
+                Tim support kami siap membantu Anda kapan saja. Respon cepat
+                melalui WhatsApp, Discord, atau email.
+              </p>
+            </div>
+          </div>
+
+          <div class="account-stats">
+            <div class="stat-card animate__animated animate__fadeInLeft">
+              <div class="stat-number">500+</div>
+              <div class="stat-label">Akun Terjual</div>
+            </div>
+
+            <div class="stat-card animate__animated animate__fadeInUp">
+              <div class="stat-number">98%</div>
+              <div class="stat-label">Kepuasan Pelanggan</div>
+            </div>
+
+            <div class="stat-card animate__animated animate__fadeInRight">
+              <div class="stat-number">24/7</div>
+              <div class="stat-label">Dukungan Pelanggan</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="faq-section" id="faqSection">
+        <div class="container">
+          <h2 class="section-title animate__animated animate__fadeIn">
+            Pertanyaan yang Sering Diajukan
+          </h2>
+
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item animate__animated animate__fadeInUp">
+              <h2 class="accordion-header" id="headingOne">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  Bagaimana cara membeli akun?
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                class="accordion-collapse collapse show"
+                aria-labelledby="headingOne"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  Anda bisa langsung menghubungi kami via WhatsApp dengan
+                  menekan tombol "Beli Sekarang" pada tier yang Anda inginkan.
+                  Setelah itu, kami akan memandu Anda melalui proses pembelian.
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="accordion-item animate__animated animate__fadeInUp"
+              style="animation-delay: 0.1s"
+            >
+              <h2 class="accordion-header" id="headingTwo">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                  Apakah akun ini aman dari banned?
+                </button>
+              </h2>
+              <div
+                id="collapseTwo"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingTwo"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  Semua akun kami dijamin aman dan original. Kami tidak
+                  menggunakan metode ilegal apapun untuk mendapatkan akun-akun
+                  ini. Namun, kami tidak bertanggung jawab jika akun digunakan
+                  untuk tindakan yang melanggar aturan Roblox.
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="accordion-item animate__animated animate__fadeInUp"
+              style="animation-delay: 0.2s"
+            >
+              <h2 class="accordion-header" id="headingThree">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  Bisakah saya mengganti email akun setelah pembelian?
+                </button>
+              </h2>
+              <div
+                id="collapseThree"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingThree"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  Ya, setelah pembelian Anda akan mendapatkan akses penuh ke
+                  akun termasuk email. Anda bisa mengganti email kapan saja
+                  melalui pengaturan akun Roblox.
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="accordion-item animate__animated animate__fadeInUp"
+              style="animation-delay: 0.3s"
+            >
+              <h2 class="accordion-header" id="headingFour">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFour"
+                  aria-expanded="false"
+                  aria-controls="collapseFour"
+                >
+                  Berapa lama proses pengiriman akun?
+                </button>
+              </h2>
+              <div
+                id="collapseFour"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingFour"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  Proses pengiriman akun biasanya memakan waktu kurang dari 5
+                  menit setelah pembayaran dikonfirmasi. Kami akan mengirim
+                  detail akun langsung ke WhatsApp/email Anda.
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="accordion-item animate__animated animate__fadeInUp"
+              style="animation-delay: 0.4s"
+            >
+              <h2 class="accordion-header" id="headingFive">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFive"
+                  aria-expanded="false"
+                  aria-controls="collapseFive"
+                >
+                  Apakah ada garansi untuk akun yang dibeli?
+                </button>
+              </h2>
+              <div
+                id="collapseFive"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingFive"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  Kami memberikan garansi 7 hari untuk semua akun yang dibeli.
+                  Jika ada masalah dengan akun dalam waktu 7 hari setelah
+                  pembelian, kami akan menggantinya dengan akun yang setara atau
+                  mengembalikan uang Anda.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="contact-section" id="contactSection">
+        <div class="container">
+          <h2 class="section-title animate__animated animate__fadeIn">
+            Hubungi Kami
+          </h2>
+
+          <div class="contact-container">
+            <div class="contact-info animate__animated animate__fadeInLeft">
+              <h3 class="contact-title">Informasi Kontak</h3>
+
+              <div class="contact-details">
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div class="contact-text">
+                    <h4>Lokasi</h4>
+                    <p>Jakarta, Indonesia</p>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-phone-alt"></i>
+                  </div>
+                  <div class="contact-text">
+                    <h4>Telepon/WhatsApp</h4>
+                    <p>+62 882-2778-9219</p>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <div class="contact-text">
+                    <h4>Email</h4>
+                    <p>support@ikyybloxstore.com</p>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-clock"></i>
+                  </div>
+                  <div class="contact-text">
+                    <h4>Jam Operasional</h4>
+                    <p>24/7 Setiap Hari</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="social-links">
+                <a href="#" class="social-link">
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="#" class="social-link">
+                  <i class="fab fa-discord"></i>
+                </a>
+                <a href="#" class="social-link">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-form animate__animated animate__fadeInRight">
+              <h3 class="contact-title">Kirim Pesan</h3>
+
+              <form id="contactForm">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Nama Lengkap</label>
+                  <input type="text" class="form-control" id="name" required />
+                </div>
+
+                <div class="mb-3">
+                  <label for="email" class="form-label">Alamat Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="subject" class="form-label">Subjek</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="subject"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="message" class="form-label">Pesan</label>
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    rows="5"
+                    required
+                  ></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                  <i class="fas fa-paper-plane"></i> Kirim Pesan
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const gameSection = document.getElementById("gameSection");
+        const homeSection = document.getElementById("homeSection");
         const accountTypeSection =
           document.getElementById("accountTypeSection");
         const tierSection = document.getElementById("tierSection");
         const testimonialSection =
           document.getElementById("testimonialSection");
+        const accountsSection = document.getElementById("accountsSection");
+        const faqSection = document.getElementById("faqSection");
+        const contactSection = document.getElementById("contactSection");
 
         const backToGamesButton = document.getElementById("backToGames");
         const backToAccountTypesButton =
@@ -1096,16 +1766,57 @@
         const flowOnlyTiers = document.getElementById("flowOnlyTiers");
         const testimonialButtons =
           document.querySelectorAll(".testimonial-btn");
+        const navLinks = document.querySelectorAll(".nav-link");
 
         let currentTierType = "style-flow"; // Menyimpan tier yang sedang aktif
 
         // Fungsi untuk menyembunyikan semua section
         function hideAllSections() {
-          gameSection.style.display = "none";
+          homeSection.style.display = "none";
           accountTypeSection.style.display = "none";
           tierSection.style.display = "none";
           testimonialSection.style.display = "none";
+          accountsSection.style.display = "none";
+          faqSection.style.display = "none";
+          contactSection.style.display = "none";
         }
+
+        // Fungsi untuk mengupdate nav link aktif
+        function updateActiveNav(section) {
+          navLinks.forEach((link) => {
+            if (link.getAttribute("data-section") === section) {
+              link.classList.add("active");
+            } else {
+              link.classList.remove("active");
+            }
+          });
+        }
+
+        // Menampilkan section berdasarkan klik nav link
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const section = this.getAttribute("data-section");
+
+            hideAllSections();
+            updateActiveNav(section);
+
+            switch (section) {
+              case "home":
+                homeSection.style.display = "block";
+                break;
+              case "accounts":
+                accountsSection.style.display = "block";
+                break;
+              case "faq":
+                faqSection.style.display = "block";
+                break;
+              case "contact":
+                contactSection.style.display = "block";
+                break;
+            }
+          });
+        });
 
         // Menampilkan bagian pemilihan tipe akun ketika tombol "Pilih Akun" diklik
         document.querySelectorAll(".game-card-btn").forEach((button) => {
@@ -1113,6 +1824,7 @@
             e.preventDefault();
             hideAllSections();
             accountTypeSection.style.display = "block";
+            updateActiveNav("home");
           });
         });
 
@@ -1139,25 +1851,29 @@
             // Tampilkan bagian tier
             hideAllSections();
             tierSection.style.display = "block";
+            updateActiveNav("home");
           });
         });
 
         // Kembali ke bagian pemilihan akun
         backToGamesButton.addEventListener("click", function () {
           hideAllSections();
-          gameSection.style.display = "block";
+          homeSection.style.display = "block";
+          updateActiveNav("home");
         });
 
         // Kembali ke bagian pemilihan tipe akun
         backToAccountTypesButton.addEventListener("click", function () {
           hideAllSections();
           accountTypeSection.style.display = "block";
+          updateActiveNav("home");
         });
 
         // Kembali ke bagian pemilihan tier
         backToTiersButton.addEventListener("click", function () {
           hideAllSections();
           tierSection.style.display = "block";
+          updateActiveNav("home");
 
           // Tampilkan tier yang sesuai dengan yang terakhir dipilih
           if (currentTierType === "style-flow") {
@@ -1174,8 +1890,25 @@
           button.addEventListener("click", function () {
             hideAllSections();
             testimonialSection.style.display = "block";
+            updateActiveNav("home");
           });
         });
+
+        // Form submission handler
+        document
+          .getElementById("contactForm")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+            alert(
+              "Pesan Anda telah terkirim! Kami akan segera menghubungi Anda kembali."
+            );
+            this.reset();
+          });
+
+        // Initialize with home section
+        hideAllSections();
+        homeSection.style.display = "block";
+        updateActiveNav("home");
       });
     </script>
   </body>
