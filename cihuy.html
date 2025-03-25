@@ -1,0 +1,2708 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Roblox Account Store | Premium Gaming Accounts</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Animate.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #5865f2;
+        --secondary: #eb459e;
+        --dark: #1a1a2e;
+        --light: #f7f7f7;
+        --success: #57f287;
+        --warning: #fee75c;
+        --danger: #ed4245;
+        --legendary: #ffd700;
+        --mythic: #ff44cc;
+        --world-class: #00a8ff;
+        --goldly: #ff9900;
+        --coming-soon: #00ff00;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: #121212;
+        color: white;
+        overflow-x: hidden;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      /* Header Styles */
+      header {
+        background: linear-gradient(135deg, #5865f2, #eb459e);
+        padding: 1rem 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .header-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 900;
+        font-family: "Poppins", sans-serif;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        display: flex;
+        align-items: center;
+        position: relative;
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.3),
+          0 0 15px rgba(255, 215, 0, 0.2);
+        margin: 10px 0;
+        padding: 0 15px;
+      }
+
+      .logo::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #ffd700, transparent);
+        border-radius: 50%;
+        filter: blur(1px);
+      }
+
+      .logo i {
+        margin-right: 10px;
+        color: #ffd700;
+        font-size: 2rem;
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+        position: relative;
+        z-index: 1;
+      }
+
+      .logo i::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40px;
+        height: 40px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 215, 0, 0.2) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+        z-index: -1;
+      }
+      
+      .nav-menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+        width: 100%;
+      }
+
+      .nav-link {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 8px 12px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        font-size: 0.9rem;
+        white-space: nowrap;
+      }
+
+      .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        transform: translateY(-3px);
+      }
+
+      .nav-link.active {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      /* Game Selection */
+      .game-section {
+        padding: 1.5rem 0;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 10px;
+        color: #ffffff;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(to right, var(--primary), var(--secondary));
+        border-radius: 2px;
+      }
+
+      .game-cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .game-card {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+        background-color: #1e1e2f;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        transition: all 0.4s ease;
+        position: relative;
+        cursor: pointer;
+      }
+
+      .game-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(88, 101, 242, 0.4);
+      }
+
+      .game-card-img {
+        width: 100%;
+        height: 200px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .game-card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .game-card:hover .game-card-img img {
+        transform: scale(1.05);
+      }
+
+      .game-card-content {
+        padding: 15px;
+        text-align: center;
+      }
+
+      .game-card-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: white;
+      }
+
+      .game-card-desc {
+        font-size: 0.85rem;
+        color: #b8b8b8;
+        margin-bottom: 12px;
+        line-height: 1.4;
+      }
+
+      .game-card-btn {
+        display: inline-block;
+        padding: 8px 20px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 0.9rem;
+      }
+
+      .game-card-btn:hover {
+        transform: scale(1.03);
+        box-shadow: 0 5px 15px rgba(88, 101, 242, 0.5);
+      }
+
+      /* Account Type Section */
+      .account-type-section {
+        display: none;
+        padding: 1.5rem 0;
+      }
+
+      .account-types {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 1.5rem;
+      }
+
+      .type-btn {
+        background-color: #1e1e2f;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 50px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        width: 100%;
+        max-width: 250px;
+      }
+
+      .type-btn:hover {
+        background-color: #2d2d44;
+        transform: translateY(-3px);
+      }
+
+      .type-btn.active {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        box-shadow: 0 5px 15px rgba(88, 101, 242, 0.4);
+      }
+
+      /* Tiers */
+      .tier-section {
+        display: none;
+        padding: 1.5rem 0;
+      }
+
+      .game-tiers {
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .tier-cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-top: 1.5rem;
+        width: 100%;
+      }
+
+      .tier-card {
+        width: 100%;
+        max-width: 350px;
+        background-color: #1e1e2f;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        transition: all 0.4s ease;
+        position: relative;
+        cursor: pointer;
+      }
+
+      .tier-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .tier-card.world-class {
+        border: 2px solid var(--world-class);
+      }
+
+      .tier-card.mythic {
+        border: 2px solid var(--mythic);
+      }
+
+      .tier-card.legendary {
+        border: 2px solid var(--legendary);
+      }
+
+      .tier-card.goldly {
+        border: 2px solid var(--goldly);
+      }
+
+      .tier-card.coming-soon {
+        border: 2px dashed var(--coming-soon);
+        background: linear-gradient(145deg, #2a2a3a, #1e1e2f);
+        text-align: center;
+        padding: 30px 20px;
+      }
+
+      .tier-header {
+        padding: 15px;
+        text-align: center;
+        position: relative;
+      }
+
+      .tier-title {
+        font-size: 1.5rem;
+        font-weight: 800;
+        margin-bottom: 8px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .world-class .tier-title {
+        background: linear-gradient(135deg, #00a8ff, #00f2fe);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .mythic .tier-title {
+        background: linear-gradient(135deg, #ff44cc, #ff66ff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .legendary .tier-title {
+        background: linear-gradient(135deg, #ffd700, #ffaa00);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .goldly .tier-title {
+        background: linear-gradient(135deg, #ff9900, #ffcc00);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .coming-soon .tier-title {
+        background: linear-gradient(135deg, #00ff00, #66ff66);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .tier-img-container {
+        display: flex;
+        width: 100%;
+      }
+
+      .tier-img {
+        width: 100%;
+        height: 160px;
+        overflow: hidden;
+        flex: 1;
+      }
+
+      .tier-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .tier-card:hover .tier-img img {
+        transform: scale(1.05);
+      }
+
+      .tier-details {
+        padding: 15px;
+      }
+
+      .tier-price {
+        font-size: 1.8rem;
+        font-weight: 800;
+        margin-bottom: 12px;
+        text-align: center;
+        color: white;
+      }
+
+      .tier-status {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 15px;
+      }
+
+      .status-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.85rem;
+      }
+
+      .status-item i {
+        width: 20px;
+        text-align: center;
+        font-size: 0.9rem;
+        color: var(--success);
+      }
+
+      .tier-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+      }
+
+      .buy-btn,
+      .testimonial-btn {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 0.9rem;
+        width: 100%;
+      }
+
+      .buy-btn {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+      }
+
+      .buy-btn:hover {
+        box-shadow: 0 5px 15px rgba(88, 101, 242, 0.5);
+      }
+
+      .testimonial-btn {
+        background-color: #2d2d44;
+        color: white;
+      }
+
+      .testimonial-btn:hover {
+        background-color: #3d3d5c;
+      }
+
+      /* Testimonial Section */
+      .testimonial-section {
+        display: none;
+        padding: 1.5rem 0;
+      }
+
+      .testimonial-cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .testimonial-card {
+        width: 100%;
+        max-width: 300px;
+        background-color: #1e1e2f;
+        border-radius: 15px;
+        padding: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .testimonial-img {
+        width: 100%;
+        height: 180px;
+        overflow: hidden;
+        border-radius: 10px;
+      }
+
+      .testimonial-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .testimonial-name {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-top: 12px;
+        text-align: center;
+        color: white;
+      }
+
+      .testimonial-text {
+        font-size: 0.85rem;
+        color: #b8b8b8;
+        margin-top: 8px;
+        text-align: center;
+        line-height: 1.4;
+      }
+
+      /* Tombol Kembali */
+      .back-button {
+        display: block;
+        margin: 15px auto;
+        padding: 10px 20px;
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        font-size: 0.9rem;
+        max-width: 250px;
+        width: 100%;
+      }
+
+      .back-button:hover {
+        background-color: #4752c4;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .back-button i {
+        margin-right: 6px;
+      }
+
+      /* Judul Kategori Tier */
+      .tier-category-title {
+        font-size: 1.6rem;
+        font-weight: 800;
+        text-align: center;
+        margin: 1.5rem 0 0.8rem 0;
+        position: relative;
+        color: rgb(255, 255, 255);
+        width: 100%;
+      }
+
+      .tier-category-title::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(to right, var(--primary), var(--secondary));
+        border-radius: 2px;
+      }
+
+      /* New Sections Styles */
+      /* Accounts Section */
+      .accounts-section {
+        display: none;
+        padding: 2rem 0;
+        background-color: #0f0f15;
+      }
+
+      .account-features {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 2rem;
+      }
+
+      .feature-card {
+        background: linear-gradient(145deg, #1e1e2f, #252540);
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .feature-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          45deg,
+          transparent,
+          rgba(88, 101, 242, 0.1)
+        );
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(88, 101, 242, 0.3);
+      }
+
+      .feature-card:hover::before {
+        opacity: 1;
+      }
+
+      .feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .feature-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: white;
+      }
+
+      .feature-desc {
+        color: #b8b8b8;
+        line-height: 1.5;
+        font-size: 0.9rem;
+      }
+
+      .account-stats {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-top: 2rem;
+      }
+
+      .stat-card {
+        background-color: #1e1e2f;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .stat-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(88, 101, 242, 0.2);
+      }
+
+      .stat-number {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 8px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .stat-label {
+        color: #b8b8b8;
+        font-size: 0.9rem;
+      }
+
+      /* FAQ Section */
+      .faq-section {
+        display: none;
+        padding: 2rem 0;
+        background-color: #0f0f15;
+      }
+
+      .accordion {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .accordion-item {
+        background-color: #1e1e2f;
+        border: none;
+        border-radius: 10px;
+        margin-bottom: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .accordion-header {
+        background-color: transparent;
+        border: none;
+      }
+
+      .accordion-button {
+        background-color: #252540;
+        color: white;
+        font-weight: 600;
+        padding: 15px;
+        border-radius: 10px !important;
+        box-shadow: none;
+        font-size: 0.95rem;
+      }
+
+      .accordion-button:not(.collapsed) {
+        background-color: #2d2d5a;
+        color: white;
+      }
+
+      .accordion-button:focus {
+        box-shadow: none;
+        border-color: transparent;
+      }
+
+      .accordion-button::after {
+        filter: brightness(0) invert(1);
+      }
+
+      .accordion-body {
+        padding: 15px;
+        background-color: #252540;
+        color: #b8b8b8;
+        line-height: 1.5;
+        font-size: 0.9rem;
+      }
+
+      /* Contact Section */
+      .contact-section {
+        display: none;
+        padding: 2rem 0;
+        background-color: #0f0f15;
+      }
+
+      .contact-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 2rem;
+      }
+
+      .contact-info {
+        background: linear-gradient(145deg, #1e1e2f, #252540);
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .contact-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        position: relative;
+      }
+
+      .contact-title::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background: linear-gradient(to right, var(--primary), var(--secondary));
+        border-radius: 2px;
+      }
+
+      .contact-details {
+        margin-top: 20px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .contact-icon {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 12px;
+        font-size: 1rem;
+        color: white;
+      }
+
+      .contact-text h4 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 3px;
+        color: white;
+      }
+
+      .contact-text p {
+        color: #b8b8b8;
+        font-size: 0.9rem;
+      }
+
+      .contact-form {
+        background: linear-gradient(145deg, #1e1e2f, #252540);
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .form-control {
+        background-color: #2d2d44;
+        color: white;
+        border: none;
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+      }
+
+      .form-control:focus {
+        background-color: #3d3d5c;
+        color: white;
+        box-shadow: 0 0 0 0.25rem rgba(88, 101, 242, 0.25);
+      }
+
+      .form-label {
+        color: white;
+        font-weight: 600;
+        margin-bottom: 6px;
+        font-size: 0.9rem;
+      }
+
+      .submit-btn {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        width: 100%;
+        font-size: 0.95rem;
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 15px rgba(88, 101, 242, 0.3);
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .social-link {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .social-link:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 15px rgba(88, 101, 242, 0.3);
+      }
+
+      /* Hamburger Menu for Mobile */
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 10px;
+      }
+
+      /* Responsive Design - Tablet */
+      @media (min-width: 576px) {
+        .game-cards {
+          flex-direction: row;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+        
+        .game-card {
+          max-width: 280px;
+        }
+        
+        .account-types {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        
+        .type-btn {
+          max-width: 200px;
+        }
+        
+        .account-features {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .account-stats {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      /* Responsive Design - Desktop */
+      @media (min-width: 992px) {
+        .header-content {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+        }
+        
+        .logo {
+          font-size: 2rem;
+          letter-spacing: 4px;
+          margin: 20px 0;
+          padding: 0 25px;
+        }
+        
+        .logo i {
+          font-size: 3.8rem;
+          margin-right: 20px;
+        }
+        
+        .logo i::after {
+          width: 60px;
+          height: 60px;
+        }
+        
+        .nav-menu {
+          flex-wrap: nowrap;
+          margin-top: 0;
+          gap: 20px;
+        }
+        
+        .nav-link {
+          padding: 8px 16px;
+          font-size: 1rem;
+        }
+        
+        .game-section {
+          padding: 2rem 0;
+        }
+        
+        .section-title {
+          font-size: 2.2rem;
+          margin-bottom: 2rem;
+          padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+          width: 100px;
+          height: 4px;
+        }
+        
+        .game-cards {
+          gap: 30px;
+        }
+        
+        .game-card {
+          width: 280px;
+          height: 380px;
+        }
+        
+        .game-card-img {
+          height: 60%;
+        }
+        
+        .game-card-content {
+          padding: 20px;
+        }
+        
+        .game-card-title {
+          font-size: 1.5rem;
+          margin-bottom: 10px;
+        }
+        
+        .game-card-desc {
+          font-size: 0.9rem;
+          margin-bottom: 15px;
+        }
+        
+        .game-card-btn {
+          padding: 8px 25px;
+        }
+        
+        .account-type-section {
+          padding: 2rem 0;
+        }
+        
+        .account-types {
+          flex-direction: row;
+          gap: 30px;
+          margin-bottom: 2rem;
+        }
+        
+        .type-btn {
+          padding: 12px 30px;
+          font-size: 1rem;
+        }
+        
+        .tier-section {
+          padding: 2rem 0;
+        }
+        
+        .tier-cards {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 30px;
+          margin-top: 2rem;
+        }
+        
+        .tier-card {
+          width: 320px;
+        }
+        
+        .tier-img {
+          height: 200px;
+        }
+        
+        .tier-header {
+          padding: 20px;
+        }
+        
+        .tier-title {
+          font-size: 1.8rem;
+          margin-bottom: 10px;
+        }
+        
+        .tier-price {
+          font-size: 2rem;
+          margin-bottom: 15px;
+        }
+        
+        .tier-status {
+          gap: 10px;
+          margin-bottom: 20px;
+        }
+        
+        .status-item {
+          font-size: 0.9rem;
+          gap: 10px;
+        }
+        
+        .tier-actions {
+          flex-direction: row;
+          margin-top: 20px;
+        }
+        
+        .buy-btn,
+        .testimonial-btn {
+          padding: 10px 20px;
+          font-size: 0.9rem;
+        }
+        
+        .testimonial-btn {
+          margin-left: 10px;
+        }
+        
+        .testimonial-section {
+          padding: 2rem 0;
+        }
+        
+        .testimonial-cards {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 20px;
+        }
+        
+        .testimonial-card {
+          width: 300px;
+          padding: 20px;
+        }
+        
+        .testimonial-img {
+          height: 200px;
+        }
+        
+        .testimonial-name {
+          font-size: 1.2rem;
+          margin-top: 15px;
+        }
+        
+        .testimonial-text {
+          font-size: 0.9rem;
+          margin-top: 10px;
+        }
+        
+        .back-button {
+          margin: 20px auto;
+          padding: 12px 24px;
+          font-size: 1rem;
+        }
+        
+        .tier-category-title {
+          font-size: 2rem;
+          margin: 2rem 0 1rem 0;
+        }
+        
+        .tier-category-title::after {
+          width: 100px;
+          height: 4px;
+          bottom: -10px;
+        }
+        
+        .accounts-section {
+          padding: 4rem 0;
+        }
+        
+        .account-features {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 30px;
+          margin-top: 3rem;
+        }
+        
+        .feature-card {
+          padding: 30px;
+        }
+        
+        .feature-icon {
+          font-size: 3rem;
+          margin-bottom: 20px;
+        }
+        
+        .feature-title {
+          font-size: 1.5rem;
+          margin-bottom: 15px;
+        }
+        
+        .feature-desc {
+          font-size: 1rem;
+        }
+        
+        .account-stats {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+          margin-top: 4rem;
+        }
+        
+        .stat-card {
+          padding: 25px;
+        }
+        
+        .stat-number {
+          font-size: 2.5rem;
+          margin-bottom: 10px;
+        }
+        
+        .stat-label {
+          font-size: 1rem;
+        }
+        
+        .faq-section {
+          padding: 4rem 0;
+        }
+        
+        .accordion-item {
+          margin-bottom: 15px;
+        }
+        
+        .accordion-button {
+          padding: 20px;
+          font-size: 1rem;
+        }
+        
+        .accordion-body {
+          padding: 20px;
+          font-size: 1rem;
+        }
+        
+        .contact-section {
+          padding: 4rem 0;
+        }
+        
+        .contact-container {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 40px;
+          margin-top: 3rem;
+        }
+        
+        .contact-info {
+          padding: 30px;
+        }
+        
+        .contact-title {
+          font-size: 1.8rem;
+          margin-bottom: 20px;
+        }
+        
+        .contact-title::after {
+          width: 60px;
+          height: 4px;
+          bottom: -10px;
+        }
+        
+        .contact-details {
+          margin-top: 30px;
+        }
+        
+        .contact-item {
+          margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+          width: 50px;
+          height: 50px;
+          font-size: 1.2rem;
+          margin-right: 15px;
+        }
+        
+        .contact-text h4 {
+          font-size: 1.2rem;
+          margin-bottom: 5px;
+        }
+        
+        .contact-text p {
+          font-size: 1rem;
+        }
+        
+        .contact-form {
+          padding: 30px;
+        }
+        
+        .form-control {
+          padding: 15px;
+          margin-bottom: 20px;
+        }
+        
+        .form-label {
+          font-size: 1rem;
+          margin-bottom: 8px;
+        }
+        
+        .submit-btn {
+          padding: 12px 30px;
+          font-size: 1rem;
+        }
+        
+        .social-links {
+          gap: 20px;
+          margin-top: 30px;
+        }
+        
+        .social-link {
+          width: 50px;
+          height: 50px;
+          font-size: 1.2rem;
+        }
+      }
+
+      /* Very small devices (phones, 360px and down) */
+      @media (max-width: 360px) {
+        .logo {
+          font-size: 1.3rem;
+        }
+        
+        .logo i {
+          font-size: 1.8rem;
+        }
+        
+        .section-title {
+          font-size: 1.5rem;
+        }
+        
+        .game-card-img {
+          height: 180px;
+        }
+        
+        .tier-img {
+          height: 140px;
+        }
+        
+        .tier-title {
+          font-size: 1.3rem;
+        }
+        
+        .tier-price {
+          font-size: 1.5rem;
+        }
+        
+        .status-item {
+          font-size: 0.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo animate__animated animate__fadeInDown">
+            <i class="fa-solid fa-crown"></i>
+            <span>Ikyy<span style="color: #ffd700">Blox</span> Store</span>
+          </div>
+          <div class="nav-menu animate__animated animate__fadeInDown">
+            <a href="#" class="nav-link active" data-section="home">Home</a>
+            <a href="#" class="nav-link" data-section="accounts">Accounts</a>
+            <a href="#" class="nav-link" data-section="faq">FAQ</a>
+            <a href="#" class="nav-link" data-section="contact">Contact</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Home Section (Game Selection) -->
+      <section class="game-section" id="homeSection">
+        <div class="container">
+          <h2 class="section-title animate__animated animate__fadeIn">
+            Pilih Akun Roblox
+          </h2>
+          <div class="game-cards">
+            <!-- Blue Lock Rivals -->
+            <div
+              class="game-card animate__animated animate__fadeInUp"
+              data-game="bluelock"
+            >
+              <div class="game-card-img">
+                <img src="Blue Lock Rivals.jpg" alt="Blue Lock Rivals" />
+              </div>
+              <div class="game-card-content">
+                <h3 class="game-card-title">Blue Lock Rivals</h3>
+                <p class="game-card-desc">
+                  Jadi pemain sepak bola terbaik di dunia!
+                </p>
+                <a href="#" class="game-card-btn">Pilih Akun</a>
+              </div>
+            </div>
+
+            <!-- Volleyball Legends -->
+            <div
+              class="game-card animate__animated animate__fadeInUp"
+              data-game="volleyball"
+            >
+              <div class="game-card-img">
+                <img src="VolleyBall Legends.jpg" alt="Volleyball Legends" />
+              </div>
+              <div class="game-card-content">
+                <h3 class="game-card-title">Volleyball Legends</h3>
+                <p class="game-card-desc">
+                  Dominasi lapangan voli dengan skill terbaik!
+                </p>
+                <a href="#" class="game-card-btn">Pilih Akun</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Account Type Section -->
+      <section class="account-type-section" id="accountTypeSection">
+        <div class="container">
+          <h2 class="section-title animate__animated animate__fadeIn">
+            Pilih Tipe Akun
+          </h2>
+          <div class="account-types">
+            <!-- Buttons will be dynamically generated based on game selection -->
+          </div>
+
+          <button class="back-button" id="backToGames">
+            <i class="fa-solid fa-arrow-left"></i> Kembali ke Pilihan Game
+          </button>
+        </div>
+      </section>
+
+      <!-- Tier Section -->
+      <section class="tier-section" id="tierSection">
+        <div class="container">
+          <h2
+            class="section-title animate__animated animate__fadeIn"
+            id="tierTitle"
+          >
+            Pilih Tier Akun
+          </h2>
+
+          <!-- Blue Lock Tiers -->
+          <div class="game-tiers" id="bluelockTiers">
+            <!-- Style + Flow Tiers -->
+            <div class="tier-cards" id="bluelock-style-flow-tiers">
+              <h3 class="tier-category-title">World Class</h3>
+              <div
+                class="tier-card world-class animate__animated animate__fadeInUp"
+                data-tier="world-class-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">World Class</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="Sae WC S + F.png" alt="Sae Style" />
+                  </div>
+                  <div class="tier-img">
+                    <img src="Genius WC S + F.png" alt="Genius Flow" />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 25.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Style: Sae (NEW)</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Flow: Genius</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Datpol, Notopi, Siap MC</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Blue%20Lock%20World%20Class%20Style%20%2B%20Flow', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="world-class-sf">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="tier-category-title">Mythic</h3>
+              <div
+                class="tier-card mythic animate__animated animate__fadeInUp"
+                style="animation-delay: 0.2s"
+                data-tier="mythic-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="Yukimiya MT S + F.png" alt="Yukimiya Style" />
+                  </div>
+                  <div class="tier-img">
+                    <img
+                      src="Demon Wings MT S + F.png"
+                      alt="Demon Wings Flow"
+                    />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 20.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Style: Yukimiya</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Flow: Demon Wings</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Datpol, Notopi, Siap MC</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Blue%20Lock%20Mythic%20Style%20%2B%20Flow', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-sf">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="tier-category-title">Legendary</h3>
+              <div
+                class="tier-card legendary animate__animated animate__fadeInUp"
+                style="animation-delay: 0.4s"
+                data-tier="legendary-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="Nagi Legend S + F.png" alt="Nagi Style" />
+                  </div>
+                  <div class="tier-img">
+                    <img
+                      src="Demon wings Legend S + F.png"
+                      alt="Demon Wings Flow"
+                    />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 15.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Style: Nagi</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Flow: Demon Wings</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Datpol, Notopi, Siap MC</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Blue%20Lock%20Legendary%20Style%20%2B%20Flow', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-sf">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Style Only Tiers -->
+            <div
+              class="tier-cards"
+              id="bluelock-style-only-tiers"
+              style="display: none"
+            >
+              <h3 class="tier-category-title">World Class</h3>
+              <div
+                class="tier-card world-class animate__animated animate__fadeInUp"
+                data-tier="world-class-so"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">World Class</h3>
+                </div>
+                <div class="tier-img">
+                  <img src="Sae WC Style Only.png" alt="Sae Style Only" />
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 30.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Style: Sae (Premium)</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Items: Full Customization</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Fresh, No Ban</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Blue%20Lock%20World%20Class%20Style%20Only', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="world-class-so">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="tier-category-title">Mythic</h3>
+              <div
+                class="tier-card mythic animate__animated animate__fadeInUp"
+                style="animation-delay: 0.2s"
+                data-tier="mythic-so"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img">
+                  <img
+                    src="Yukimiya MT Style Only.png"
+                    alt="Yukimiya Style Only"
+                  />
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 25.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Style: Yukimiya</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Items: Full Customization</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Fresh, No Ban</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Blue%20Lock%20Mythic%20Style%20Only', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-so">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="tier-category-title">Legendary</h3>
+              <div
+                class="tier-card legendary animate__animated animate__fadeInUp"
+                style="animation-delay: 0.4s"
+                data-tier="legendary-so"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img">
+                  <img src="Nagi Legend Style Only.png" alt="Nagi Style Only" />
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 20.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Style: Nagi</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Items: Full Customization</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Fresh, No Ban</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Blue%20Lock%20Legendary%20Style%20Only', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-so">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Flow Only Tiers -->
+            <div
+              class="tier-cards"
+              id="bluelock-flow-only-tiers"
+              style="display: none"
+            >
+              <h3 class="tier-category-title">World Class</h3>
+              <div
+                class="tier-card world-class animate__animated animate__fadeInUp"
+                data-tier="world-class-fo"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">World Class</h3>
+                </div>
+                <div class="tier-img">
+                  <img
+                    src="Genius WC Abilities Only.png"
+                    alt="Genius Flow Only"
+                  />
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 35.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Flow: Genius (Max Level)</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Skills: Full Unlocked</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Fresh, No Ban</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Blue%20Lock%20World%20Class%20Flow%20Only', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="world-class-fo">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="tier-category-title">Mythic</h3>
+              <div
+                class="tier-card mythic animate__animated animate__fadeInUp"
+                style="animation-delay: 0.2s"
+                data-tier="mythic-fo"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img">
+                  <img
+                    src="Demon Wings MT Abilities Only.png"
+                    alt="Demon Wings Flow Only"
+                  />
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 30.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Flow: Demon Wings (Max Level)</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Skills: Full Unlocked</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Fresh, No Ban</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Blue%20Lock%20Mythic%20Flow%20Only', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-fo">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="tier-category-title">Legendary</h3>
+              <div
+                class="tier-card legendary animate__animated animate__fadeInUp"
+                style="animation-delay: 0.4s"
+                data-tier="legendary-fo"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img">
+                  <img
+                    src="Demon Wings Legend Abilities Only.png"
+                    alt="Demon Wings Flow Only"
+                  />
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 25.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Flow: Demon Wings (High Level)</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Skills: Almost Full Unlocked</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Fresh, No Ban</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Blue%20Lock%20Legendary%20Flow%20Only', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-fo">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Volleyball Legends Tiers -->
+          <div class="game-tiers" id="volleyballTiers" style="display: none">
+            <!-- Style + Abilities Tiers -->
+            <div class="tier-cards" id="volleyball-style-abilities-tiers">
+              <h3 class="tier-category-title">Goldly</h3>
+              <div
+                class="tier-card goldly animate__animated animate__fadeInUp"
+                data-tier="goldly-sa"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Goldly</h3>
+                </div>
+                <div class="tier-img">
+                  <img src="vl-goldly-sa.jpg" alt="Goldly Account" />
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 150.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Style: Champion Edition</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Abilities: All Max Level</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Fresh, No Ban</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Volleyball%20Legends%20Goldly%20Style%20%2B%20Abilities', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="goldly-sa">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="tier-category-title">Legendary</h3>
+              <div
+                class="tier-card legendary animate__animated animate__fadeInUp"
+                style="animation-delay: 0.2s"
+                data-tier="legendary-sa"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img">
+                  <img src="vl-legendary-sa.jpg" alt="Legendary Account" />
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 100.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Style: Pro Player</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Abilities: Most Max Level</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Fresh, No Ban</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Volleyball%20Legends%20Legendary%20Style%20%2B%20Abilities', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-sa">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Style Only Tiers -->
+            <div
+              class="tier-cards"
+              id="volleyball-style-only-tiers"
+              style="display: none"
+            >
+              <h3 class="tier-category-title">Goldly</h3>
+              <div
+                class="tier-card goldly animate__animated animate__fadeInUp"
+                data-tier="goldly-so"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Goldly</h3>
+                </div>
+                <div class="tier-img">
+                  <img src="vl-goldly-style.jpg" alt="Goldly Style Account" />
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 120.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Style: Champion Edition</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Items: Full Customization</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Fresh, No Ban</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Volleyball%20Legends%20Goldly%20Style%20Only', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="goldly-so">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="tier-category-title">Legendary</h3>
+              <div
+                class="tier-card legendary animate__animated animate__fadeInUp"
+                style="animation-delay: 0.2s"
+                data-tier="legendary-so"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img">
+                  <img
+                    src="vl-legendary-style.jpg"
+                    alt="Legendary Style Account"
+                  />
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 80.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Style: Pro Player</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Items: Full Customization</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Fresh, No Ban</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Volleyball%20Legends%20Legendary%20Style%20Only', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-so">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Abilities Only Tiers -->
+            <div
+              class="tier-cards"
+              id="volleyball-abilities-only-tiers"
+              style="display: none"
+            >
+              <h3 class="tier-category-title">Goldly</h3>
+              <div
+                class="tier-card goldly animate__animated animate__fadeInUp"
+                data-tier="goldly-ao"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Goldly</h3>
+                </div>
+                <div class="tier-img">
+                  <img
+                    src="vl-goldly-abilities.jpg"
+                    alt="Goldly Abilities Account"
+                  />
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 130.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Abilities: All Max Level</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Skills: Full Unlocked</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Fresh, No Ban</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Volleyball%20Legends%20Goldly%20Abilities%20Only', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="goldly-ao">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="tier-category-title">Legendary</h3>
+              <div
+                class="tier-card legendary animate__animated animate__fadeInUp"
+                style="animation-delay: 0.2s"
+                data-tier="legendary-ao"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img">
+                  <img
+                    src="vl-legendary-abilities.jpg"
+                    alt="Legendary Abilities Account"
+                  />
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 90.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Abilities: Most Max Level</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Skills: Almost Full Unlocked</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Fresh, No Ban</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Volleyball%20Legends%20Legendary%20Abilities%20Only', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-ao">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tombol Kembali ke Tipe Akun -->
+          <button class="back-button" id="backToAccountTypes">
+            <i class="fa-solid fa-arrow-left"></i> Kembali ke Tipe Akun
+          </button>
+        </div>
+      </section>
+
+      <!-- Testimonial Section -->
+      <section class="testimonial-section" id="testimonialSection">
+        <div class="container">
+          <h2 class="section-title animate__animated animate__fadeIn">
+            Testimoni Pembeli
+          </h2>
+          <div class="testimonial-cards">
+            <div class="testimonial-card animate__animated animate__fadeInUp">
+              <div class="testimonial-img">
+                <img src="testimonial1.jpg" alt="Testimoni 1" />
+              </div>
+              <div class="testimonial-name">John Doe</div>
+              <div class="testimonial-text">
+                "Akunnya keren banget, pelayanan cepat dan ramah!"
+              </div>
+            </div>
+            <div
+              class="testimonial-card animate__animated animate__fadeInUp"
+              style="animation-delay: 0.2s"
+            >
+              <div class="testimonial-img">
+                <img src="testimonial2.jpg" alt="Testimoni 2" />
+              </div>
+              <div class="testimonial-name">Jane Smith</div>
+              <div class="testimonial-text">
+                "Itemnya lengkap, worth it banget harganya!"
+              </div>
+            </div>
+          </div>
+          <button class="back-button
+                      </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="faq-section" id="faqSection">
+        <div class="container">
+          <h2 class="section-title animate__animated animate__fadeIn">
+            Pertanyaan yang Sering Diajukan
+          </h2>
+
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item animate__animated animate__fadeInUp">
+              <h2 class="accordion-header" id="headingOne">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseOne"
+                >
+                  Bagaimana cara membeli akun?
+                </button>
+              </h2>
+              <div
+                id="collapseOne"
+                class="accordion-collapse collapse show"
+                aria-labelledby="headingOne"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  Anda bisa langsung menghubungi kami via WhatsApp dengan
+                  menekan tombol "Beli Sekarang" pada tier yang Anda inginkan.
+                  Setelah itu, kami akan memandu Anda melalui proses pembelian.
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="accordion-item animate__animated animate__fadeInUp"
+              style="animation-delay: 0.1s"
+            >
+              <h2 class="accordion-header" id="headingTwo">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo"
+                >
+                  Apakah akun ini aman dari banned?
+                </button>
+              </h2>
+              <div
+                id="collapseTwo"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingTwo"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  Semua akun kami dijamin aman dan original. Kami tidak
+                  menggunakan metode ilegal apapun untuk mendapatkan akun-akun
+                  ini. Namun, kami tidak bertanggung jawab jika akun digunakan
+                  untuk tindakan yang melanggar aturan game.
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="accordion-item animate__animated animate__fadeInUp"
+              style="animation-delay: 0.2s"
+            >
+              <h2 class="accordion-header" id="headingThree">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree"
+                  aria-expanded="false"
+                  aria-controls="collapseThree"
+                >
+                  Bisakah saya mengganti email akun setelah pembelian?
+                </button>
+              </h2>
+              <div
+                id="collapseThree"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingThree"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  Ya, setelah pembelian Anda akan mendapatkan akses penuh ke
+                  akun termasuk email. Anda bisa mengganti email kapan saja
+                  melalui pengaturan akun game.
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="accordion-item animate__animated animate__fadeInUp"
+              style="animation-delay: 0.3s"
+            >
+              <h2 class="accordion-header" id="headingFour">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFour"
+                  aria-expanded="false"
+                  aria-controls="collapseFour"
+                >
+                  Berapa lama proses pengiriman akun?
+                </button>
+              </h2>
+              <div
+                id="collapseFour"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingFour"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  Proses pengiriman akun biasanya memakan waktu kurang dari 5
+                  menit setelah pembayaran dikonfirmasi. Kami akan mengirim
+                  detail akun langsung ke WhatsApp/email Anda.
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="accordion-item animate__animated animate__fadeInUp"
+              style="animation-delay: 0.4s"
+            >
+              <h2 class="accordion-header" id="headingFive">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseFive"
+                  aria-expanded="false"
+                  aria-controls="collapseFive"
+                >
+                  Apakah ada garansi untuk akun yang dibeli?
+                </button>
+              </h2>
+              <div
+                id="collapseFive"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingFive"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  Kami memberikan garansi 7 hari untuk semua akun yang dibeli.
+                  Jika ada masalah dengan akun dalam waktu 7 hari setelah
+                  pembelian, kami akan menggantinya dengan akun yang setara atau
+                  mengembalikan uang Anda.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="contact-section" id="contactSection">
+        <div class="container">
+          <h2 class="section-title animate__animated animate__fadeIn">
+            Hubungi Kami
+          </h2>
+
+          <div class="contact-container">
+            <div class="contact-info animate__animated animate__fadeInLeft">
+              <h3 class="contact-title">Informasi Kontak</h3>
+
+              <div class="contact-details">
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div class="contact-text">
+                    <h4>Lokasi</h4>
+                    <p>Jakarta, Indonesia</p>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-phone-alt"></i>
+                  </div>
+                  <div class="contact-text">
+                    <h4>Telepon/WhatsApp</h4>
+                    <p>+62 882-2778-9219</p>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <div class="contact-text">
+                    <h4>Email</h4>
+                    <p>support@ikyybloxstore.com</p>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-clock"></i>
+                  </div>
+                  <div class="contact-text">
+                    <h4>Jam Operasional</h4>
+                    <p>24/7 Setiap Hari</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="social-links">
+                <a href="#" class="social-link">
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="#" class="social-link">
+                  <i class="fab fa-discord"></i>
+                </a>
+                <a href="#" class="social-link">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-form animate__animated animate__fadeInRight">
+              <h3 class="contact-title">Kirim Pesan</h3>
+
+              <form id="contactForm">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Nama Lengkap</label>
+                  <input type="text" class="form-control" id="name" required />
+                </div>
+
+                <div class="mb-3">
+                  <label for="email" class="form-label">Alamat Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="subject" class="form-label">Subjek</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="subject"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="message" class="form-label">Pesan</label>
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    rows="5"
+                    required
+                  ></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                  <i class="fas fa-paper-plane"></i> Kirim Pesan
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-dark py-4 mt-5">
+      <div class="container text-center">
+        <p class="mb-2">© 2023 IkyyBlox Store. All Rights Reserved.</p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="#" class="text-white"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-discord"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const homeSection = document.getElementById("homeSection");
+        const accountTypeSection =
+          document.getElementById("accountTypeSection");
+        const tierSection = document.getElementById("tierSection");
+        const testimonialSection =
+          document.getElementById("testimonialSection");
+        const accountsSection = document.getElementById("accountsSection");
+        const faqSection = document.getElementById("faqSection");
+        const contactSection = document.getElementById("contactSection");
+
+        const backToGamesButton = document.getElementById("backToGames");
+        const backToAccountTypesButton =
+          document.getElementById("backToAccountTypes");
+        const backToTiersButton = document.getElementById("backToTiers");
+
+        const accountTypesContainer = document.querySelector(".account-types");
+        const testimonialButtons =
+          document.querySelectorAll(".testimonial-btn");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        let currentGame = "bluelock"; // Default game
+        let currentTierType = "style-flow"; // Default tier type
+
+        // Fungsi untuk menyembunyikan semua section
+        function hideAllSections() {
+          homeSection.style.display = "none";
+          accountTypeSection.style.display = "none";
+          tierSection.style.display = "none";
+          testimonialSection.style.display = "none";
+          accountsSection.style.display = "none";
+          faqSection.style.display = "none";
+          contactSection.style.display = "none";
+        }
+
+        // Fungsi untuk mengupdate nav link aktif
+        function updateActiveNav(section) {
+          navLinks.forEach((link) => {
+            if (link.getAttribute("data-section") === section) {
+              link.classList.add("active");
+            } else {
+              link.classList.remove("active");
+            }
+          });
+        }
+
+        // Fungsi untuk menampilkan tier yang sesuai dengan game dan tipe yang dipilih
+        function showTiers(game, type) {
+          // Sembunyikan semua tier game
+          document.querySelectorAll(".game-tiers").forEach((el) => {
+            el.style.display = "none";
+          });
+
+          // Tampilkan tier game yang dipilih
+          const gameTiers = document.getElementById(`${game}Tiers`);
+          if (gameTiers) gameTiers.style.display = "block";
+
+          // Sembunyikan semua tier cards dalam game tersebut
+          const allTierCards = gameTiers.querySelectorAll(".tier-cards");
+          allTierCards.forEach((card) => {
+            card.style.display = "none";
+          });
+
+          // Tampilkan tier cards yang sesuai dengan tipe yang dipilih
+          let tierCardsId = "";
+          if (game === "bluelock") {
+            if (type === "style-flow")
+              tierCardsId = "bluelock-style-flow-tiers";
+            else if (type === "style-only")
+              tierCardsId = "bluelock-style-only-tiers";
+            else if (type === "flow-only")
+              tierCardsId = "bluelock-flow-only-tiers";
+          } else if (game === "volleyball") {
+            if (type === "style-abilities")
+              tierCardsId = "volleyball-style-abilities-tiers";
+            else if (type === "style-only")
+              tierCardsId = "volleyball-style-only-tiers";
+            else if (type === "abilities-only")
+              tierCardsId = "volleyball-abilities-only-tiers";
+          }
+
+          const tierCards = gameTiers.querySelector(`#${tierCardsId}`);
+          if (tierCards) tierCards.style.display = "flex";
+        }
+
+        // Fungsi untuk mengupdate tombol tipe akun berdasarkan game yang dipilih
+        function updateAccountTypeButtons(game) {
+          accountTypesContainer.innerHTML = ""; // Kosongkan container
+
+          if (game === "bluelock") {
+            // Tombol untuk Blue Lock Rivals
+            const buttons = [
+              { type: "style-flow", text: "Style + Flow" },
+              { type: "style-only", text: "Style Only" },
+              { type: "flow-only", text: "Flow Only" },
+            ];
+
+            buttons.forEach((btn, index) => {
+              const button = document.createElement("button");
+              button.className = `type-btn animate__animated animate__fadeIn${
+                index === 0 ? "Left" : index === 1 ? "Up" : "Right"
+              }`;
+              button.setAttribute("data-type", btn.type);
+              button.textContent = btn.text;
+              button.addEventListener("click", function () {
+                currentTierType = this.getAttribute("data-type");
+                showTiers(currentGame, currentTierType);
+
+                // Tampilkan bagian tier
+                hideAllSections();
+                tierSection.style.display = "block";
+                updateActiveNav("home");
+              });
+              accountTypesContainer.appendChild(button);
+            });
+          } else if (game === "volleyball") {
+            // Tombol untuk Volleyball Legends
+            const buttons = [
+              { type: "style-abilities", text: "Style + Abilities" },
+              { type: "style-only", text: "Style Only" },
+              { type: "abilities-only", text: "Abilities Only" },
+            ];
+
+            buttons.forEach((btn, index) => {
+              const button = document.createElement("button");
+              button.className = `type-btn animate__animated animate__fadeIn${
+                index === 0 ? "Left" : index === 1 ? "Up" : "Right"
+              }`;
+              button.setAttribute("data-type", btn.type);
+              button.textContent = btn.text;
+              button.addEventListener("click", function () {
+                currentTierType = this.getAttribute("data-type");
+                showTiers(currentGame, currentTierType);
+
+                // Tampilkan bagian tier
+                hideAllSections();
+                tierSection.style.display = "block";
+                updateActiveNav("home");
+              });
+              accountTypesContainer.appendChild(button);
+            });
+          }
+        }
+
+        // Menampilkan section berdasarkan klik nav link
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const section = this.getAttribute("data-section");
+
+            hideAllSections();
+            updateActiveNav(section);
+
+            switch (section) {
+              case "home":
+                homeSection.style.display = "block";
+                break;
+              case "accounts":
+                accountsSection.style.display = "block";
+                break;
+              case "faq":
+                faqSection.style.display = "block";
+                break;
+              case "contact":
+                contactSection.style.display = "block";
+                break;
+            }
+          });
+        });
+
+        // Menampilkan bagian pemilihan tipe akun ketika tombol "Pilih Akun" diklik
+        document.querySelectorAll(".game-card-btn").forEach((button) => {
+          button.addEventListener("click", function (e) {
+            e.preventDefault();
+            const gameCard = this.closest(".game-card");
+            currentGame = gameCard.getAttribute("data-game");
+
+            // Update tombol tipe akun berdasarkan game yang dipilih
+            updateAccountTypeButtons(currentGame);
+
+            hideAllSections();
+            accountTypeSection.style.display = "block";
+            updateActiveNav("home");
+          });
+        });
+
+        // Kembali ke bagian pemilihan game
+        backToGamesButton.addEventListener("click", function () {
+          hideAllSections();
+          homeSection.style.display = "block";
+          updateActiveNav("home");
+        });
+
+        // Kembali ke bagian pemilihan tipe akun
+        backToAccountTypesButton.addEventListener("click", function () {
+          hideAllSections();
+          accountTypeSection.style.display = "block";
+          updateActiveNav("home");
+        });
+
+        // Kembali ke bagian pemilihan tier
+        backToTiersButton.addEventListener("click", function () {
+          hideAllSections();
+          tierSection.style.display = "block";
+          updateActiveNav("home");
+          showTiers(currentGame, currentTierType);
+        });
+
+        // Menampilkan testimoni ketika tombol testimoni diklik
+        testimonialButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            hideAllSections();
+            testimonialSection.style.display = "block";
+            updateActiveNav("home");
+          });
+        });
+
+        // Form submission handler
+        document
+          .getElementById("contactForm")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+            alert(
+              "Pesan Anda telah terkirim! Kami akan segera menghubungi Anda kembali."
+            );
+            this.reset();
+          });
+
+        // Initialize with home section
+        hideAllSections();
+        homeSection.style.display = "block";
+        updateActiveNav("home");
+      });
+    </script>
+  </body>
+</html>
