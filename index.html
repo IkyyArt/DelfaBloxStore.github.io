@@ -148,7 +148,7 @@
 
       .game-card {
         width: 280px;
-        height: 430px;
+        height: 380px;
         background-color: #1e1e2f;
         border-radius: 15px;
         overflow: hidden;
@@ -854,27 +854,61 @@
         box-shadow: 0 10px 20px rgba(88, 101, 242, 0.3);
       }
 
-      /* Responsive Design */
+      /* ========== START OF MOBILE STYLES ========== */
       @media (max-width: 768px) {
+        /* Header Styles */
         .header-content {
           flex-direction: column;
+          text-align: center;
           gap: 15px;
         }
 
-        .nav-menu {
-          margin-top: 15px;
+        .logo {
+          font-size: 1.8rem;
+          justify-content: center;
         }
 
-        .game-cards,
+        .nav-menu {
+          flex-direction: column;
+          gap: 10px;
+          width: 100%;
+        }
+
+        .nav-link {
+          padding: 10px;
+          width: 100%;
+          text-align: center;
+        }
+
+        /* Game Cards */
+        .game-cards {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .game-card {
+          width: 90%;
+          height: auto;
+          margin-bottom: 20px;
+        }
+
+        .game-card-img {
+          height: 180px;
+        }
+
+        /* Tier Cards */
         .tier-cards {
           flex-direction: column;
           align-items: center;
         }
 
-        .account-types {
-          flex-direction: column;
-          align-items: center;
-          gap: 15px;
+        .tier-card {
+          width: 90%;
+          margin-bottom: 25px;
+        }
+
+        .tier-img {
+          height: 150px;
         }
 
         .tier-actions {
@@ -882,18 +916,67 @@
           gap: 10px;
         }
 
+        .buy-btn,
         .testimonial-btn {
+          width: 100%;
           margin-left: 0;
         }
 
-        .feature-card {
-          padding: 20px;
+        /* Font Sizes */
+        .section-title {
+          font-size: 1.8rem;
         }
 
+        .game-card-title,
+        .tier-title {
+          font-size: 1.3rem;
+        }
+
+        .tier-price {
+          font-size: 1.5rem;
+        }
+
+        /* Contact Form */
         .contact-container {
           grid-template-columns: 1fr;
         }
+
+        .contact-form,
+        .contact-info {
+          width: 90%;
+          margin: 0 auto;
+        }
+
+        /* Testimonials */
+        .testimonial-cards {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .testimonial-card {
+          width: 90%;
+        }
+
+        /* Section Padding */
+        .game-section,
+        .account-type-section,
+        .tier-section {
+          padding: 1.5rem 0;
+        }
+
+        .container {
+          padding: 0 15px;
+        }
+
+        /* Buttons */
+        .game-card-btn,
+        .buy-btn,
+        .back-button {
+          padding: 12px 20px;
+          font-size: 1rem;
+        }
       }
+      /* ========== END OF MOBILE STYLES ========== */
     </style>
   </head>
   <body>
