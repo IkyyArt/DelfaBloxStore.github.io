@@ -46,6 +46,7 @@
         background-color: #121212;
         color: white;
         overflow-x: hidden;
+        width: 100%;
       }
 
       .container {
@@ -774,6 +775,8 @@
         display: none;
         padding: 3rem 0;
         background-color: #0f0f15;
+        width: 100%;
+        overflow: hidden;
       }
 
       .contact-container {
@@ -781,6 +784,7 @@
         flex-direction: column;
         gap: 30px;
         margin-top: 2rem;
+        width: 100%;
       }
 
       @media (min-width: 768px) {
@@ -795,6 +799,7 @@
         padding: 20px;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         flex: 1;
+        max-width: 100%;
       }
 
       .contact-form {
@@ -803,6 +808,7 @@
         padding: 20px;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         flex: 1;
+        max-width: 100%;
       }
 
       .contact-title {
@@ -866,6 +872,7 @@
         margin-bottom: 15px;
         border-radius: 8px;
         font-size: 0.9rem;
+        width: 100%;
       }
 
       .form-control:focus {
@@ -979,6 +986,12 @@
 
         .contact-container {
           flex-direction: column;
+        }
+
+        .contact-info,
+        .contact-form {
+          width: 100%;
+          max-width: 100%;
         }
       }
 
