@@ -777,10 +777,16 @@
       }
 
       .contact-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        display: flex;
+        flex-direction: column;
         gap: 30px;
         margin-top: 2rem;
+      }
+
+      @media (min-width: 768px) {
+        .contact-container {
+          flex-direction: row;
+        }
       }
 
       .contact-info {
@@ -788,6 +794,15 @@
         border-radius: 15px;
         padding: 20px;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        flex: 1;
+      }
+
+      .contact-form {
+        background: linear-gradient(145deg, #1e1e2f, #252540);
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        flex: 1;
       }
 
       .contact-title {
@@ -841,13 +856,6 @@
       .contact-text p {
         color: #b8b8b8;
         font-size: 0.9rem;
-      }
-
-      .contact-form {
-        background: linear-gradient(145deg, #1e1e2f, #252540);
-        border-radius: 15px;
-        padding: 20px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
       }
 
       .form-control {
@@ -908,6 +916,7 @@
         color: white;
         font-size: 1.1rem;
         transition: all 0.3s ease;
+        text-decoration: none;
       }
 
       .social-link:hover {
@@ -960,16 +969,16 @@
           padding: 15px;
         }
 
-        .contact-container {
-          grid-template-columns: 1fr;
-        }
-
         .tier-img {
           height: 140px;
         }
 
         .game-card-img {
           height: 180px;
+        }
+
+        .contact-container {
+          flex-direction: column;
         }
       }
 
@@ -2114,13 +2123,25 @@
               </div>
 
               <div class="social-links">
-                <a href="#" class="social-link">
+                <a
+                  href="https://wa.me/6288227789219"
+                  class="social-link"
+                  target="_blank"
+                >
                   <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="#" class="social-link">
+                <a
+                  href="https://discord.com/invite/ikyybloxstore"
+                  class="social-link"
+                  target="_blank"
+                >
                   <i class="fab fa-discord"></i>
                 </a>
-                <a href="#" class="social-link">
+                <a
+                  href="https://instagram.com/ikyybloxstore"
+                  class="social-link"
+                  target="_blank"
+                >
                   <i class="fab fa-instagram"></i>
                 </a>
               </div>
