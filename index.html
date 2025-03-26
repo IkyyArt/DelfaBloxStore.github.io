@@ -772,7 +772,7 @@
       /* Contact Section - Fixed for Mobile */
       .contact-section {
         display: none;
-        padding: 3rem 0;
+        padding: 2rem 0;
         background-color: #0f0f15;
       }
 
@@ -883,6 +883,19 @@
         font-size: 0.9rem;
         display: block;
       }
+      .form-control:focus {
+        background-color: #3d3d5c;
+        color: white;
+        box-shadow: 0 0 0 0.25rem rgba(88, 101, 242, 0.25);
+      }
+
+      .form-label {
+        color: white;
+        font-weight: 600;
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+        display: block;
+      }
 
       .submit-btn {
         background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -927,60 +940,8 @@
         box-shadow: 0 10px 20px rgba(88, 101, 242, 0.3);
       }
 
-      /* Mobile Responsive Fixes */
+      /* Fixed Mobile Responsiveness */
       @media (max-width: 768px) {
-        .header-content {
-          flex-direction: column;
-          gap: 10px;
-          text-align: center;
-        }
-
-        .logo {
-          justify-content: center;
-          width: 100%;
-          padding: 0;
-        }
-
-        .nav-menu {
-          width: 100%;
-          justify-content: center;
-          margin-top: 10px;
-        }
-
-        .game-cards,
-        .tier-cards {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .account-types {
-          flex-direction: column;
-          align-items: center;
-          gap: 10px;
-        }
-
-        .tier-actions {
-          flex-direction: column;
-          gap: 10px;
-        }
-
-        .testimonial-btn {
-          margin-left: 0;
-        }
-
-        .feature-card {
-          padding: 15px;
-        }
-
-        .tier-img {
-          height: 140px;
-        }
-
-        .game-card-img {
-          height: 180px;
-        }
-
-        /* Improved Contact Section for Mobile */
         .contact-container {
           flex-direction: column;
         }
@@ -988,25 +949,15 @@
         .contact-info,
         .contact-form {
           width: 100%;
-          margin-bottom: 20px;
         }
 
         .contact-item {
           flex-direction: row;
-          align-items: flex-start;
+          align-items: center;
         }
 
         .contact-icon {
-          flex-shrink: 0;
-        }
-
-        .social-links {
-          justify-content: flex-start;
-          margin-top: 15px;
-        }
-
-        .form-control {
-          width: 100%;
+          margin-right: 10px;
         }
       }
 
@@ -1017,12 +968,8 @@
         }
 
         .contact-icon {
-          margin-bottom: 10px;
+          margin-bottom: 8px;
           margin-right: 0;
-        }
-
-        .contact-text {
-          margin-left: 0;
         }
       }
 
@@ -2408,6 +2355,9 @@
                 break;
               case "contact":
                 contactSection.style.display = "block";
+                // Force reflow to fix animation issues
+                void contactSection.offsetWidth;
+                contactSection.classList.add("animate__fadeIn");
                 break;
             }
           });
