@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Roblox Account Store | Premium Gaming Accounts</title>
+    <title>IKYYBLOX STORE - Premium Roblox Accounts</title>
     <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -769,7 +769,7 @@
         font-size: 0.9rem;
       }
 
-      /* Contact Section */
+      /* Contact Section - Fixed for Mobile */
       .contact-section {
         display: none;
         padding: 3rem 0;
@@ -829,7 +829,7 @@
 
       .contact-item {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         margin-bottom: 15px;
       }
 
@@ -844,6 +844,7 @@
         margin-right: 12px;
         font-size: 1rem;
         color: white;
+        flex-shrink: 0;
       }
 
       .contact-text h4 {
@@ -866,6 +867,7 @@
         margin-bottom: 15px;
         border-radius: 8px;
         font-size: 0.9rem;
+        width: 100%;
       }
 
       .form-control:focus {
@@ -879,6 +881,7 @@
         font-weight: 600;
         margin-bottom: 8px;
         font-size: 0.9rem;
+        display: block;
       }
 
       .submit-btn {
@@ -900,7 +903,7 @@
 
       .social-links {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         gap: 15px;
         margin-top: 20px;
       }
@@ -924,7 +927,7 @@
         box-shadow: 0 10px 20px rgba(88, 101, 242, 0.3);
       }
 
-      /* Responsive Design */
+      /* Mobile Responsive Fixes */
       @media (max-width: 768px) {
         .header-content {
           flex-direction: column;
@@ -977,8 +980,49 @@
           height: 180px;
         }
 
+        /* Improved Contact Section for Mobile */
         .contact-container {
           flex-direction: column;
+        }
+
+        .contact-info,
+        .contact-form {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+
+        .contact-item {
+          flex-direction: row;
+          align-items: flex-start;
+        }
+
+        .contact-icon {
+          flex-shrink: 0;
+        }
+
+        .social-links {
+          justify-content: flex-start;
+          margin-top: 15px;
+        }
+
+        .form-control {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .contact-item {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .contact-icon {
+          margin-bottom: 10px;
+          margin-right: 0;
+        }
+
+        .contact-text {
+          margin-left: 0;
         }
       }
 
@@ -1009,7 +1053,6 @@
         <div class="header-content">
           <div class="logo animate__animated animate__fadeInDown">
             <i class="fa-solid fa-crown"></i>
-            <!-- atau fa-gamepad -->
             <span>Ikyy<span style="color: #ffd700">Blox</span> Store</span>
           </div>
           <div class="nav-menu animate__animated animate__fadeInDown">
