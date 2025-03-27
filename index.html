@@ -335,6 +335,534 @@
         margin-bottom: 20px;
       }
 
+      /* Premium Section - Enhanced */
+      .premium-section {
+        padding: 5rem 0;
+        background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+        position: relative;
+        overflow: hidden;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .premium-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+            circle at 20% 30%,
+            rgba(255, 215, 0, 0.05) 0%,
+            transparent 20%
+          ),
+          radial-gradient(
+            circle at 80% 70%,
+            rgba(255, 255, 255, 0.03) 0%,
+            transparent 20%
+          );
+        z-index: 0;
+      }
+
+      .premium-header {
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .premium-title {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 800;
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      .neon-text {
+        color: #fff;
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff4da6,
+          0 0 20px #ff4da6, 0 0 25px #ff4da6;
+        animation: neonGlow 1.5s ease-in-out infinite alternate;
+      }
+
+      .gradient-text {
+        background: linear-gradient(90deg, #ff8a00, #e52e71, #ff8a00);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+        background-size: 200% auto;
+        animation: gradientText 3s linear infinite;
+      }
+
+      .premium-subtitle {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+
+      .premium-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 3rem;
+      }
+
+      .premium-card {
+        background: rgba(30, 30, 47, 0.7);
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+      }
+
+      .premium-card::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 70%
+        );
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+
+      .premium-card:hover::before {
+        opacity: 1;
+      }
+
+      .premium-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      }
+
+      .tier-badge {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 25px;
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 10px 20px;
+        border-radius: 50px;
+        background: rgba(0, 0, 0, 0.3);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .tier-badge::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.1),
+          transparent
+        );
+        transform: translateX(-100%);
+        transition: transform 0.6s ease;
+      }
+
+      .premium-card:hover .tier-badge::before {
+        transform: translateX(100%);
+      }
+
+      .tier-badge i {
+        font-size: 1.8rem;
+      }
+
+      .diamond-tier .tier-badge {
+        color: #b9f2ff;
+        background: linear-gradient(
+          90deg,
+          rgba(0, 198, 255, 0.1),
+          rgba(0, 198, 255, 0.2)
+        );
+        box-shadow: 0 0 15px rgba(0, 198, 255, 0.3);
+      }
+
+      .platinum-tier .tier-badge {
+        color: #e5e4e2;
+        background: linear-gradient(
+          90deg,
+          rgba(224, 224, 224, 0.1),
+          rgba(224, 224, 224, 0.2)
+        );
+        box-shadow: 0 0 15px rgba(224, 224, 224, 0.3);
+      }
+
+      .gold-tier .tier-badge {
+        color: #ffd700;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 215, 0, 0.1),
+          rgba(255, 215, 0, 0.2)
+        );
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+      }
+
+      .game-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 2.5rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        position: relative;
+      }
+
+      .game-icon::after {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        right: -5px;
+        bottom: -5px;
+        border-radius: 50%;
+        z-index: -1;
+        opacity: 0.7;
+      }
+
+      .diamond-tier .game-icon {
+        background: linear-gradient(135deg, #00c6ff, #0072ff);
+        color: white;
+      }
+
+      .diamond-tier .game-icon::after {
+        background: linear-gradient(135deg, #00c6ff, #0072ff);
+        filter: blur(10px);
+      }
+
+      .platinum-tier .game-icon {
+        background: linear-gradient(135deg, #e0e0e0, #a8a8a8);
+        color: #333;
+      }
+
+      .platinum-tier .game-icon::after {
+        background: linear-gradient(135deg, #e0e0e0, #a8a8a8);
+        filter: blur(10px);
+      }
+
+      .gold-tier .game-icon {
+        background: linear-gradient(135deg, #ffd700, #ff9500);
+        color: #333;
+      }
+
+      .gold-tier .game-icon::after {
+        background: linear-gradient(135deg, #ffd700, #ff9500);
+        filter: blur(10px);
+      }
+
+      .features-list {
+        list-style: none;
+        margin: 30px 0;
+        padding: 0;
+      }
+
+      .features-list li {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+        font-size: 1rem;
+        padding: 12px 15px;
+        border-radius: 8px;
+        background: rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .premium-card:hover .features-list li {
+        transform: translateX(5px);
+        background: rgba(0, 0, 0, 0.3);
+      }
+
+      .features-list i {
+        font-size: 1.2rem;
+        min-width: 25px;
+        text-align: center;
+      }
+
+      .diamond-tier .features-list i {
+        color: #00c6ff;
+        text-shadow: 0 0 10px rgba(0, 198, 255, 0.5);
+      }
+
+      .platinum-tier .features-list i {
+        color: #e0e0e0;
+        text-shadow: 0 0 10px rgba(224, 224, 224, 0.5);
+      }
+
+      .gold-tier .features-list i {
+        color: #ffd700;
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+      }
+
+      .price-tag {
+        margin: 30px 0;
+        text-align: center;
+      }
+
+      .price {
+        font-size: 2.5rem;
+        font-weight: 800;
+        display: block;
+        margin-bottom: 5px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .diamond-tier .price {
+        background: linear-gradient(90deg, #00c6ff, #0072ff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .platinum-tier .price {
+        background: linear-gradient(90deg, #e0e0e0, #a8a8a8);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .gold-tier .price {
+        background: linear-gradient(90deg, #ffd700, #ff9500);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .price::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        border-radius: 2px;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+
+      .premium-card:hover .price::after {
+        transform: scaleX(1);
+      }
+
+      .diamond-tier .price::after {
+        background: linear-gradient(90deg, #00c6ff, #0072ff);
+      }
+
+      .platinum-tier .price::after {
+        background: linear-gradient(90deg, #e0e0e0, #a8a8a8);
+      }
+
+      .gold-tier .price::after {
+        background: linear-gradient(90deg, #ffd700, #ff9500);
+      }
+
+      .discount {
+        font-size: 1rem;
+        color: var(--success);
+        font-weight: 600;
+        display: block;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .premium-buy-btn {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        border: none;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+      }
+
+      .premium-buy-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .premium-buy-btn:hover::before {
+        opacity: 1;
+      }
+
+      .premium-buy-btn::after {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: rgba(255, 255, 255, 0.1);
+        transform: rotate(45deg);
+        transition: all 0.6s ease;
+        z-index: -2;
+      }
+
+      .premium-buy-btn:hover::after {
+        left: 100%;
+      }
+
+      .diamond-tier .premium-buy-btn {
+        background: linear-gradient(135deg, #00c6ff, #0072ff);
+        color: white;
+        box-shadow: 0 5px 20px rgba(0, 198, 255, 0.4);
+      }
+
+      .platinum-tier .premium-buy-btn {
+        background: linear-gradient(135deg, #e0e0e0, #a8a8a8);
+        color: #333;
+        box-shadow: 0 5px 20px rgba(224, 224, 224, 0.4);
+      }
+
+      .gold-tier .premium-buy-btn {
+        background: linear-gradient(135deg, #ffd700, #ff9500);
+        color: #333;
+        box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+      }
+
+      .premium-buy-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+      }
+
+      .glow-effect {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+
+      .diamond-tier .glow-effect {
+        box-shadow: 0 0 40px rgba(0, 198, 255, 0.6);
+      }
+
+      .platinum-tier .glow-effect {
+        box-shadow: 0 0 40px rgba(224, 224, 224, 0.6);
+      }
+
+      .gold-tier .glow-effect {
+        box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+      }
+
+      .premium-card:hover .glow-effect {
+        opacity: 1;
+      }
+
+      /* Ribbon for best value */
+      .ribbon {
+        position: absolute;
+        top: 15px;
+        right: -30px;
+        width: 120px;
+        height: 30px;
+        background: #ff4da6;
+        transform: rotate(45deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        z-index: 2;
+      }
+
+      /* Animations */
+      @keyframes neonGlow {
+        from {
+          text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff4da6,
+            0 0 20px #ff4da6;
+        }
+        to {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff4da6,
+            0 0 40px #ff4da6;
+        }
+      }
+
+      @keyframes gradientText {
+        0% {
+          background-position: 0% center;
+        }
+        100% {
+          background-position: 200% center;
+        }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .premium-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .premium-card {
+          padding: 25px;
+        }
+
+        .tier-badge {
+          font-size: 1.3rem;
+        }
+
+        .price {
+          font-size: 2rem;
+        }
+      }
+
       .tier-card:hover {
         transform: translateY(-10px);
       }
@@ -1154,6 +1682,132 @@
             </div>
           </div>
         </div>
+
+        <!-- PREMIUM BUNDLE SECTION -->
+        <section class="premium-section">
+          <div class="container">
+            <div class="premium-header">
+              <h2 class="premium-title">
+                <span class="neon-text">ELITE</span>
+                <span class="gradient-text">PREMIUM BUNDLE</span>
+              </h2>
+              <p class="premium-subtitle">
+                Unlock ultimate power across all games with our exclusive
+                premium bundles. Get the most valuable accounts with rare items
+                and maxed stats.
+              </p>
+            </div>
+
+            <div class="premium-grid">
+              <!-- DIAMOND TIER -->
+              <div
+                class="premium-card diamond-tier animate__animated animate__fadeInUp"
+              >
+                <div class="ribbon">Best Value</div>
+                <div class="tier-badge">
+                  <i class="fas fa-gem"></i>
+                  <span>Diamond Tier</span>
+                </div>
+                <div class="game-icon">
+                  <i class="fas fa-trophy"></i>
+                </div>
+                <ul class="features-list">
+                  <li>
+                    <i class="fas fa-star"></i> All WC Styles + Mythic Flows
+                  </li>
+                  <li>
+                    <i class="fas fa-level-up-alt"></i> Max Level All Skills
+                  </li>
+                  <li>
+                    <i class="fas fa-medal"></i> Exclusive Tournament Badges
+                  </li>
+                  <li><i class="fas fa-crown"></i> VIP Access to All Games</li>
+                  <li><i class="fas fa-coins"></i> 50,000 In-Game Currency</li>
+                </ul>
+                <div class="price-tag">
+                  <span class="price">Rp 500K</span>
+                  <span class="discount">Save 30% (Rp 700K)</span>
+                </div>
+                <button
+                  class="premium-buy-btn"
+                  onclick="window.open('https://wa.me/6288227789219')"
+                >
+                  GET DIAMOND <i class="fas fa-arrow-right"></i>
+                </button>
+                <div class="glow-effect"></div>
+              </div>
+
+              <!-- PLATINUM TIER -->
+              <div
+                class="premium-card platinum-tier animate__animated animate__fadeInUp"
+                style="animation-delay: 0.2s"
+              >
+                <div class="tier-badge">
+                  <i class="fas fa-crown"></i>
+                  <span>Platinum Tier</span>
+                </div>
+                <div class="game-icon">
+                  <i class="fas fa-award"></i>
+                </div>
+                <ul class="features-list">
+                  <li><i class="fas fa-star"></i> Champion Edition Style</li>
+                  <li>
+                    <i class="fas fa-level-up-alt"></i> All Abilities Maxed
+                  </li>
+                  <li><i class="fas fa-medal"></i> VIP Tournament Skins</li>
+                  <li><i class="fas fa-unlock"></i> Premium Unlocks</li>
+                  <li><i class="fas fa-coins"></i> 30,000 In-Game Currency</li>
+                </ul>
+                <div class="price-tag">
+                  <span class="price">Rp 350K</span>
+                  <span class="discount">Save 25% (Rp 450K)</span>
+                </div>
+                <button
+                  class="premium-buy-btn"
+                  onclick="window.open('https://wa.me/6288227789219')"
+                >
+                  GET PLATINUM <i class="fas fa-arrow-right"></i>
+                </button>
+                <div class="glow-effect"></div>
+              </div>
+
+              <!-- GOLD TIER -->
+              <div
+                class="premium-card gold-tier animate__animated animate__fadeInUp"
+                style="animation-delay: 0.4s"
+              >
+                <div class="tier-badge">
+                  <i class="fas fa-medal"></i>
+                  <span>Gold Tier</span>
+                </div>
+                <div class="game-icon">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <ul class="features-list">
+                  <li><i class="fas fa-star"></i> All Premium Styles</li>
+                  <li><i class="fas fa-chart-line"></i> Max Zone Level</li>
+                  <li>
+                    <i class="fas fa-basketball-ball"></i> Special Dunk
+                    Animations
+                  </li>
+                  <li><i class="fas fa-lock-open"></i> Advanced Unlocks</li>
+                  <li><i class="fas fa-coins"></i> 15,000 In-Game Currency</li>
+                </ul>
+                <div class="price-tag">
+                  <span class="price">Rp 250K</span>
+                  <span class="discount">Save 20% (Rp 300K)</span>
+                </div>
+                <button
+                  class="premium-buy-btn"
+                  onclick="window.open('https://wa.me/6288227789219')"
+                >
+                  GET GOLD <i class="fas fa-arrow-right"></i>
+                </button>
+                <div class="glow-effect"></div>
+              </div>
+            </div>
+          </div>
+        </section>
       </section>
 
       <!-- Account Type Section -->
@@ -2838,7 +3492,7 @@
                   />
                 </div>
                 <div class="tier-details">
-                  <div class="tier-price">Rp 130.000</div>
+                  <div class="tier-price">Rp 15.000</div>
                   <div class="tier-status">
                     <div class="status-item">
                       <i class="fa-solid fa-check-circle"></i>
@@ -4019,6 +4673,36 @@
         homeSection.style.display = "block";
         updateActiveNav("home");
       });
+
+      // Function to hide all sections
+      function hideAllSections() {
+        homeSection.style.display = "none";
+        accountTypeSection.style.display = "none";
+        tierSection.style.display = "none";
+        testimonialSection.style.display = "none";
+        accountsSection.style.display = "none";
+        faqSection.style.display = "none";
+        contactSection.style.display = "none";
+
+        // Sembunyikan premium-section jika bukan di home
+        const premiumSection = document.querySelector(".premium-section");
+        if (premiumSection) {
+          premiumSection.style.display = "none";
+        }
+      }
+
+      // Dalam switch case untuk menampilkan section, tambahkan:
+      switch (section) {
+        case "home":
+          homeSection.style.display = "block";
+          // Tampilkan premium-section hanya di home
+          const premiumSection = document.querySelector(".premium-section");
+          if (premiumSection) {
+            premiumSection.style.display = "block";
+          }
+          break;
+        // ... case lainnya tetap sama
+      }
     </script>
   </body>
 </html>
