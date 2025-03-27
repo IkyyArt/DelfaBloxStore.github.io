@@ -181,31 +181,61 @@
         border-radius: 2px;
       }
 
+      /* Luxurious Glowing Game Cards */
       .game-cards {
         display: flex;
         justify-content: center;
-        gap: 20px;
+        gap: 30px;
         flex-wrap: wrap;
+        margin: 0 auto;
+        max-width: 1200px;
+        perspective: 1000px;
       }
 
       .game-card {
         width: 100%;
-        max-width: 280px;
-        height: auto;
-        min-height: 380px;
-        background-color: #1e1e2f;
-        border-radius: 15px;
+        max-width: 300px;
+        min-height: 420px;
+        background: linear-gradient(145deg, #1e1e2f, #252540);
+        border-radius: 16px;
         overflow: hidden;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        transition: all 0.4s ease;
+        transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         position: relative;
         cursor: pointer;
         margin-bottom: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transform-style: preserve-3d;
+      }
+
+      .game-card::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(
+          45deg,
+          var(--card-glow-1),
+          var(--card-glow-2),
+          var(--card-glow-1)
+        );
+        z-index: -1;
+        border-radius: 18px;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        filter: blur(10px);
+      }
+
+      .game-card:hover::before {
+        opacity: 0.7;
       }
 
       .game-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 40px rgba(88, 101, 242, 0.4);
+        transform: translateY(-10px) scale(1.03) rotateX(2deg);
+        box-shadow: 0 20px 50px rgba(88, 101, 242, 0.5);
+        border-color: rgba(255, 255, 255, 0.2);
       }
 
       .game-card-img {
@@ -213,54 +243,214 @@
         height: 200px;
         position: relative;
         overflow: hidden;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .game-card-img::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 50%,
+          rgba(0, 0, 0, 0.5) 100%
+        );
+        z-index: 1;
       }
 
       .game-card-img img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.5s ease;
+        transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
 
       .game-card:hover .game-card-img img {
-        transform: scale(1.1);
+        transform: scale(1.15);
       }
 
       .game-card-content {
-        padding: 15px;
+        padding: 25px;
         text-align: center;
+        position: relative;
+        z-index: 2;
+        background: rgba(30, 30, 47, 0.7);
+        backdrop-filter: blur(10px);
       }
 
       .game-card-title {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
         font-weight: 700;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
         color: white;
+        position: relative;
+        display: inline-block;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+      }
+
+      .game-card-title::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(
+          to right,
+          var(--card-glow-1),
+          var(--card-glow-2)
+        );
+        border-radius: 3px;
+        box-shadow: 0 0 15px var(--card-glow-1);
       }
 
       .game-card-desc {
-        font-size: 0.85rem;
-        color: #b8b8b8;
-        margin-bottom: 15px;
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 25px;
+        line-height: 1.6;
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 300;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
       }
 
       .game-card-btn {
         display: inline-block;
-        padding: 8px 20px;
-        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        padding: 12px 30px;
+        background: linear-gradient(
+          135deg,
+          var(--card-glow-1),
+          var(--card-glow-2)
+        );
         color: white;
         border-radius: 50px;
         font-weight: 600;
         text-decoration: none;
-        transition: all 0.3s ease;
-        font-size: 0.9rem;
+        transition: all 0.4s ease;
+        font-size: 1rem;
+        position: relative;
+        overflow: hidden;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 5px 20px var(--card-glow-shadow);
+        z-index: 1;
+        letter-spacing: 0.5px;
+      }
+
+      .game-card-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: 0.5s;
       }
 
       .game-card-btn:hover {
-        transform: scale(1.05);
-        box-shadow: 0 5px 15px rgba(88, 101, 242, 0.5);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 30px var(--card-glow-shadow-hover);
       }
 
+      .game-card-btn:hover::before {
+        left: 100%;
+      }
+
+      /* Game-specific glow colors */
+      .game-card[data-game="bluelock"] {
+        --card-glow-1: #00a8ff;
+        --card-glow-2: #00f2fe;
+        --card-glow-shadow: rgba(0, 168, 255, 0.4);
+        --card-glow-shadow-hover: rgba(0, 168, 255, 0.6);
+      }
+
+      .game-card[data-game="volleyball"] {
+        --card-glow-1: #ff44cc;
+        --card-glow-2: #ff66ff;
+        --card-glow-shadow: rgba(255, 68, 204, 0.4);
+        --card-glow-shadow-hover: rgba(255, 68, 204, 0.6);
+      }
+
+      .game-card[data-game="basketball"] {
+        --card-glow-1: #ff9900;
+        --card-glow-2: #ffcc00;
+        --card-glow-shadow: rgba(255, 153, 0, 0.4);
+        --card-glow-shadow-hover: rgba(255, 153, 0, 0.6);
+      }
+
+      .game-card[data-game="boxing"] {
+        --card-glow-1: #ed4245;
+        --card-glow-2: #ff6b6b;
+        --card-glow-shadow: rgba(237, 66, 69, 0.4);
+        --card-glow-shadow-hover: rgba(237, 66, 69, 0.6);
+      }
+
+      /* Floating particles effect */
+      .game-card::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(
+          circle at 20% 30%,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 20%
+        );
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+
+      .game-card:hover::after {
+        opacity: 1;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .game-card {
+          max-width: 100%;
+          min-height: 380px;
+        }
+
+        .game-card-img {
+          height: 180px;
+        }
+
+        .game-card-title {
+          font-size: 1.3rem;
+        }
+
+        .game-card-content {
+          padding: 20px;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .game-card {
+          width: calc(50% - 30px);
+        }
+      }
+
+      @media (min-width: 1200px) {
+        .game-card {
+          width: calc(25% - 30px);
+        }
+      }
       /* Account Type Section */
       .account-type-section {
         display: none;
@@ -1730,7 +1920,7 @@
                 </div>
                 <button
                   class="premium-buy-btn"
-                  onclick="window.open('https://wa.me/6288227789219')"
+                  onclick="window.open('https://wa.me/6288227789219?text=Halo%20admin%20IkyyBlox%20Store,%20saya%20ingin%20membeli%20PREMIUM%20BUNDLE%20DIAMOND%20TIER%20seharga%20Rp%20500.000')"
                 >
                   GET DIAMOND <i class="fas fa-arrow-right"></i>
                 </button>
@@ -1764,10 +1954,11 @@
                 </div>
                 <button
                   class="premium-buy-btn"
-                  onclick="window.open('https://wa.me/6288227789219')"
+                  onclick="window.open('https://wa.me/6288227789219?text=Halo%20admin%20IkyyBlox%20Store,%20saya%20ingin%20membeli%20PREMIUM%20BUNDLE%20PLATINUM%20TIER%20seharga%20Rp%20350.000')"
                 >
                   GET PLATINUM <i class="fas fa-arrow-right"></i>
                 </button>
+
                 <div class="glow-effect"></div>
               </div>
 
@@ -1799,7 +1990,7 @@
                 </div>
                 <button
                   class="premium-buy-btn"
-                  onclick="window.open('https://wa.me/6288227789219')"
+                  onclick="window.open('https://wa.me/6288227789219?text=Halo%20admin%20IkyyBlox%20Store,%20saya%20ingin%20membeli%20PREMIUM%20BUNDLE%20GOLD%20TIER%20seharga%20Rp%20350.000')"
                 >
                   GET GOLD <i class="fas fa-arrow-right"></i>
                 </button>
