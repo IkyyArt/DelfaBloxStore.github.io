@@ -33,6 +33,7 @@
         --world-class: #00a8ff;
         --goldly: #ff9900;
         --coming-soon: #00ff00;
+        --rare: #3498db;
       }
 
       * {
@@ -347,11 +348,15 @@
       }
 
       .tier-card.legendary {
-        border: 2px solid var(--legendary);
+        border: 2px solid var(--danger); /* Using the existing danger color */
       }
 
-      .tier-card.goldly {
-        border: 2px solid var(--goldly);
+      .tier-card.godly {
+        border: 2px solid var(--goldly); /* Or define a new color variable for godly */
+      }
+
+      .tier-card.rare {
+        border: 2px solid var(--rare);
       }
 
       .tier-card.coming-soon {
@@ -390,13 +395,13 @@
       }
 
       .legendary .tier-title {
-        background: linear-gradient(135deg, #ffd700, #ffaa00);
+        background: linear-gradient(135deg, #ed4245, #ff6b6b);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
       }
 
-      .goldly .tier-title {
+      .godly .tier-title {
         background: linear-gradient(135deg, #ff9900, #ffcc00);
         -webkit-background-clip: text;
         background-clip: text;
@@ -405,6 +410,41 @@
 
       .coming-soon .tier-title {
         background: linear-gradient(135deg, #00ff00, #66ff66);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .rare .tier-title {
+        background: linear-gradient(135deg, #3498db, #2ecc71);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Add this CSS rule to target only Volleyball Legends' Legendary tiers */
+      #volleyballTiers .tier-card.legendary {
+        border: 2px solid var(--danger); /* Using danger color (red) */
+      }
+
+      #volleyballTiers .legendary .tier-title {
+        background: linear-gradient(
+          135deg,
+          var(--danger),
+          #ff6666
+        ); /* Red gradient */
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Keep the original Legendary styling for other games */
+      .tier-card.legendary:not(#volleyballTiers .tier-card.legendary) {
+        border: 2px solid var(--legendary); /* Original gold color */
+      }
+
+      .legendary .tier-title:not(#volleyballTiers .legendary .tier-title) {
+        background: linear-gradient(135deg, var(--legendary), var(--goldly));
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -554,7 +594,7 @@
         text-align: center;
       }
 
-      /* Tombol Kembali */
+      /* Back Button */
       .back-button {
         display: block;
         margin: 20px auto;
@@ -580,7 +620,7 @@
         margin-right: 5px;
       }
 
-      /* Judul Kategori Tier */
+      /* Tier Category Title */
       .tier-category-title {
         font-size: 1.8rem;
         font-weight: 800;
@@ -1022,7 +1062,6 @@
         <div class="header-content">
           <div class="logo animate__animated animate__fadeInDown">
             <i class="fa-solid fa-crown"></i>
-            <!-- atau fa-gamepad -->
             <span>Ikyy<span style="color: #ffd700">Blox</span> Store</span>
           </div>
           <div class="nav-menu animate__animated animate__fadeInDown">
@@ -1076,7 +1115,7 @@
                 <a href="#" class="game-card-btn">Pilih Akun</a>
               </div>
             </div>
-            
+
             <!-- Basket Ball: Zero -->
             <div
               class="game-card animate__animated animate__fadeInUp"
@@ -1093,14 +1132,17 @@
                 <a href="#" class="game-card-btn">Pilih Akun</a>
               </div>
             </div>
-            
+
             <!-- Untitled Boxing Game -->
             <div
               class="game-card animate__animated animate__fadeInUp"
               data-game="boxing"
             >
               <div class="game-card-img">
-                <img src="Untitled Boxing Game.png" alt="Untitled Boxing Game" />
+                <img
+                  src="Untitled Boxing Game.png"
+                  alt="Untitled Boxing Game"
+                />
               </div>
               <div class="game-card-content">
                 <h3 class="game-card-title">Untitled Boxing Game</h3>
@@ -1165,7 +1207,94 @@
                   <div class="tier-status">
                     <div class="status-item">
                       <i class="fa-solid fa-check-circle"></i>
-                      <span>Style: Sae (NEW)</span>
+                      <span>Style: Sae</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Flow: Genius</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Datpol, Notopi, Siap MC</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Blue%20Lock%20World%20Class%20Style%20%2B%20Flow', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="world-class-sf">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="tier-card world-class animate__animated animate__fadeInUp"
+                data-tier="world-class-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">World Class</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="Don Lorenzo02.png" alt="Sae Style" />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">SOLD</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Style: Don Lorenzo (SOLD)</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Flow: Genius</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Datpol, Notopi, Siap MC</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Blue%20Lock%20World%20Class%20Style%20%2B%20Flow', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="world-class-sf">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="tier-card world-class animate__animated animate__fadeInUp"
+                data-tier="world-class-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">World Class</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="Don Lorenzo.png" alt="Sae Style" />
+                  </div>
+                  <div class="tier-img">
+                    <img src="Monster.png" alt="Genius Flow" />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">SOLD</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Style: Don Lorenzo (SOLD)</span>
                     </div>
                     <div class="status-item">
                       <i class="fa-solid fa-check-circle"></i>
@@ -1240,6 +1369,55 @@
                 </div>
               </div>
 
+              <div
+                class="tier-card mythic animate__animated animate__fadeInUp"
+                style="animation-delay: 0.2s"
+                data-tier="mythic-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="Yukimiya MT S + F.png" alt="Yukimiya Style" />
+                  </div>
+                  <div class="tier-img">
+                    <img
+                      src="Demon Wings MT S + F.png"
+                      alt="Demon Wings Flow"
+                    />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 20.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Style: Rin</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Flow: Demon Wings</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Datpol, Notopi, Siap MC</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Blue%20Lock%20Mythic%20Style%20%2B%20Flow', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-sf">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
               <h3 class="tier-category-title">Legendary</h3>
               <div
                 class="tier-card legendary animate__animated animate__fadeInUp"
@@ -1289,6 +1467,300 @@
                   </div>
                 </div>
               </div>
+
+              <div
+                class="tier-card legendary animate__animated animate__fadeInUp"
+                style="animation-delay: 0.4s"
+                data-tier="legendary-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="Nagi Legend S + F.png" alt="Nagi Style" />
+                  </div>
+                  <div class="tier-img">
+                    <img
+                      src="Demon wings Legend S + F.png"
+                      alt="Demon Wings Flow"
+                    />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 15.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Style: King</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Flow: Awakend Genius</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Datpol, Notopi, Siap MC</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Blue%20Lock%20Legendary%20Style%20%2B%20Flow', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-sf">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="tier-card legendary animate__animated animate__fadeInUp"
+                style="animation-delay: 0.4s"
+                data-tier="legendary-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="Nagi Legend S + F.png" alt="Nagi Style" />
+                  </div>
+                  <div class="tier-img">
+                    <img
+                      src="Demon wings Legend S + F.png"
+                      alt="Demon Wings Flow"
+                    />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 15.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Style: King</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Flow: Chameleon</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Datpol, Notopi, Siap MC</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Blue%20Lock%20Legendary%20Style%20%2B%20Flow', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-sf">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="tier-card legendary animate__animated animate__fadeInUp"
+                style="animation-delay: 0.4s"
+                data-tier="legendary-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="Nagi Legend S + F.png" alt="Nagi Style" />
+                  </div>
+                  <div class="tier-img">
+                    <img
+                      src="Demon wings Legend S + F.png"
+                      alt="Demon Wings Flow"
+                    />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 15.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Style: King</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Flow: Trap</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Datpol, Notopi, Siap MC</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Blue%20Lock%20Legendary%20Style%20%2B%20Flow', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-sf">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="tier-card legendary animate__animated animate__fadeInUp"
+                style="animation-delay: 0.4s"
+                data-tier="legendary-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="Nagi Legend S + F.png" alt="Nagi Style" />
+                  </div>
+                  <div class="tier-img">
+                    <img
+                      src="Demon wings Legend S + F.png"
+                      alt="Demon Wings Flow"
+                    />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 15.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Style: Reo</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Flow: Demon Wings</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Datpol, Notopi, Siap MC</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Blue%20Lock%20Legendary%20Style%20%2B%20Flow', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-sf">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="tier-card legendary animate__animated animate__fadeInUp"
+                style="animation-delay: 0.4s"
+                data-tier="legendary-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="Nagi Legend S + F.png" alt="Nagi Style" />
+                  </div>
+                  <div class="tier-img">
+                    <img
+                      src="Demon wings Legend S + F.png"
+                      alt="Demon Wings Flow"
+                    />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 15.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Style: Reo</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Flow: Genius</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Datpol, Notopi, Siap MC</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Blue%20Lock%20Legendary%20Style%20%2B%20Flow', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-sf">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="tier-card legendary animate__animated animate__fadeInUp"
+                style="animation-delay: 0.4s"
+                data-tier="legendary-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="Nagi Legend S + F.png" alt="Nagi Style" />
+                  </div>
+                  <div class="tier-img">
+                    <img
+                      src="Demon wings Legend S + F.png"
+                      alt="Demon Wings Flow"
+                    />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 15.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Style: Karasu</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Flow: Trap</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Datpol, Notopi, Siap MC</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Blue%20Lock%20Legendary%20Style%20%2B%20Flow', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-sf">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <!-- Style Only Tiers -->
@@ -1309,19 +1781,87 @@
                   <img src="Sae WC Style Only.png" alt="Sae Style Only" />
                 </div>
                 <div class="tier-details">
-                  <div class="tier-price">Rp 30.000</div>
+                  <div class="tier-price">Rp 20.000</div>
                   <div class="tier-status">
                     <div class="status-item">
                       <i class="fa-solid fa-check-circle"></i>
-                      <span>Style: Sae (Premium)</span>
+                      <span>Style: Sae</span>
                     </div>
                     <div class="status-item">
                       <i class="fa-solid fa-check-circle"></i>
-                      <span>Items: Full Customization</span>
+                      <span>Status: Datpol, Notopi, Siap MC</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Blue%20Lock%20World%20Class%20Style%20Only', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="world-class-so">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="tier-card world-class animate__animated animate__fadeInUp"
+                data-tier="world-class-so"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">World Class</h3>
+                </div>
+                <div class="tier-img">
+                  <img src="Sae WC Style Only.png" alt="Sae Style Only" />
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">SOLD</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Style: Don Lorenzo</span>
                     </div>
                     <div class="status-item">
                       <i class="fa-solid fa-check-circle"></i>
-                      <span>Status: Fresh, No Ban</span>
+                      <span>Status: Datpol, Notopi, Siap MC</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Blue%20Lock%20World%20Class%20Style%20Only', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="world-class-so">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="tier-card world-class animate__animated animate__fadeInUp"
+                data-tier="world-class-so"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">World Class</h3>
+                </div>
+                <div class="tier-img">
+                  <img src="Sae WC Style Only.png" alt="Sae Style Only" />
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">SOLD</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Style: Don Lorenzo</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>SStatus: Datpol, Notopi, Siap MC</span>
                     </div>
                   </div>
                   <div class="tier-actions">
@@ -1354,7 +1894,47 @@
                   />
                 </div>
                 <div class="tier-details">
-                  <div class="tier-price">Rp 25.000</div>
+                  <div class="tier-price">Rp 15.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Style: Rin</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Datpol, Notopi, Siap MC</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Blue%20Lock%20Mythic%20Style%20Only', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-so">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="tier-card mythic animate__animated animate__fadeInUp"
+                style="animation-delay: 0.2s"
+                data-tier="mythic-so"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img">
+                  <img
+                    src="Yukimiya MT Style Only.png"
+                    alt="Yukimiya Style Only"
+                  />
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 15.000</div>
                   <div class="tier-status">
                     <div class="status-item">
                       <i class="fa-solid fa-check-circle"></i>
@@ -1362,11 +1942,7 @@
                     </div>
                     <div class="status-item">
                       <i class="fa-solid fa-check-circle"></i>
-                      <span>Items: Full Customization</span>
-                    </div>
-                    <div class="status-item">
-                      <i class="fa-solid fa-check-circle"></i>
-                      <span>Status: Fresh, No Ban</span>
+                      <span>Status: Datpol, Notopi, Siap MC</span>
                     </div>
                   </div>
                   <div class="tier-actions">
@@ -1396,7 +1972,7 @@
                   <img src="Nagi Legend Style Only.png" alt="Nagi Style Only" />
                 </div>
                 <div class="tier-details">
-                  <div class="tier-price">Rp 20.000</div>
+                  <div class="tier-price">Rp 10.000</div>
                   <div class="tier-status">
                     <div class="status-item">
                       <i class="fa-solid fa-check-circle"></i>
@@ -1404,11 +1980,192 @@
                     </div>
                     <div class="status-item">
                       <i class="fa-solid fa-check-circle"></i>
-                      <span>Items: Full Customization</span>
+                      <span>Status: Datpol, Notopi, Siap MC</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Blue%20Lock%20Legendary%20Style%20Only', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-so">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="tier-card legendary animate__animated animate__fadeInUp"
+                style="animation-delay: 0.4s"
+                data-tier="legendary-so"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img">
+                  <img src="Nagi Legend Style Only.png" alt="Nagi Style Only" />
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Style: Nagi</span>
                     </div>
                     <div class="status-item">
                       <i class="fa-solid fa-check-circle"></i>
-                      <span>Status: Fresh, No Ban</span>
+                      <span>Status: Datpol, Notopi, Siap MC</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Blue%20Lock%20Legendary%20Style%20Only', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-so">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="tier-card legendary animate__animated animate__fadeInUp"
+                style="animation-delay: 0.4s"
+                data-tier="legendary-so"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img">
+                  <img src="Nagi Legend Style Only.png" alt="Nagi Style Only" />
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 20.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Style: Karasu</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Datpol, Notopi, Siap MC</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Blue%20Lock%20Legendary%20Style%20Only', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-so">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="tier-card legendary animate__animated animate__fadeInUp"
+                style="animation-delay: 0.4s"
+                data-tier="legendary-so"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img">
+                  <img src="Nagi Legend Style Only.png" alt="Nagi Style Only" />
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 20.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Style: Karasu</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Datpol, Notopi, Siap MC</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Blue%20Lock%20Legendary%20Style%20Only', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-so">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="tier-card legendary animate__animated animate__fadeInUp"
+                style="animation-delay: 0.4s"
+                data-tier="legendary-so"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img">
+                  <img src="Nagi Legend Style Only.png" alt="Nagi Style Only" />
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 20.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Style: King</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Datpol, Notopi, Siap MC</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Blue%20Lock%20Legendary%20Style%20Only', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-so">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="tier-card legendary animate__animated animate__fadeInUp"
+                style="animation-delay: 0.4s"
+                data-tier="legendary-so"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img">
+                  <img src="Nagi Legend Style Only.png" alt="Nagi Style Only" />
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 20.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Style: Reo</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Datpol, Notopi, Siap MC</span>
                     </div>
                   </div>
                   <div class="tier-actions">
@@ -1447,19 +2204,54 @@
                   />
                 </div>
                 <div class="tier-details">
-                  <div class="tier-price">Rp 35.000</div>
+                  <div class="tier-price">Rp 15.000</div>
                   <div class="tier-status">
                     <div class="status-item">
                       <i class="fa-solid fa-check-circle"></i>
-                      <span>Flow: Genius (Max Level)</span>
+                      <span>Flow: Awakend Genius</span>
                     </div>
                     <div class="status-item">
                       <i class="fa-solid fa-check-circle"></i>
-                      <span>Skills: Full Unlocked</span>
+                      <span>Status: Datpol, Notopi, Siap MC</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Blue%20Lock%20World%20Class%20Flow%20Only', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="world-class-fo">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="tier-card world-class animate__animated animate__fadeInUp"
+                data-tier="world-class-fo"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">World Class</h3>
+                </div>
+                <div class="tier-img">
+                  <img
+                    src="Genius WC Abilities Only.png"
+                    alt="Genius Flow Only"
+                  />
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 15.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Flow: Soul Harvester</span>
                     </div>
                     <div class="status-item">
                       <i class="fa-solid fa-check-circle"></i>
-                      <span>Status: Fresh, No Ban</span>
+                      <span>Status: Datpol, Notopi, Siap MC</span>
                     </div>
                   </div>
                   <div class="tier-actions">
@@ -1492,19 +2284,15 @@
                   />
                 </div>
                 <div class="tier-details">
-                  <div class="tier-price">Rp 30.000</div>
+                  <div class="tier-price">Rp 10.000</div>
                   <div class="tier-status">
                     <div class="status-item">
                       <i class="fa-solid fa-check-circle"></i>
-                      <span>Flow: Demon Wings (Max Level)</span>
+                      <span>Flow: Snake</span>
                     </div>
                     <div class="status-item">
                       <i class="fa-solid fa-check-circle"></i>
-                      <span>Skills: Full Unlocked</span>
-                    </div>
-                    <div class="status-item">
-                      <i class="fa-solid fa-check-circle"></i>
-                      <span>Status: Fresh, No Ban</span>
+                      <span>Status: Datpol, Notopi, Siap MC</span>
                     </div>
                   </div>
                   <div class="tier-actions">
@@ -1537,19 +2325,215 @@
                   />
                 </div>
                 <div class="tier-details">
-                  <div class="tier-price">Rp 25.000</div>
+                  <div class="tier-price">Rp 5.000</div>
                   <div class="tier-status">
                     <div class="status-item">
                       <i class="fa-solid fa-check-circle"></i>
-                      <span>Flow: Demon Wings (High Level)</span>
+                      <span>Flow: Trap</span>
                     </div>
                     <div class="status-item">
                       <i class="fa-solid fa-check-circle"></i>
-                      <span>Skills: Almost Full Unlocked</span>
+                      <span>Status: Datpol, Notopi, Siap MC</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Blue%20Lock%20Legendary%20Flow%20Only', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-fo">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="tier-card legendary animate__animated animate__fadeInUp"
+                style="animation-delay: 0.4s"
+                data-tier="legendary-fo"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img">
+                  <img
+                    src="Demon Wings Legend Abilities Only.png"
+                    alt="Demon Wings Flow Only"
+                  />
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 5.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Flow: Trap</span>
                     </div>
                     <div class="status-item">
                       <i class="fa-solid fa-check-circle"></i>
-                      <span>Status: Fresh, No Ban</span>
+                      <span>Status: Datpol, Notopi, Siap MC</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Blue%20Lock%20Legendary%20Flow%20Only', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-fo">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="tier-card legendary animate__animated animate__fadeInUp"
+                style="animation-delay: 0.4s"
+                data-tier="legendary-fo"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img">
+                  <img
+                    src="Demon Wings Legend Abilities Only.png"
+                    alt="Demon Wings Flow Only"
+                  />
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 5.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Flow: Trap</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Datpol, Notopi, Siap MC</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Blue%20Lock%20Legendary%20Flow%20Only', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-fo">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="tier-card legendary animate__animated animate__fadeInUp"
+                style="animation-delay: 0.4s"
+                data-tier="legendary-fo"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img">
+                  <img
+                    src="Demon Wings Legend Abilities Only.png"
+                    alt="Demon Wings Flow Only"
+                  />
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 5.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Flow: Crow</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Datpol, Notopi, Siap MC</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Blue%20Lock%20Legendary%20Flow%20Only', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-fo">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="tier-card legendary animate__animated animate__fadeInUp"
+                style="animation-delay: 0.4s"
+                data-tier="legendary-fo"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img">
+                  <img
+                    src="Demon Wings Legend Abilities Only.png"
+                    alt="Demon Wings Flow Only"
+                  />
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 5.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Flow: Chameleon</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Datpol, Notopi, Siap MC</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Blue%20Lock%20Legendary%20Flow%20Only', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-fo">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="tier-card legendary animate__animated animate__fadeInUp"
+                style="animation-delay: 0.4s"
+                data-tier="legendary-fo"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img">
+                  <img
+                    src="Demon Wings Legend Abilities Only.png"
+                    alt="Demon Wings Flow Only"
+                  />
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 5.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Flow: Wild Card</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Datpol, Notopi, Siap MC</span>
                     </div>
                   </div>
                   <div class="tier-actions">
@@ -1572,16 +2556,16 @@
           <div class="game-tiers" id="volleyballTiers" style="display: none">
             <!-- Style + Abilities Tiers -->
             <div class="tier-cards" id="volleyball-style-abilities-tiers">
-              <h3 class="tier-category-title">Goldly</h3>
+              <h3 class="tier-category-title">Godly</h3>
               <div
-                class="tier-card goldly animate__animated animate__fadeInUp"
-                data-tier="goldly-sa"
+                class="tier-card godly animate__animated animate__fadeInUp"
+                data-tier="godly-sa"
               >
                 <div class="tier-header">
-                  <h3 class="tier-title">Goldly</h3>
+                  <h3 class="tier-title">Godly</h3>
                 </div>
                 <div class="tier-img">
-                  <img src="vl-goldly-sa.jpg" alt="Goldly Account" />
+                  <img src="vl-godly-sa.jpg" alt="Godly Account" />
                 </div>
                 <div class="tier-details">
                   <div class="tier-price">Rp 150.000</div>
@@ -1602,11 +2586,11 @@
                   <div class="tier-actions">
                     <button
                       class="buy-btn"
-                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Volleyball%20Legends%20Goldly%20Style%20%2B%20Abilities', '_blank')"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Volleyball%20Legends%20Godly%20Style%20%2B%20Abilities', '_blank')"
                     >
                       Beli Sekarang
                     </button>
-                    <button class="testimonial-btn" data-tier="goldly-sa">
+                    <button class="testimonial-btn" data-tier="godly-sa">
                       Testimoni
                     </button>
                   </div>
@@ -1654,6 +2638,48 @@
                   </div>
                 </div>
               </div>
+
+              <h3 class="tier-category-title">Rare</h3>
+              <div
+                class="tier-card rare animate__animated animate__fadeInUp"
+                style="animation-delay: 0.4s"
+                data-tier="rare-sa"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Rare</h3>
+                </div>
+                <div class="tier-img">
+                  <img src="vl-rare-sa.jpg" alt="Rare Account" />
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 70.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Style: Advanced</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Abilities: Medium Level</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Fresh, No Ban</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Volleyball%20Legends%20Rare%20Style%20%2B%20Abilities', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="rare-sa">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <!-- Style Only Tiers -->
@@ -1662,16 +2688,16 @@
               id="volleyball-style-only-tiers"
               style="display: none"
             >
-              <h3 class="tier-category-title">Goldly</h3>
+              <h3 class="tier-category-title">Godly</h3>
               <div
-                class="tier-card goldly animate__animated animate__fadeInUp"
-                data-tier="goldly-so"
+                class="tier-card godly animate__animated animate__fadeInUp"
+                data-tier="godly-so"
               >
                 <div class="tier-header">
-                  <h3 class="tier-title">Goldly</h3>
+                  <h3 class="tier-title">Godly</h3>
                 </div>
                 <div class="tier-img">
-                  <img src="vl-goldly-style.jpg" alt="Goldly Style Account" />
+                  <img src="vl-godly-style.jpg" alt="Godly Style Account" />
                 </div>
                 <div class="tier-details">
                   <div class="tier-price">Rp 120.000</div>
@@ -1692,11 +2718,11 @@
                   <div class="tier-actions">
                     <button
                       class="buy-btn"
-                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Volleyball%20Legends%20Goldly%20Style%20Only', '_blank')"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Volleyball%20Legends%20Godly%20Style%20Only', '_blank')"
                     >
                       Beli Sekarang
                     </button>
-                    <button class="testimonial-btn" data-tier="goldly-so">
+                    <button class="testimonial-btn" data-tier="godly-so">
                       Testimoni
                     </button>
                   </div>
@@ -1747,6 +2773,48 @@
                   </div>
                 </div>
               </div>
+
+              <h3 class="tier-category-title">Rare</h3>
+              <div
+                class="tier-card rare animate__animated animate__fadeInUp"
+                style="animation-delay: 0.4s"
+                data-tier="rare-so"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Rare</h3>
+                </div>
+                <div class="tier-img">
+                  <img src="vl-rare-style.jpg" alt="Rare Style Account" />
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 50.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Style: Advanced</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Items: Basic Customization</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Fresh, No Ban</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Volleyball%20Legends%20Rare%20Style%20Only', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="rare-so">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <!-- Abilities Only Tiers -->
@@ -1755,18 +2823,18 @@
               id="volleyball-abilities-only-tiers"
               style="display: none"
             >
-              <h3 class="tier-category-title">Goldly</h3>
+              <h3 class="tier-category-title">Godly</h3>
               <div
-                class="tier-card goldly animate__animated animate__fadeInUp"
-                data-tier="goldly-ao"
+                class="tier-card godly animate__animated animate__fadeInUp"
+                data-tier="godly-ao"
               >
                 <div class="tier-header">
-                  <h3 class="tier-title">Goldly</h3>
+                  <h3 class="tier-title">Godly</h3>
                 </div>
                 <div class="tier-img">
                   <img
-                    src="vl-goldly-abilities.jpg"
-                    alt="Goldly Abilities Account"
+                    src="vl-godly-abilities.jpg"
+                    alt="Godly Abilities Account"
                   />
                 </div>
                 <div class="tier-details">
@@ -1788,11 +2856,11 @@
                   <div class="tier-actions">
                     <button
                       class="buy-btn"
-                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Volleyball%20Legends%20Goldly%20Abilities%20Only', '_blank')"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Volleyball%20Legends%20Godly%20Abilities%20Only', '_blank')"
                     >
                       Beli Sekarang
                     </button>
-                    <button class="testimonial-btn" data-tier="goldly-ao">
+                    <button class="testimonial-btn" data-tier="godly-ao">
                       Testimoni
                     </button>
                   </div>
@@ -1838,6 +2906,51 @@
                       Beli Sekarang
                     </button>
                     <button class="testimonial-btn" data-tier="legendary-ao">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="tier-category-title">Rare</h3>
+              <div
+                class="tier-card rare animate__animated animate__fadeInUp"
+                style="animation-delay: 0.4s"
+                data-tier="rare-ao"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Rare</h3>
+                </div>
+                <div class="tier-img">
+                  <img
+                    src="vl-rare-abilities.jpg"
+                    alt="Rare Abilities Account"
+                  />
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 60.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Abilities: Medium Level</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Skills: Basic Unlocked</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Fresh, No Ban</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Volleyball%20Legends%20Rare%20Abilities%20Only', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="rare-ao">
                       Testimoni
                     </button>
                   </div>
@@ -2001,7 +3114,10 @@
                   <h3 class="tier-title">Legendary</h3>
                 </div>
                 <div class="tier-img">
-                  <img src="bb-legendary-style-only.jpg" alt="Legendary Style Only" />
+                  <img
+                    src="bb-legendary-style-only.jpg"
+                    alt="Legendary Style Only"
+                  />
                 </div>
                 <div class="tier-details">
                   <div class="tier-price">Rp 35.000</div>
@@ -2086,8 +3202,44 @@
                 class="tier-card legendary animate__animated animate__fadeInUp"
                 style="animation-delay: 0.2s"
                 data-tier="legendary-zo"
-                >
-                                </div>
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img">
+                  <img
+                    src="bb-legendary-zone-only.jpg"
+                    alt="Legendary Zone Only"
+                  />
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 45.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Zone: High Level</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Skills: Almost Full Unlocked</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Fresh, No Ban</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Basket%20Ball%20Zero%20Legendary%20Zone%20Only', '_blank')"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-zo">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -2181,7 +3333,7 @@
             </div>
           </div>
 
-          <!-- Tombol Kembali ke Tipe Akun -->
+          <!-- Back to Account Types Button -->
           <button class="back-button" id="backToAccountTypes">
             <i class="fa-solid fa-arrow-left"></i> Kembali ke Tipe Akun
           </button>
@@ -2606,7 +3758,7 @@
         let currentGame = "bluelock"; // Default game
         let currentTierType = "style-flow"; // Default tier type
 
-        // Fungsi untuk menyembunyikan semua section
+        // Function to hide all sections
         function hideAllSections() {
           homeSection.style.display = "none";
           accountTypeSection.style.display = "none";
@@ -2617,7 +3769,7 @@
           contactSection.style.display = "none";
         }
 
-        // Fungsi untuk mengupdate nav link aktif
+        // Function to update active nav
         function updateActiveNav(section) {
           navLinks.forEach((link) => {
             if (link.getAttribute("data-section") === section) {
@@ -2628,24 +3780,24 @@
           });
         }
 
-        // Fungsi untuk menampilkan tier yang sesuai dengan game dan tipe yang dipilih
+        // Function to show tiers based on selected game and type
         function showTiers(game, type) {
-          // Sembunyikan semua tier game
+          // Hide all game tiers
           document.querySelectorAll(".game-tiers").forEach((el) => {
             el.style.display = "none";
           });
 
-          // Tampilkan tier game yang dipilih
+          // Show selected game tiers
           const gameTiers = document.getElementById(`${game}Tiers`);
           if (gameTiers) gameTiers.style.display = "block";
 
-          // Sembunyikan semua tier cards dalam game tersebut
+          // Hide all tier cards within the game
           const allTierCards = gameTiers.querySelectorAll(".tier-cards");
           allTierCards.forEach((card) => {
             card.style.display = "none";
           });
 
-          // Tampilkan tier cards yang sesuai dengan tipe yang dipilih
+          // Show tier cards based on selected type
           let tierCardsId = "";
           if (game === "bluelock") {
             if (type === "style-flow")
@@ -2677,12 +3829,12 @@
           if (tierCards) tierCards.style.display = "flex";
         }
 
-        // Fungsi untuk mengupdate tombol tipe akun berdasarkan game yang dipilih
+        // Function to update account type buttons based on selected game
         function updateAccountTypeButtons(game) {
-          accountTypesContainer.innerHTML = ""; // Kosongkan container
+          accountTypesContainer.innerHTML = ""; // Clear container
 
           if (game === "bluelock") {
-            // Tombol untuk Blue Lock Rivals
+            // Buttons for Blue Lock Rivals
             const buttons = [
               { type: "style-flow", text: "Style + Flow" },
               { type: "style-only", text: "Style Only" },
@@ -2700,7 +3852,7 @@
                 currentTierType = this.getAttribute("data-type");
                 showTiers(currentGame, currentTierType);
 
-                // Tampilkan bagian tier
+                // Show tier section
                 hideAllSections();
                 tierSection.style.display = "block";
                 updateActiveNav("home");
@@ -2708,7 +3860,7 @@
               accountTypesContainer.appendChild(button);
             });
           } else if (game === "volleyball") {
-            // Tombol untuk Volleyball Legends
+            // Buttons for Volleyball Legends
             const buttons = [
               { type: "style-abilities", text: "Style + Abilities" },
               { type: "style-only", text: "Style Only" },
@@ -2726,7 +3878,7 @@
                 currentTierType = this.getAttribute("data-type");
                 showTiers(currentGame, currentTierType);
 
-                // Tampilkan bagian tier
+                // Show tier section
                 hideAllSections();
                 tierSection.style.display = "block";
                 updateActiveNav("home");
@@ -2734,7 +3886,7 @@
               accountTypesContainer.appendChild(button);
             });
           } else if (game === "basketball") {
-            // Tombol untuk Basket Ball: Zero
+            // Buttons for Basket Ball: Zero
             const buttons = [
               { type: "style-zone", text: "Style + Zone" },
               { type: "style-only", text: "Style Only" },
@@ -2752,7 +3904,7 @@
                 currentTierType = this.getAttribute("data-type");
                 showTiers(currentGame, currentTierType);
 
-                // Tampilkan bagian tier
+                // Show tier section
                 hideAllSections();
                 tierSection.style.display = "block";
                 updateActiveNav("home");
@@ -2760,7 +3912,7 @@
               accountTypesContainer.appendChild(button);
             });
           } else if (game === "boxing") {
-            // Tombol untuk Untitled Boxing Game
+            // Button for Untitled Boxing Game
             const button = document.createElement("button");
             button.className = "type-btn animate__animated animate__fadeInUp";
             button.setAttribute("data-type", "fight-style");
@@ -2769,7 +3921,7 @@
               currentTierType = this.getAttribute("data-type");
               showTiers(currentGame, currentTierType);
 
-              // Tampilkan bagian tier
+              // Show tier section
               hideAllSections();
               tierSection.style.display = "block";
               updateActiveNav("home");
@@ -2778,7 +3930,7 @@
           }
         }
 
-        // Menampilkan section berdasarkan klik nav link
+        // Show section based on nav link click
         navLinks.forEach((link) => {
           link.addEventListener("click", function (e) {
             e.preventDefault();
@@ -2804,14 +3956,14 @@
           });
         });
 
-        // Menampilkan bagian pemilihan tipe akun ketika tombol "Pilih Akun" diklik
+        // Show account type selection when "Pilih Akun" button is clicked
         document.querySelectorAll(".game-card-btn").forEach((button) => {
           button.addEventListener("click", function (e) {
             e.preventDefault();
             const gameCard = this.closest(".game-card");
             currentGame = gameCard.getAttribute("data-game");
 
-            // Update tombol tipe akun berdasarkan game yang dipilih
+            // Update account type buttons based on selected game
             updateAccountTypeButtons(currentGame);
 
             hideAllSections();
@@ -2820,21 +3972,21 @@
           });
         });
 
-        // Kembali ke bagian pemilihan game
+        // Back to game selection
         backToGamesButton.addEventListener("click", function () {
           hideAllSections();
           homeSection.style.display = "block";
           updateActiveNav("home");
         });
 
-        // Kembali ke bagian pemilihan tipe akun
+        // Back to account type selection
         backToAccountTypesButton.addEventListener("click", function () {
           hideAllSections();
           accountTypeSection.style.display = "block";
           updateActiveNav("home");
         });
 
-        // Kembali ke bagian pemilihan tier
+        // Back to tier selection
         backToTiersButton.addEventListener("click", function () {
           hideAllSections();
           tierSection.style.display = "block";
@@ -2842,7 +3994,7 @@
           showTiers(currentGame, currentTierType);
         });
 
-        // Menampilkan testimoni ketika tombol testimoni diklik
+        // Show testimonial when testimonial button is clicked
         testimonialButtons.forEach((button) => {
           button.addEventListener("click", function () {
             hideAllSections();
@@ -2870,5 +4022,3 @@
     </script>
   </body>
 </html>
-                
-             
