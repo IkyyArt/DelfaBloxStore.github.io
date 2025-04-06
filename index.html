@@ -15,10 +15,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
     <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
       :root {
         --primary: #5865f2;
@@ -1065,54 +1062,156 @@
         background-color: #3d3d5c;
       }
 
-      /* Testimonial Section */
+      /* Improved Testimonial Section */
       .testimonial-section {
-        display: none;
-        padding: 2rem 0;
+        display: block;
+        padding: 3rem 1rem;
+        background:  #1a1a2e;
+        overflow: hidden;
+      }
+      
+      .section-title {
+        text-align: center;
+        color: white;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        font-weight: 700;
       }
 
       .testimonial-cards {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        gap: 15px;
+        gap: 25px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10px;
       }
 
       .testimonial-card {
         width: 100%;
-        max-width: 300px;
-        background-color: #1e1e2f;
+        max-width: 320px;
+        background-color: #25253a;
         border-radius: 15px;
-        padding: 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        padding: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      
+      .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
       }
 
-      .testimonial-img {
+      /* For cards with single image */
+      .testimonial-img-single {
         width: 100%;
         height: 180px;
         overflow: hidden;
         border-radius: 10px;
+        margin-bottom: 15px;
       }
 
-      .testimonial-img img {
+      /* For cards with double images */
+      .testimonial-images-container {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 15px;
+      }
+
+      .testimonial-img {
+        flex: 1;
+        height: 160px;
+        overflow: hidden;
+        border-radius: 10px;
+        position: relative;
+      }
+
+      .testimonial-img img, 
+      .testimonial-img-single img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+      
+      .testimonial-img:hover img,
+      .testimonial-img-single:hover img {
+        transform: scale(1.05);
       }
 
       .testimonial-name {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         font-weight: 600;
-        margin-top: 12px;
+        margin-top: 15px;
         text-align: center;
         color: white;
+        position: relative;
+        padding-bottom: 10px;
+      }
+      
+      .testimonial-name::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 2px;
+        background: linear-gradient(90deg, #ff7e5f, #feb47b);
       }
 
       .testimonial-text {
-        font-size: 0.85rem;
-        color: #b8b8b8;
-        margin-top: 8px;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: #d1d1d1;
+        margin-top: 15px;
         text-align: center;
+        font-style: italic;
+      }
+      
+      .testimonial-text::before,
+      .testimonial-text::after {
+        content: '"';
+        color: #ff7e5f;
+        font-size: 1.2rem;
+      }
+
+      /* Tombol kembali versi original */
+      .back-button {
+        display: block;
+        margin: 2rem auto 0;
+        padding: 10px 20px;
+        background-color: transparent;
+        color: white;
+        border: 1px solid white;
+        border-radius: 30px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      
+      .back-button:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      @media (max-width: 768px) {
+        .testimonial-cards {
+          gap: 15px;
+        }
+        
+        .testimonial-card {
+          max-width: 100%;
+        }
+        
+        .testimonial-images-container {
+          flex-direction: column;
+        }
+        
+        .testimonial-img,
+        .testimonial-img-single {
+          height: 200px;
+        }
       }
 
       /* Back Button */
@@ -5178,41 +5277,57 @@
         </div>
       </section>
 
-      <!-- Testimonial Section -->
-      <section class="testimonial-section" id="testimonialSection">
-        <div class="container">
-          <h2 class="section-title animate__animated animate__fadeIn">
-            Testimoni Pembeli
-          </h2>
-          <div class="testimonial-cards">
-            <div class="testimonial-card animate__animated animate__fadeInUp">
-              <div class="testimonial-img">
-                <img src="TEST_PELANGGAN1.png" alt="Testimoni 1" />
-              </div>
-              <div class="testimonial-name">Pelanggan 1</div>
-              <div class="testimonial-text">
-                "Akunnya keren banget, pelayanan cepat dan ramah!"
-              </div>
-            </div>
-            <div
-              class="testimonial-card animate__animated animate__fadeInUp"
-              style="animation-delay: 0.2s"
-            >
-              <div class="testimonial-img">
-                <img src="TEST_PELANGGAN2.png" alt="Testimoni 2" />
-              </div>
-              <div class="testimonial-name">Pelanggan 2</div>
-              <div class="testimonial-text">
-                "Itemnya lengkap, worth it banget harganya!"
-              </div>
-            </div>
-          </div>
-          <button class="back-button" id="backToTiers">
-            <i class="fa-solid fa-arrow-left"></i> Kembali ke Pilihan Tier
-          </button>
+    <!-- Testimonial Section -->
+    <section class="testimonial-section" id="testimonialSection">
+      <div class="container">
+        <h2 class="section-title animate__animated animate__fadeIn">
+          Testimoni Pembeli
+        </h2>
+    <div class="testimonial-cards">
+      <!-- Pelanggan 1 (Single Image) -->
+      <div class="testimonial-card animate__animated animate__fadeInUp">
+        <div class="testimonial-img-single">
+          <img src="TEST_PELANGGAN1.png" alt="Testimoni 1" />
         </div>
-      </section>
-
+        <div class="testimonial-name">Pelanggan 1</div>
+        <div class="testimonial-text">
+          Akunnya keren banget, pelayanan cepat dan ramah!
+        </div>
+      </div>
+      
+      <!-- Pelanggan 2 (Single Image) -->
+      <div class="testimonial-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+        <div class="testimonial-img-single">
+          <img src="TEST_PELANGGAN2.png" alt="Testimoni 2" />
+        </div>
+        <div class="testimonial-name">Pelanggan 2</div>
+        <div class="testimonial-text">
+          Itemnya lengkap, worth it banget harganya!
+        </div>
+      </div>
+      
+      <!-- Pelanggan 3 (Double Images Horizontal) -->
+      <div class="testimonial-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
+        <div class="testimonial-images-container">
+          <div class="testimonial-img">
+            <img src="TEST_PELANGGAN3.1.jpg" alt="Testimoni 3 - Foto 1" />
+          </div>
+          <div class="testimonial-img">
+            <img src="TEST_PELANGGAN3.2.jpg" alt="Testimoni 3 - Foto 2" />
+          </div>
+        </div>
+        <div class="testimonial-name">Pelanggan 3</div>
+        <div class="testimonial-text">
+          Kualitas produk premium, seller sangat profesional!
+        </div>
+      </div>
+    </div>
+    
+    <button class="back-button" id="backToTiers">
+      <i class="fa-solid fa-arrow-left"></i> Kembali ke Pilihan Tier
+    </button>
+  </div>
+</section>
       <!-- Accounts Section -->
       <section class="accounts-section" id="accountsSection">
         <div class="container">
