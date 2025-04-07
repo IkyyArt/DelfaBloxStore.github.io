@@ -228,7 +228,7 @@
         box-shadow: 0 15px 40px rgba(59, 255, 199, 0.4);
       }
       .game-card[data-game="basketball"] .game-card-btn {
-        background: linear-gradient(135deg, #9bb662, #00ff80);
+        background: linear-gradient(135deg, #88c7b5, #00ff80);
       }
 
       .game-card[data-game="boxing"]:hover {
@@ -1605,6 +1605,15 @@
         box-shadow: 0 10px 20px rgba(88, 101, 242, 0.3);
       }
 
+      /* Tambahkan ini di bagian CSS */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .tier-section {
+        scroll-margin-top: 20px; /* Memberi jarak saat discroll */
+      }
+
       /* Responsive Design */
       @media (max-width: 768px) {
         .header-content {
@@ -1696,7 +1705,7 @@
         <div class="header-content">
           <div class="logo animate__animated animate__fadeInDown">
             <i class="fa-solid fa-crown"></i>
-            <span>Ikyy<span style="color: #ffd700">Blox</span> Store</span>
+            <span>Delfa<span style="color: #ffd700">Blox</span> Store</span>
           </div>
           <div class="nav-menu animate__animated animate__fadeInDown">
             <a href="#" class="nav-link active" data-section="home">Home</a>
@@ -2114,7 +2123,7 @@
 
       <!-- Tier Section -->
       <section class="tier-section" id="tierSection">
-        <div class="container">
+        <div class="container" id="tierSectionContainer">
           <h2
             class="section-title animate__animated animate__fadeIn"
             id="tierTitle"
@@ -5973,12 +5982,18 @@
           updateActiveNav("home");
         });
 
-        // Back to tier selection
-        backToTiersButton.addEventListener("click", function () {
+       // Back to tier selection
+        backToTiersButton.addEventListener("click", function() {
           hideAllSections();
           tierSection.style.display = "block";
           updateActiveNav("home");
           showTiers(currentGame, currentTierType);
+          
+          // Scroll ke paling atas halaman
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
         });
 
         // Show testimonial when testimonial button is clicked
