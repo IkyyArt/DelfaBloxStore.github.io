@@ -15,7 +15,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
     <!-- Font Awesome -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
       :root {
         --primary: #5865f2;
@@ -221,7 +221,7 @@
         box-shadow: 0 15px 40px rgba(255, 255, 255, 0.4);
       }
       .game-card[data-game="volleyball"] .game-card-btn {
-        background: linear-gradient(135deg, #dbd7d7, #6c6c6c);
+        background: linear-gradient(135deg, #dbdbd7, #6c6c6c);
       }
 
       .game-card[data-game="basketball"]:hover {
@@ -236,6 +236,13 @@
       }
       .game-card[data-game="boxing"] .game-card-btn {
         background: linear-gradient(135deg, #981ee9, #c2185b);
+      }
+
+      .game-card[data-game="bloxfruit"]:hover {
+        box-shadow: 0 15px 40px rgba(247, 174, 2, 0.842);
+      }
+      .game-card[data-game="bloxfruit"] .game-card-btn {
+        background: linear-gradient(135deg, #04b327, #d9d203);
       }
 
       .game-card:hover {
@@ -1793,6 +1800,21 @@
                   Jadilah juara tinju dengan gaya bertarung terbaik!
                 </p>
                 <a href="#" class="game-card-btn">Pilih Akun</a>
+              </div>
+            </div>
+
+            <!-- Blox Fruit -->
+            <div class="game-card animate__animated animate__fadeInUp" data-game="bloxfruit">
+              <div class="game-card-img">
+                <img src="BloxFruit.png" alt="Anime Vanguard" />
+              </div>
+              <div class="game-card-content">
+                <h3 class="game-card-title">Blox Fruit</h3>
+                <h3 class="game-card-title">(COMING SOON)</h3>
+                <p class="game-card-desc">
+                  Jadilah Raja Baja Laut di Blox Fruit!
+                </p>
+                <a href="#" class="game-card-btn">Pilih Fruit</a>
               </div>
             </div>
           </div>
@@ -5277,80 +5299,887 @@
                 </div>
               </div>
             </div>
+          </div>            
+
+          <!-- Blox Fruit Tiers -->
+          <div class="game-tiers" id="bloxfruitTiers" style="display: none">
+            <!-- All Fruit Tiers -->
+            <div class="tier-cards" id="bloxfruit-All-Fruit-tiers">              
+              <h3 class="tier-category-title">Mythic</h3>
+              <div class="tier-card mythic animate__animated animate__fadeInUp" style="animation-delay: 0.2s" data-tier="mythic-cw">
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="COMING_SOON.png" alt="Mythic Character" />
+                  </div>                
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 175.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Fruit : Dragon ( West )</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 0</span>
+                    </div>                    
+                  </div>
+                  <div class="tier-actions">
+                    <button class="buy-btn" onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Anime%20Vanguard%20Mythic%20Character%20%2B%20Weapon', '_blank')">
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-cw">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+                <div class="tier-card mythic animate__animated animate__fadeInUp" style="animation-delay: 0.2s" data-tier="mythic-cw">
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="DragonEast.png" alt="Mythic Character" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 150.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Fruit : Dragon ( East )</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 0</span>
+                    </div>                    
+                  </div>
+                  <div class="tier-actions">
+                    <button class="buy-btn" onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Anime%20Vanguard%20Mythic%20Character%20%2B%20Weapon', '_blank')">
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-cw">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tier-card mythic animate__animated animate__fadeInUp" style="animation-delay: 0.2s" data-tier="mythic-cw">
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="Kitsune.png" alt="Mythic Character" />
+                  </div>               
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 35.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Fruit : Kitsune</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 0</span>
+                    </div>                    
+                  </div>
+                  <div class="tier-actions">
+                    <button class="buy-btn" onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Anime%20Vanguard%20Mythic%20Character%20%2B%20Weapon', '_blank')">
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-cw">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tier-card mythic animate__animated animate__fadeInUp" style="animation-delay: 0.2s" data-tier="mythic-cw">
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="Yeti.png" alt="Mythic Character" />
+                  </div>                  
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 26.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Fruit : Yeti</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 0</span>
+                    </div>                    
+                  </div>
+                  <div class="tier-actions">
+                    <button class="buy-btn" onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Anime%20Vanguard%20Mythic%20Character%20%2B%20Weapon', '_blank')">
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-cw">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tier-card mythic animate__animated animate__fadeInUp" style="animation-delay: 0.2s" data-tier="mythic-cw">
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="Gas.png" alt="Mythic Character" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 16.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Fruit : Gas</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 0</span>
+                    </div>                    
+                  </div>
+                  <div class="tier-actions">
+                    <button class="buy-btn" onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Anime%20Vanguard%20Mythic%20Character%20%2B%20Weapon', '_blank')">
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-cw">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tier-card mythic animate__animated animate__fadeInUp" style="animation-delay: 0.2s" data-tier="mythic-cw">
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="Leopard.png" alt="Mythic Character" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 13.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Fruit : Leopard</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 0</span>
+                    </div>                    
+                  </div>
+                  <div class="tier-actions">
+                    <button class="buy-btn" onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Anime%20Vanguard%20Mythic%20Character%20%2B%20Weapon', '_blank')">
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-cw">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tier-card mythic animate__animated animate__fadeInUp" style="animation-delay: 0.2s" data-tier="mythic-cw">
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="Dough.png" alt="Mythic Character" />
+                  </div>                  
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Fruit : Dough</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 0</span>
+                    </div>                    
+                  </div>
+                  <div class="tier-actions">
+                    <button class="buy-btn" onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Anime%20Vanguard%20Mythic%20Character%20%2B%20Weapon', '_blank')">
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-cw">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tier-card mythic animate__animated animate__fadeInUp" style="animation-delay: 0.2s" data-tier="mythic-cw">
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="T-rex.png" alt="Mythic Character" />
+                  </div>                
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 7.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Fruit : T-Rex</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 0</span>
+                    </div>                    
+                  </div>
+                  <div class="tier-actions">
+                    <button class="buy-btn" onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Anime%20Vanguard%20Mythic%20Character%20%2B%20Weapon', '_blank')">
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-cw">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tier-card mythic animate__animated animate__fadeInUp" style="animation-delay: 0.2s" data-tier="mythic-cw">
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="Mammonth.png" alt="Mythic Character" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 7.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Fruit : Mammonth</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 0</span>
+                    </div>                    
+                  </div>
+                  <div class="tier-actions">
+                    <button class="buy-btn" onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Anime%20Vanguard%20Mythic%20Character%20%2B%20Weapon', '_blank')">
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-cw">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tier-card mythic animate__animated animate__fadeInUp" style="animation-delay: 0.2s" data-tier="mythic-cw">
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="Spirit.png" alt="Mythic Character" />
+                  </div>               
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 7.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Fruit : Spirit</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 0</span>
+                    </div>                    
+                  </div>
+                  <div class="tier-actions">
+                    <button class="buy-btn" onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Anime%20Vanguard%20Mythic%20Character%20%2B%20Weapon', '_blank')">
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-cw">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>           
+
+              <div class="tier-card mythic animate__animated animate__fadeInUp" style="animation-delay: 0.2s" data-tier="mythic-cw">
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="Control.png" alt="Mythic Character" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 7.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Fruit : Control</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 0</span>
+                    </div>                    
+                  </div>
+                  <div class="tier-actions">
+                    <button class="buy-btn" onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Anime%20Vanguard%20Mythic%20Character%20%2B%20Weapon', '_blank')">
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-cw">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tier-card mythic animate__animated animate__fadeInUp" style="animation-delay: 0.2s" data-tier="mythic-cw">
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="Gravity.png" alt="Mythic Character" />
+                  </div>                
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 7.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Fruit : Gravity</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 0</span>
+                    </div>                    
+                  </div>
+                  <div class="tier-actions">
+                    <button class="buy-btn" onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Anime%20Vanguard%20Mythic%20Character%20%2B%20Weapon', '_blank')">
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-cw">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+                <div class="tier-card mythic animate__animated animate__fadeInUp" style="animation-delay: 0.2s" data-tier="mythic-cw">
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="Venom.png" alt="Mythic Character" />
+                  </div>                
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 6.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Fruit : Venom</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 0</span>
+                    </div>                    
+                  </div>
+                  <div class="tier-actions">
+                    <button class="buy-btn" onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Anime%20Vanguard%20Mythic%20Character%20%2B%20Weapon', '_blank')">
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-cw">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tier-card mythic animate__animated animate__fadeInUp" style="animation-delay: 0.2s" data-tier="mythic-cw">
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="Shadow.png" alt="Mythic Character" />
+                  </div>               
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 6.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Fruit : Shadow</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 0</span>
+                    </div>                    
+                  </div>
+                  <div class="tier-actions">
+                    <button class="buy-btn" onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Anime%20Vanguard%20Mythic%20Character%20%2B%20Weapon', '_blank')">
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-cw">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>            
+
+              <h3 class="tier-category-title">Legendary</h3>
+              <div class="tier-card legendary animate__animated animate__fadeInUp" data-tier="legendary-cw">
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="AnimeVanguard_Char1.png" alt="Legendary Character" />
+                  </div>
+                  <div class="tier-img">
+                    <img src="AnimeVanguard_Weapon1.png" alt="Legendary Weapon" />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 5.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Fruit: Quake</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 0</span>
+                    </div>                    
+                  </div>
+                  <div class="tier-actions">
+                    <button class="buy-btn" onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Anime%20Vanguard%20Legendary%20Character%20%2B%20Weapon', '_blank')">
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-cw">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tier-card legendary animate__animated animate__fadeInUp" data-tier="legendary-cw">
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="AnimeVanguard_Char1.png" alt="Legendary Character" />
+                  </div>
+                  <div class="tier-img">
+                    <img src="AnimeVanguard_Weapon1.png" alt="Legendary Weapon" />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 5.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Fruit: Buddha</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 0</span>
+                    </div>                    
+                  </div>
+                  <div class="tier-actions">
+                    <button class="buy-btn" onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Anime%20Vanguard%20Legendary%20Character%20%2B%20Weapon', '_blank')">
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-cw">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="tier-card legendary animate__animated animate__fadeInUp" data-tier="legendary-cw">
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="AnimeVanguard_Char1.png" alt="Legendary Character" />
+                  </div>
+                  <div class="tier-img">
+                    <img src="AnimeVanguard_Weapon1.png" alt="Legendary Weapon" />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 5.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Fruit: Love</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 0</span>
+                    </div>                    
+                  </div>
+                  <div class="tier-actions">
+                    <button class="buy-btn" onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Anime%20Vanguard%20Legendary%20Character%20%2B%20Weapon', '_blank')">
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-cw">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tier-card legendary animate__animated animate__fadeInUp" data-tier="legendary-cw">
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="AnimeVanguard_Char1.png" alt="Legendary Character" />
+                  </div>
+                  <div class="tier-img">
+                    <img src="AnimeVanguard_Weapon1.png" alt="Legendary Weapon" />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 5.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Fruit: Spider</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 0</span>
+                    </div>                    
+                  </div>
+                  <div class="tier-actions">
+                    <button class="buy-btn" onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Anime%20Vanguard%20Legendary%20Character%20%2B%20Weapon', '_blank')">
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-cw">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tier-card legendary animate__animated animate__fadeInUp" data-tier="legendary-cw">
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="AnimeVanguard_Char1.png" alt="Legendary Character" />
+                  </div>
+                  <div class="tier-img">
+                    <img src="AnimeVanguard_Weapon1.png" alt="Legendary Weapon" />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 5.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Fruit: Sound</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 0</span>
+                    </div>                    
+                  </div>
+                  <div class="tier-actions">
+                    <button class="buy-btn" onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Anime%20Vanguard%20Legendary%20Character%20%2B%20Weapon', '_blank')">
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-cw">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tier-card legendary animate__animated animate__fadeInUp" data-tier="legendary-cw">
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="AnimeVanguard_Char1.png" alt="Legendary Character" />
+                  </div>
+                  <div class="tier-img">
+                    <img src="AnimeVanguard_Weapon1.png" alt="Legendary Weapon" />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 5.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Fruit: Phoenix</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 0</span>
+                    </div>                    
+                  </div>
+                  <div class="tier-actions">
+                    <button class="buy-btn" onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Anime%20Vanguard%20Legendary%20Character%20%2B%20Weapon', '_blank')">
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-cw">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tier-card legendary animate__animated animate__fadeInUp" data-tier="legendary-cw">
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="AnimeVanguard_Char1.png" alt="Legendary Character" />
+                  </div>
+                  <div class="tier-img">
+                    <img src="AnimeVanguard_Weapon1.png" alt="Legendary Weapon" />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 5.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Fruit: Portal</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 0</span>
+                    </div>                    
+                  </div>
+                  <div class="tier-actions">
+                    <button class="buy-btn" onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Anime%20Vanguard%20Legendary%20Character%20%2B%20Weapon', '_blank')">
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-cw">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tier-card legendary animate__animated animate__fadeInUp" data-tier="legendary-cw">
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="AnimeVanguard_Char1.png" alt="Legendary Character" />
+                  </div>
+                  <div class="tier-img">
+                    <img src="AnimeVanguard_Weapon1.png" alt="Legendary Weapon" />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 5.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Fruit: Rumble</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 0</span>
+                    </div>                    
+                  </div>
+                  <div class="tier-actions">
+                    <button class="buy-btn" onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Anime%20Vanguard%20Legendary%20Character%20%2B%20Weapon', '_blank')">
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-cw">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tier-card legendary animate__animated animate__fadeInUp" data-tier="legendary-cw">
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="AnimeVanguard_Char1.png" alt="Legendary Character" />
+                  </div>
+                  <div class="tier-img">
+                    <img src="AnimeVanguard_Weapon1.png" alt="Legendary Weapon" />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 5.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Fruit: Pain</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 0</span>
+                    </div>                    
+                  </div>
+                  <div class="tier-actions">
+                    <button class="buy-btn" onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Anime%20Vanguard%20Legendary%20Character%20%2B%20Weapon', '_blank')">
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-cw">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tier-card legendary animate__animated animate__fadeInUp" data-tier="legendary-cw">
+                <div class="tier-header">
+                  <h3 class="tier-title">Legendary</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="AnimeVanguard_Char1.png" alt="Legendary Character" />
+                  </div>
+                  <div class="tier-img">
+                    <img src="AnimeVanguard_Weapon1.png" alt="Legendary Weapon" />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 5.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Fruit: Blizzard</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 0</span>
+                    </div>                    
+                  </div>
+                  <div class="tier-actions">
+                    <button class="buy-btn" onclick="window.open('https://wa.me/6288227789219?text=Saya%20ingin%20membeli%20akun%20Anime%20Vanguard%20Legendary%20Character%20%2B%20Weapon', '_blank')">
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="legendary-cw">
+                      Testimoni
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <!-- Back to Account Types Button -->
-          <button class="back-button" id="backToAccountTypes">
-            <i class="fa-solid fa-arrow-left"></i> Kembali ke Tipe Akun
+            <!-- Back to Account Types Button -->
+            <button class="back-button" id="backToAccountTypes">
+                <i class="fa-solid fa-arrow-left"></i> Kembali ke Tipe Akun
+              </button>
+              </div>
+          </section>
+
+          <!-- Testimonial Section -->
+          <section class="testimonial-section" id="testimonialSection">
+            <div class="container">
+              <h2 class="section-title animate__animated animate__fadeIn">
+                Testimoni Pembeli
+              </h2>
+          <div class="testimonial-cards">
+            <!-- Pelanggan 1 (Single Image) -->
+            <div class="testimonial-card animate__animated animate__fadeInUp">
+              <div class="testimonial-img-single">
+                <img src="TEST_PELANGGAN1.png" alt="Testimoni 1" />
+              </div>
+              <div class="testimonial-name">Pelanggan 1</div>
+              <div class="testimonial-text">
+                Akunnya sesuai dengan di foto keren banget, pelayanan cepat dan ramah!
+              </div>
+            </div>
+            
+            <!-- Pelanggan 2 (Single Image) -->
+            <div class="testimonial-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+              <div class="testimonial-img-single">
+                <img src="TEST_PELANGGAN2.png" alt="Testimoni 2" />
+              </div>
+              <div class="testimonial-name">Pelanggan 2</div>
+              <div class="testimonial-text">
+                Waah , akun Don Lorenzonya sesuai dengan di foto, puas banget gw.
+              </div>
+            </div>
+            
+            <!-- Pelanggan 3 (Double Images Horizontal) -->
+            <div class="testimonial-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
+              <div class="testimonial-images-container">
+                <div class="testimonial-img">
+                  <img src="TEST_PELANGGAN3.1.jpg" alt="Testimoni 3 - Foto 1" />
+                </div>
+                <div class="testimonial-img">
+                  <img src="TEST_PELANGGAN3.2.jpg" alt="Testimoni 3 - Foto 2" />
+                </div>
+              </div>
+              <div class="testimonial-name">Pelanggan 3</div>
+              <div class="testimonial-text">
+                Akhirnya kebeli juga NEL Isagi, di tempat lain terlalu murah tapi scam , tapi di sini aman dan nyaman.
+              </div>
+            </div>
+
+            <!-- Pelanggan 4 (Single Image) -->
+            <div class="testimonial-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+              <div class="testimonial-img-single">
+                <img src="TEST_PELANGGAN4.1.jpg" alt="Testimoni 2" />
+              </div>
+                <div class="testimonial-img-single">
+                <img src="TEST_PELANGGAN4.2.jpg" alt="Testimoni 2" />
+              </div>
+              <div class="testimonial-name">Pelanggan 4</div>
+              <div class="testimonial-text">
+                Gelooo, akun King + Awakend Genius ( PREMIUM RUBY ) sesuai dengan di foto, puas banget slurr.
+              </div>
+            </div>
+          </div>
+          
+          <button class="back-button" id="backToTiers">
+            <i class="fa-solid fa-arrow-left"></i> Kembali ke Pilihan Tier
           </button>
         </div>
       </section>
 
-    <!-- Testimonial Section -->
-    <section class="testimonial-section" id="testimonialSection">
-      <div class="container">
-        <h2 class="section-title animate__animated animate__fadeIn">
-          Testimoni Pembeli
-        </h2>
-    <div class="testimonial-cards">
-      <!-- Pelanggan 1 (Single Image) -->
-      <div class="testimonial-card animate__animated animate__fadeInUp">
-        <div class="testimonial-img-single">
-          <img src="TEST_PELANGGAN1.png" alt="Testimoni 1" />
-        </div>
-        <div class="testimonial-name">Pelanggan 1</div>
-        <div class="testimonial-text">
-          Akunnya sesuai dengan di foto keren banget, pelayanan cepat dan ramah!
-        </div>
-      </div>
-      
-      <!-- Pelanggan 2 (Single Image) -->
-      <div class="testimonial-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
-        <div class="testimonial-img-single">
-          <img src="TEST_PELANGGAN2.png" alt="Testimoni 2" />
-        </div>
-        <div class="testimonial-name">Pelanggan 2</div>
-        <div class="testimonial-text">
-          Waah , akun Don Lorenzonya sesuai dengan di foto, puas banget gw.
-        </div>
-      </div>
-      
-      <!-- Pelanggan 3 (Double Images Horizontal) -->
-      <div class="testimonial-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
-        <div class="testimonial-images-container">
-          <div class="testimonial-img">
-            <img src="TEST_PELANGGAN3.1.jpg" alt="Testimoni 3 - Foto 1" />
-          </div>
-          <div class="testimonial-img">
-            <img src="TEST_PELANGGAN3.2.jpg" alt="Testimoni 3 - Foto 2" />
-          </div>
-        </div>
-        <div class="testimonial-name">Pelanggan 3</div>
-        <div class="testimonial-text">
-          Akhirnya kebeli juga NEL Isagi, di tempat lain terlalu murah tapi scam , tapi di sini aman dan nyaman.
-        </div>
-      </div>
-
-      <!-- Pelanggan 4 (Single Image) -->
-      <div class="testimonial-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
-        <div class="testimonial-img-single">
-          <img src="TEST_PELANGGAN4.1.jpg" alt="Testimoni 2" />
-        </div>
-          <div class="testimonial-img-single">
-          <img src="TEST_PELANGGAN4.2.jpg" alt="Testimoni 2" />
-        </div>
-        <div class="testimonial-name">Pelanggan 4</div>
-        <div class="testimonial-text">
-          Gelooo, akun King + Awakend Genius ( PREMIUM RUBY ) sesuai dengan di foto, puas banget slurr.
-        </div>
-      </div>
-    </div>
-    
-    <button class="back-button" id="backToTiers">
-      <i class="fa-solid fa-arrow-left"></i> Kembali ke Pilihan Tier
-    </button>
-  </div>
-</section>
       <!-- Accounts Section -->
       <section class="accounts-section" id="accountsSection">
         <div class="container">
@@ -5819,6 +6648,9 @@
           } else if (game === "boxing") {
             if (type === "fight-style")
               tierCardsId = "boxing-fight-style-tiers";
+          } else if (game === "bloxfruit") {
+            if (type === "All-Fruit")
+              tierCardsId = "bloxfruit-All-Fruit-tiers";           
           }
 
           const tierCards = gameTiers.querySelector(`#${tierCardsId}`);
@@ -5923,6 +6755,30 @@
               updateActiveNav("home");
             });
             accountTypesContainer.appendChild(button);
+          } else if (game === "bloxfruit") {
+            // Buttons for Anime Vanguard
+            const buttons = [
+              { type: "All-Fruit", text: "Pricelist Fruit" }
+            ];
+
+            buttons.forEach((btn, index) => {
+              const button = document.createElement("button");
+              button.className = `type-btn animate__animated animate__fadeIn${
+                index === 0 ? "Left" : index === 1 ? "Up" : "Right"
+              }`;
+              button.setAttribute("data-type", btn.type);
+              button.textContent = btn.text;
+              button.addEventListener("click", function () {
+                currentTierType = this.getAttribute("data-type");
+                showTiers(currentGame, currentTierType);
+
+                // Show tier section
+                hideAllSections();
+                tierSection.style.display = "block";
+                updateActiveNav("home");
+              });
+              accountTypesContainer.appendChild(button);
+            });
           }
         }
 
