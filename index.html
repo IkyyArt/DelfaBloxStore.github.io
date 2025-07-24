@@ -31,6 +31,13 @@
         --goldly: #ff9900;
         --coming-soon: #00ff00;
         --rare: #3498db;
+        --Gold: #ffcc00;
+        --Basic: #c3c0b7;
+        --Diamond: #00ddff;
+        --Rainbow: #ff00ff;
+        --Candy: #ff00cc;
+        --Secret: #221931;
+        --BrainrotGod: #6600ff;
       }
 
       * {
@@ -211,10 +218,10 @@
 
       /* Warna khusus untuk setiap game card */
       .game-card[data-game="bluelock"]:hover {
-        box-shadow: 0 15px 40px rgb(235, 9, 9);
+        box-shadow: 0 15px 40px rgb(108, 4, 204);
       }
       .game-card[data-game="bluelock"] .game-card-btn {
-        background: linear-gradient(135deg, #df0606, rgb(182, 71, 71));
+        background: linear-gradient(135deg, #b096d6, rgb(21, 200, 69));
       }
 
       .game-card[data-game="volleyball"]:hover {
@@ -225,10 +232,10 @@
       }
 
       .game-card[data-game="basketball"]:hover {
-        box-shadow: 0 15px 40px rgba(0, 239, 115, 0.885);
+        box-shadow: 0 15px 40px rgba(255, 225, 0, 0.885);
       }
       .game-card[data-game="basketball"] .game-card-btn {
-        background: linear-gradient(135deg, #90eabb, #08f783);
+        background: linear-gradient(135deg, #d2c887, rgb(254, 212, 0));
       }
 
       .game-card[data-game="boxing"]:hover {
@@ -243,6 +250,13 @@
       }
       .game-card[data-game="bloxfruit"] .game-card-btn {
       background: linear-gradient(135deg, #981ee9, #c2185b);
+      }
+
+      .game-card[data-game="brainrot"]:hover {
+        box-shadow: 0 15px 40px rgba(17, 251, 173, 0.758);
+      }
+      .game-card[data-game="brainrot"] .game-card-btn {
+        background: linear-gradient(135deg, #fbd9d9,  #24d410);
       }
 
       .game-card:hover {
@@ -884,6 +898,34 @@
         border: 2px solid var(--rare);
       }
 
+      .tier-card.Gold {
+        border: 2px solid var(--Gold);
+      }
+
+      .tier-card.Basic {
+        border: 2px solid var(--Basic);
+      }
+
+      .tier-card.Diamond {
+        border: 2px solid var(--Diamond);
+      }
+
+      .tier-card.Candy {
+        border: 2px solid var(--Candy);
+      }
+
+      .tier-card.Rainbow {
+        border: 2px solid var(--Rainbow);
+      }
+
+      .tier-card.Secret {
+        border: 2px solid var(--Secret);
+      }
+
+      .tier-card.BrainrotGod {
+        border: 2px solid var(--BrainrotGod);
+      }
+
       .tier-card.coming-soon {
         border: 2px dashed var(--coming-soon);
         background: linear-gradient(145deg, #2a2a3a, #1e1e2f);
@@ -942,6 +984,55 @@
 
       .rare .tier-title {
         background: linear-gradient(135deg, #3498db, #2ecc71);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .Gold .tier-title {
+        background: linear-gradient(135deg, #f1c40f, #f39c12);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .Basic .tier-title {
+        background: linear-gradient(135deg, #34495e, #2c3e50);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .Diamond .tier-title {
+        background: linear-gradient(135deg, #9b59b6, #8e44ad);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .Candy .tier-title {
+        background: linear-gradient(135deg, #f1c40f, #f39c12);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .Rainbow .tier-title {
+        background: linear-gradient(135deg, #f1c40f, #f39c12);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .Secret .tier-title {
+        background: linear-gradient(135deg, #f1c40f, #f39c12);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .Brainrot God .tier-title {
+        background: linear-gradient(135deg, #f1c40f, #f39c12);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -1729,7 +1820,7 @@
       <section class="game-section" id="homeSection">
         <div class="container">
           <h2 class="section-title animate__animated animate__fadeIn">
-            Pilih Akun Roblox
+            Pilih Akun & Item Roblox
           </h2>
           <div class="game-cards">
             <!-- Blue Lock Rivals -->
@@ -1816,6 +1907,23 @@
                 <a href="#" class="game-card-btn">Pilih Fruit</a>
               </div>
             </div>
+
+            <!-- Blue Lock Rivals -->
+            <div
+              class="game-card animate__animated animate__fadeInUp"
+              data-game="brainrot"
+            >
+              <div class="game-card-img">
+                <img src="Brainrot.png" alt="Blue Lock Rivals" />
+              </div>
+              <div class="game-card-content">
+                <h3 class="game-card-title">Steal a Brainrot</h3>
+                <p class="game-card-desc">
+                  Menjadi pemain terkaya dan tak terkalahkan di Steal a Brainrot
+                </p>
+                <a href="#" class="game-card-btn">Pilih Brainrot</a>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1829,7 +1937,7 @@
               </h2>
               <p class="premium-subtitle">
                 Unlock ultimate power across all games with our exclusive
-                premium bundles. Get the most valuable accounts with rare items
+                premium bundles. Get the most valuable accounts with Premium items
                 and maxed stats.
               </p>
             </div>
@@ -2133,7 +2241,7 @@
       <section class="account-type-section" id="accountTypeSection">
         <div class="container">
           <h2 class="section-title animate__animated animate__fadeIn">
-            Pilih Tipe Akun
+            Pilih Tipe Akun / Item
           </h2>
           <div class="account-types">
             <!-- Buttons will be dynamically generated based on game selection -->
@@ -2152,7 +2260,7 @@
             class="section-title animate__animated animate__fadeIn"
             id="tierTitle"
           >
-            Pilih Tier Akun
+            Pilih Tier Akun / Item
           </h2>
 
           <!-- Blue Lock Tiers -->
@@ -5929,12 +6037,1641 @@
                     <button class="testimonial-btn" data-tier="legendary-cw">
                       Testimoni
                     </button>
+                    </div>
+                  </div>
+                </div>    
+              </div>
+            </div>
+
+            <!-- Brainrot Tiers -->
+          <div class="game-tiers" id="brainrotTiers">
+            <!-- Basic Tiers -->
+            <div class="tier-cards" id="brainrot-pricellist-basic-tiers">
+              <h3 class="tier-category-title">Secret</h3>  
+              <div
+                class="tier-card world-class animate__animated animate__fadeInUp"
+                data-tier="world-class-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Secret</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="PROGRESS.png" alt="Sae Style" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Style: Sae</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Flow: Genius</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Status: Datpol, Notopi, Siap MC</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="world-class-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+
+              <h3 class="tier-category-title">Brainrot God</h3>  
+              <div
+                class="tier-card BrainrotGod animate__animated animate__fadeInUp"
+                data-tier="BrainrotGod-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Brainrot God</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                     <img src="Tralalero.jpg" alt="Sae Style" />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Tralalero Tralala</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 4</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="BrainrotGod-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+
+                  <div
+                class="tier-card BrainrotGod animate__animated animate__fadeInUp"
+                data-tier="BrainrotGod-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Brainrot God</h3>
+                </div>
+                <div class="tier-img-container">
+                   <div class="tier-img">
+                     <img src="Elefanto.jpg" alt="Sae Style" />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Cocofanto Elefanto</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 3</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="BrainrotGod-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+
+                  <div
+                class="tier-card BrainrotGod animate__animated animate__fadeInUp"
+                data-tier="BrainrotGod-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Brainrot God</h3>
+                </div>
+                <div class="tier-img-container">
+                   <div class="tier-img">
+                     <img src="Odin.jpg" alt="Sae Style" />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Odin din din dun</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 2</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="BrainrotGod-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+
+                  <div
+                class="tier-card BrainrotGod animate__animated animate__fadeInUp"
+                data-tier="BrainrotGod-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Brainrot God</h3>
+                </div>
+                <div class="tier-img-container">
+                   <div class="tier-img">
+                     <img src="Giraf.jpg" alt="Sae Style" />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Girafa Celeste</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 5</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="BrainrotGod-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+
+                  <div
+                class="tier-card BrainrotGod animate__animated animate__fadeInUp"
+                data-tier="BrainrotGod-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Brainrot God</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="Turbo 3000.jpg" alt="Sae Style" />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Trenostruzzo Turbo 3000</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 1</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="BrainrotGod-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+
+              <h3 class="tier-category-title">Mythic</h3>  
+              <div
+                class="tier-card mythic animate__animated animate__fadeInUp"
+                data-tier="mythic-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                   <div class="tier-img">
+                     <img src="Zibra.jpg" alt="Sae Style" />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Zibra Zubra Zibralini</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 4</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                class="tier-card mythic animate__animated animate__fadeInUp"
+                data-tier="mythic-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                   <div class="tier-img">
+                     <img src="Crocodillo.jpg" alt="Sae Style" />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Bombardiro Crocodillo</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 4</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+                
+            <div
+                class="tier-card mythic animate__animated animate__fadeInUp"
+                data-tier="mythic-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                   <div class="tier-img">
+                     <img src="Gusini.jpg" alt="Sae Style" />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Bombombini Gusini</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 2</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+
+                  <div
+                class="tier-card mythic animate__animated animate__fadeInUp"
+                data-tier="mythic-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                   <div class="tier-img">
+                     <img src="Kuda.jpg" alt="Sae Style" />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Carvallo Virtuoso</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 3</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+
+                  <div
+                class="tier-card mythic animate__animated animate__fadeInUp"
+                data-tier="mythic-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                     <img src="Bird.jpg" alt="Sae Style" />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Spioniro Golubiro</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 2</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+
+                  <div
+                class="tier-card mythic animate__animated animate__fadeInUp"
+                data-tier="mythic-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                     <img src="Onta.jpg" alt="Sae Style" />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Frigo Camelo</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 3</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+
+                  <div
+                class="tier-card mythic animate__animated animate__fadeInUp"
+                data-tier="mythic-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                     <img src="Rhino.jpg" alt="Sae Style" />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Rhino Toasterino</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 3</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+
+              <div
+                class="tier-card mythic animate__animated animate__fadeInUp"
+                data-tier="mythic-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                     <img src="Tiger.jpg" alt="Sae Style" />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Tigrillini Watermelini</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 3</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                class="tier-card mythic animate__animated animate__fadeInUp"
+                data-tier="mythic-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                   <div class="tier-img">
+                     <img src="Orangutan.jpg" alt="Sae Style" />
+                  </div>
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Orangutini Ananassini</span>
+                    </div>
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 1</span>
+                    </div>
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <!-- Gold Tiers -->
+            <div class="tier-cards" id="brainrot-pricellist-gold-tiers">
+              <h3 class="tier-category-title">Secret</h3>  
+              <div
+                class="tier-card world-class animate__animated animate__fadeInUp"
+                data-tier="world-class-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Secret</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="PROGRESS.png" alt="Sae Style" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Style: Sae</span>
+                    </div>                                     
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="world-class-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+
+                <h3 class="tier-category-title">Brainrot God</h3>  
+              <div
+                class="tier-card BrainrotGod animate__animated animate__fadeInUp"
+                data-tier="BrainrotGod-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Brainrot God</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="ODINGOLD.jpg" alt="Sae Style" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Odin din din dun</span>
+                    </div>     
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 1</span>
+                    </div>                                     
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="BrainrotGod-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+
+              <h3 class="tier-category-title">Mythic</h3>  
+              <div
+                class="tier-card mythic animate__animated animate__fadeInUp"
+                data-tier="mythic-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="RHINOGOLD.jpg" alt="Sae Style" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Rhino Toasterino</span>
+                    </div>     
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 2</span>
+                    </div>                                     
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+            
+            <div
+                class="tier-card mythic animate__animated animate__fadeInUp"
+                data-tier="mythic-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="ORANGUTANGOLDjpg.jpg" alt="Sae Style" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Orangutini Ananassini</span>
+                    </div>     
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 1</span>
+                    </div>                                     
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+              
+            <div
+                class="tier-card mythic animate__animated animate__fadeInUp"
+                data-tier="mythic-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="TIGERGOLD.jpg" alt="Sae Style" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Tigrillini Watermelini</span>
+                    </div>     
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 1</span>
+                    </div>                                     
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+
+               <div
+                class="tier-card mythic animate__animated animate__fadeInUp"
+                data-tier="mythic-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="TIGERGOLDTACO.jpg" alt="Sae Style" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Tigrillini Watermelini (Tacos)</span>
+                    </div>     
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 1</span>
+                    </div>                                     
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                class="tier-card mythic animate__animated animate__fadeInUp"
+                data-tier="mythic-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="ONTAGOLD.jpg" alt="Sae Style" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Frigo Camelo</span>
+                    </div>     
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 2</span>
+                    </div>                                     
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                class="tier-card mythic animate__animated animate__fadeInUp"
+                data-tier="mythic-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="GUSINIGOLD.jpg" alt="Sae Style" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Bombombini Gusini</span>
+                    </div>     
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 1</span>
+                    </div>                                     
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                class="tier-card mythic animate__animated animate__fadeInUp"
+                data-tier="mythic-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="KUDAGOLD.jpg" alt="Sae Style" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Carvallo Virtuoso</span>
+                    </div>     
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 1</span>
+                    </div>                                     
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="mythic-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- DIAMOND-->
+              <div class="tier-cards" id="brainrot-pricellist-diamond-tiers">
+              <h3 class="tier-category-title">Secret</h3>  
+              <div
+                class="tier-card world-class animate__animated animate__fadeInUp"
+                data-tier="world-class-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Secret</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="PROGRESS.png" alt="Sae Style" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: -</span>
+                    </div>  
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: -</span>
+                    </div>                                    
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="world-class-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+
+                <h3 class="tier-category-title">Brainrot God</h3>  
+              <div
+                class="tier-card BrainrotGod animate__animated animate__fadeInUp"
+                data-tier="BrainrotGod-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Brainrot God</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="ELEFANTODIAMOND.jpg" alt="Sae Style" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Cocofanto Elefanto </span>
+                    </div>  
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 2</span>
+                    </div>                                    
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="BrainrotGod-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+
+                <h3 class="tier-category-title">Mythic</h3>  
+            <div
+                class="tier-card mythic animate__animated animate__fadeInUp"
+                data-tier="mythic-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="ORANGUTANDIAMONDjpg.jpg" alt="Sae Style" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Orangutini Ananassini</span>
+                    </div>  
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: -</span>
+                    </div>                                    
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="Mythic-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div
+                class="tier-card mythic animate__animated animate__fadeInUp"
+                data-tier="mythic-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="ZIBRADIAMONDjpg.jpg" alt="Sae Style" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Zibra Zubra Zibralini</span>
+                    </div>  
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 2</span>
+                    </div>                                    
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="Mythic-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                class="tier-card mythic animate__animated animate__fadeInUp"
+                data-tier="mythic-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="RHINODIAMOND.jpg" alt="Sae Style" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Rhino Toasterino</span>
+                    </div>  
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 2</span>
+                    </div>                                    
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="Mythic-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+
+                 <div
+                class="tier-card mythic animate__animated animate__fadeInUp"
+                data-tier="mythic-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="GUSINIDIAMOND.jpg" alt="Sae Style" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Bombombini Gusini</span>
+                    </div>  
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 2</span>
+                    </div>                                    
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="Mythic-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+
+                 <div
+                class="tier-card mythic animate__animated animate__fadeInUp"
+                data-tier="mythic-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="CROCODILLEDIAMOND.jpg" alt="Sae Style" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Bombardiro Crocodillo</span>
+                    </div>  
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 2</span>
+                    </div>                                    
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="Mythic-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+
+                 <div
+                class="tier-card mythic animate__animated animate__fadeInUp"
+                data-tier="mythic-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="TIGERDIAMOND.jpg" alt="Sae Style" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Tigrillini Watermelini</span>
+                    </div>  
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 1</span>
+                    </div>                                    
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="Mythic-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- RAINBOW-->
+              <div class="tier-cards" id="brainrot-pricellist-rainbow-tiers">
+              <h3 class="tier-category-title">Secret</h3>  
+              <div
+                class="tier-card world-class animate__animated animate__fadeInUp"
+                data-tier="world-class-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Secret</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="PROGRESS.png" alt="Sae Style" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: -</span>
+                    </div>  
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: -</span>
+                    </div>                                    
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="world-class-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+
+                <h3 class="tier-category-title">Brainrot God</h3>  
+              <div
+                class="tier-card BrainrotGod animate__animated animate__fadeInUp"
+                data-tier="BrainrotGod-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Brainrot God</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="PROGRESS.png" alt="Sae Style" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: -</span>
+                    </div>  
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: -</span>
+                    </div>                                    
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="BrainrotGod-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+
+                <h3 class="tier-category-title">Mythic</h3>  
+            <div
+                class="tier-card mythic animate__animated animate__fadeInUp"
+                data-tier="mythic-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="PROGRESS.png" alt="Sae Style" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: -</span>
+                    </div>  
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: -</span>
+                    </div>                                    
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="Mythic-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- CANDY-->
+              <div class="tier-cards" id="brainrot-pricellist-candy-tiers">
+              <h3 class="tier-category-title">Secret</h3>  
+              <div
+                class="tier-card world-class animate__animated animate__fadeInUp"
+                data-tier="world-class-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Secret</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="PROGRESS.png" alt="Sae Style" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: -</span>
+                    </div>  
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: -</span>
+                    </div>                                    
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="world-class-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+
+                <h3 class="tier-category-title">Brainrot God</h3>  
+                <div
+                class="tier-card BrainrotGod animate__animated animate__fadeInUp"
+                data-tier="BrainrotGod-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Brainrot God</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="MATTEOCANDY.jpg" alt="Sae Style" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Matteo</span>
+                    </div>  
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 1</span>
+                    </div>                                    
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="BrainrotGod-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div> 
+                
+              <div
+                class="tier-card BrainrotGod animate__animated animate__fadeInUp"
+                data-tier="BrainrotGod-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Brainrot God</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="TRALALEROCANDYjpg.jpg" alt="Sae Style" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Tralalero Tralala</span>
+                    </div>  
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 1</span>
+                    </div>                                    
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="BrainrotGod-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+
+                <h3 class="tier-category-title">Mythic</h3>  
+            <div
+                class="tier-card mythic animate__animated animate__fadeInUp"
+                data-tier="mythic-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="TIGERCANDY.jpg" alt="Sae Style" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Tigrillini Watermelini</span>
+                    </div>  
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 1</span>
+                    </div>                                    
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="Mythic-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+
+                 <div
+                class="tier-card mythic animate__animated animate__fadeInUp"
+                data-tier="mythic-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="BIRDCANDY.jpg" alt="Sae Style" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Spioniro Golubiro</span>
+                    </div>  
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 1</span>
+                    </div>                                    
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="Mythic-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+
+                 <div
+                class="tier-card mythic animate__animated animate__fadeInUp"
+                data-tier="mythic-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="ORANGUTANCANDY.jpg" alt="Sae Style" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Orangutini Anananssini</span>
+                    </div>  
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 1</span>
+                    </div>                                    
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="Mythic-sf">
+                      Testimoni
+                    </button>
+                    </div>
+                  </div>
+                </div>
+
+                 <div
+                class="tier-card mythic animate__animated animate__fadeInUp"
+                data-tier="mythic-sf"
+              >
+                <div class="tier-header">
+                  <h3 class="tier-title">Mythic</h3>
+                </div>
+                <div class="tier-img-container">
+                  <div class="tier-img">
+                    <img src="RHINOCANDY.jpg" alt="Sae Style" />
+                  </div>                 
+                </div>
+                <div class="tier-details">
+                  <div class="tier-price">Rp 10.000</div>
+                  <div class="tier-status">
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Brainrot: Rhino Toasterino</span>
+                    </div>  
+                    <div class="status-item">
+                      <i class="fa-solid fa-check-circle"></i>
+                      <span>Stok: 2</span>
+                    </div>                                    
+                  </div>
+                  <div class="tier-actions">
+                    <button
+                      class="buy-btn"
+                      onclick="window.open('https://wa.me/6288227789219?text=Halo%20Admin%20DelfaBlox%20Store%0ASaya%20ingin%20membeli%20akun%20*Blue*%20*Lock*%20*Rivals*%20Yaitu%20%3A%0A%0A*Tipe*%20*Akun*%20%3A%20Style%20%2B%20Flow%20%0A*Tipe*%20*Tier*%20%3A%20World%20Class%20%0A*Style*%20%3A%20Sae%20%0A*Flow*%20%3A%20Genius%0A*HARGA*%20%3A%20Rp.10.000', '_blank');"
+                    >
+                      Beli Sekarang
+                    </button>
+                    <button class="testimonial-btn" data-tier="Mythic-sf">
+                      Testimoni
+                    </button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-
+              
             <!-- Back to Account Types Button -->
             <button class="back-button" id="backToAccountTypes">
                 <i class="fa-solid fa-arrow-left"></i> Kembali ke Tipe Akun
@@ -6401,6 +8138,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
+      // AKUN
       document.addEventListener("DOMContentLoaded", function () {
         const homeSection = document.getElementById("homeSection");
         const accountTypeSection =
@@ -6493,6 +8231,17 @@
           } else if (game === "bloxfruit") {
             if (type === "All-Fruit")
               tierCardsId = "bloxfruit-All-Fruit-tiers";           
+          }if (game === "brainrot") {
+            if (type === "brainrot-basic")
+              tierCardsId = "brainrot-pricellist-basic-tiers";
+            else if (type === "brainrot-gold")
+              tierCardsId = "brainrot-pricellist-gold-tiers";
+            else if (type === "brainrot-diamond")
+              tierCardsId = "brainrot-pricellist-diamond-tiers";
+            else if (type === "brainrot-rainbow")
+              tierCardsId = "brainrot-pricellist-rainbow-tiers";
+            else if (type === "brainrot-candy")
+              tierCardsId = "brainrot-pricellist-candy-tiers";
           }
 
           const tierCards = gameTiers.querySelector(`#${tierCardsId}`);
@@ -6601,6 +8350,34 @@
             // Buttons for Anime Vanguard
             const buttons = [
               { type: "All-Fruit", text: "Pricelist Fruit" }
+            ];
+
+            buttons.forEach((btn, index) => {
+              const button = document.createElement("button");
+              button.className = `type-btn animate__animated animate__fadeIn${
+                index === 0 ? "Left" : index === 1 ? "Up" : "Right"
+              }`;
+              button.setAttribute("data-type", btn.type);
+              button.textContent = btn.text;
+              button.addEventListener("click", function () {
+                currentTierType = this.getAttribute("data-type");
+                showTiers(currentGame, currentTierType);
+
+                // Show tier section
+                hideAllSections();
+                tierSection.style.display = "block";
+                updateActiveNav("home");
+              });
+              accountTypesContainer.appendChild(button);
+            });
+          }else if (game === "brainrot") {
+            // Buttons for Blue Lock Rivals
+            const buttons = [
+              { type: "brainrot-basic", text: "Pricellist B.R Basic" },
+              { type: "brainrot-gold", text: "Pricelist B.R Gold" },
+              { type: "brainrot-diamond", text: "Pricelist B.R Diamond" },
+              { type: "brainrot-rainbow", text: "Pricelist B.R Rainbow" },
+              { type: "brainrot-candy", text: "Pricelist B.R Candy" },
             ];
 
             buttons.forEach((btn, index) => {
